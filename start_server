@@ -1,0 +1,5 @@
+export $(heroku config --shell)
+unset DATABASE_URL
+bundle install
+rake db:migrate
+foreman start -p 7000
