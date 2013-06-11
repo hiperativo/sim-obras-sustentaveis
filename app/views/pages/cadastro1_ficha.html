@@ -1,0 +1,551 @@
+
+
+
+  <div class="row">
+
+	 <div class="span3">
+    <div class="well" style="max-width: 340px; padding: 8px 0;">
+              <ul class="nav nav-list">
+                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="divider"></li>
+                <li class="active"><a href="/cadastro1_ficha.html">1. Ficha Técnica</a></li>
+                <li><a href="/cadastro2_certificacao.html">2. Certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">3. Terreno</a></li>
+                <li><a href="/cadastro4_agua.html">4. Água</a></li>
+                <li><a href="/cadastro5_energia.html">5. Energia</a></li>
+                <li><a href="/cadastro6_fachada.html">6. Fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">7. Iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">8. Materiais e resíduos</a></li>
+                <li class="divider"></li>
+              </ul>
+        </div>
+        
+    </div>
+
+  <div class="span8">
+
+
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend><strong>Ficha Técnica</strong></legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">1. Código Obra</label>
+  <div class="controls">
+    <input id="cod_obra" name="cod_obra" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">2. Nome da obra</label>
+  <div class="controls">
+    <input id="nome_obra" name="nome_obra" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>3. Localização:</STRONG></label>
+</div>
+
+  <!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label">Tipo de Logradouro</label>
+  <div class="controls">
+    <select id="tipo_logra" name="tipo_logra" class="input-xlarge">
+      <option>Acesso</option>
+      <option>Alameda</option>
+      <option>Avenida</option>
+      <option>Calçada</option>
+      <option>Caminho</option>
+      <option>Estrada</option>
+      <option>Fazenda</option>
+      <option>Ladeira</option>
+      <option>Outros</option>
+      <option>Praça</option>
+      <option>Rodovia</option>
+      <option>Rua</option>
+      <option>Travessa</option>
+      <option>Via</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Logradouro</label>
+  <div class="controls">
+    <input id="logradouro" name="logradouro" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Bairro</label>
+  <div class="controls">
+    <input id="bairro" name="bairro" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">CEP</label>
+  <div class="controls">
+    <input id="cep" name="cep" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label">Estado</label>
+  <div class="controls">
+    <select id="estado" name="estado" class="input-xlarge">
+      <option value="AC">AC</option>
+      <option value="AL">AL</option>
+      <option value="AM">AM</option>
+      <option value="AP">AP</option>
+      <option value="BA">BA</option>
+      <option value="CE">CE</option>
+      <option value="DF">DF</option>
+      <option value="ES">ES</option>
+      <option value="GO">GO</option>
+      <option value="MA">MA</option>
+      <option value="MG">MG</option>
+      <option value="MS">MS</option>
+      <option value="MT">MT</option>
+      <option value="PA">PA</option>
+      <option value="PB">PB</option>
+      <option value="PE">PE</option>
+      <option value="PI">PI</option>
+      <option value="PR">PR</option>
+      <option value="RJ">RJ</option>
+      <option value="RN">RN</option>
+      <option value="RO">RO</option>
+      <option value="RR">RR</option>
+      <option value="RS">RS</option>
+      <option value="SC">SC</option>
+      <option value="SE">SE</option>
+      <option value="SP">SP</option>
+      <option value="TO">TO</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label">Cidade</label>
+  <div class="controls">
+    <select id="cidade" name="cidade" class="input-xlarge">
+      <option>Adamantina</option>
+      <option>Adolfo</option>
+      <option>Aguaí</option>
+      <option>Águas da Prata</option>
+      <option>Águas de Lindóia</option>
+      <option>Águas de Santa Bárbara</option>
+      <option>Águas de São Pedro</option>
+      <option>Agudos</option>
+      <option>Alambari</option>
+      <option>Alfredo Marcondes</option>
+      <option>Altair</option>
+      <option>Altinópolis</option>
+      <option>Alto Alegre</option>
+      <option>Alumínio</option>
+      <option>Álvares Florence</option>
+      <option>Álvares Machado</option>
+      <option>Álvaro de Carvalho</option>
+      <option>Alvinlândia</option>
+      <option>Americana</option>
+      <option>Américo Brasiliense</option>
+      <option>Américo de Campos</option>
+      <option>Amparo</option>
+      <option>Analândia</option>
+      <option>Andradina</option>
+      <option>Angatuba</option>
+      <option>Anhembi</option>
+      <option>Anhumas</option>
+      <option>Aparecida</option>
+      <option>Aparecida d'Oeste</option>
+      <option>Apiaí</option>
+      <option>Araçariguama</option>
+      <option>Araçatuba</option>
+      <option>Araçoiaba da Serra</option>
+      <option>Aramina</option>
+      <option>Arandu</option>
+      <option>Arapeí</option>
+      <option>Araraquara</option>
+      <option>Araras</option>
+      <option>Arco-Íris</option>
+      <option>Arealva</option>
+      <option>Areias</option>
+      <option>Areiópolis</option>
+      <option>Ariranha</option>
+      <option>Artur Nogueira</option>
+      <option>Arujá</option>
+      <option>Aspásia</option>
+      <option>Assis</option>
+      <option>Atibaia</option>
+      <option>Auriflama</option>
+      <option>Avaí</option>
+      <option>Avanhandava</option>
+      <option>Avaré</option>
+    </select>
+  </div>
+</div>
+
+<hr>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">4. m² unidade</label>
+  <div class="controls">
+    <input id="m2_unidade" name="m2_unidade" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">5. m² útil total</label>
+  <div class="controls">
+    <input id="m2_util" name="m2_util" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">6. Nº de andares</label>
+  <div class="controls">
+    <input id="n_andares" name="n_andares" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">7. Início da obra (data prevista)</label>
+  <div class="controls">
+    <input id="data_inicio" name="data_inicio" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">8. Término da obra (data prevista)</label>
+  <div class="controls">
+    <input id="data_termino" name="data_termino" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>9. FASES:</STRONG></label>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Projeto</label>
+  <div class="controls">
+    <input id="fases_projeto" name="fases_projeto" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Lançamento</label>
+  <div class="controls">
+    <input id="fases_lancamento" name="fases_lancamento" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Fundação</label>
+  <div class="controls">
+    <input id="fases_fundacao" name="fases_fundacao" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Estrutura</label>
+  <div class="controls">
+    <input id="fases_estrutura" name="fases_estrutura" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Acabamento</label>
+  <div class="controls">
+    <input id="fases_acabamento" name="fases_acabamento" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Paralisada</label>
+  <div class="controls">
+    <input id="fases_paralisada" name="fases_paralisada" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Concluída</label>
+  <div class="controls">
+    <input id="fases_concluida" name="fases_concluida" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>10. PROPRIETÁRIOS:</STRONG></label>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Proprietário 1</label>
+  <div class="controls">
+    <input id="proprietario_1" name="proprietario_1" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Proprietário 2</label>
+  <div class="controls">
+    <input id="proprietario_2" name="proprietario_2" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Proprietário 3</label>
+  <div class="controls">
+    <input id="proprietario_3" name="proprietario_3" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Proprietário 4</label>
+  <div class="controls">
+    <input id="proprietario_4" name="proprietario_4" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>11. INVESTIDORES:</STRONG></label>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Investidor 1</label>
+  <div class="controls">
+    <input id="investidor_1" name="investidor_1" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Investidor 2</label>
+  <div class="controls">
+    <input id="investidor_2" name="investidor_2" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Investidor 3</label>
+  <div class="controls">
+    <input id="investidor_3" name="investidor_3" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Investidor 4</label>
+  <div class="controls">
+    <input id="investidor_4" name="investidor_4" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>12. CONTRUTORAS:</STRONG></label>
+</div>
+
+<div class="control-group">
+   <label class="control-label">Construtora 1</label>
+
+<div class="controls">
+    <input type="text" class="input-mini" placeholder="Cód">
+  <input type="text" class="input-xlarge" placeholder="Razão Social">
+    
+  </div>
+
+</div>
+
+<div class="control-group">
+   <label class="control-label">Construtora 2</label>
+
+<div class="controls">
+    <input type="text" class="input-mini" placeholder="Cód">
+  <input type="text" class="input-xlarge" placeholder="Razão Social">
+    
+  </div>
+
+</div>
+
+<div class="control-group">
+   <label class="control-label">Construtora 3</label>
+
+<div class="controls">
+    <input type="text" class="input-mini" placeholder="Cód">
+  <input type="text" class="input-xlarge" placeholder="Razão Social">
+    
+  </div>
+
+</div>
+
+<div class="control-group">
+   <label class="control-label">Construtora 4</label>
+
+<div class="controls">
+    <input type="text" class="input-mini" placeholder="Cód">
+  <input type="text" class="input-xlarge" placeholder="Razão Social">
+    
+  </div>
+
+</div>
+
+
+<hr>
+
+<div class="control-group">
+   <label class="control-label"><STRONG>13. TIPOLOGIA:</STRONG></label>
+</div>
+
+
+
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label">Tipo de Obra</label>
+  <div class="controls">
+    <select id="tipo_obra" name="tipo_obra" class="input-xlarge">
+      <option>Mercado Imobiliário – Residencial - Edifício Residencial</option>
+      <option>Mercado Imobiliário – Comercial - Edifício comercial saletas</option>
+      <option>Mercado Imobiliário – Comercial - Edifício corporativo</option>
+      <option>Mercado Imobiliário – Comercial - Universidades / Escolas</option>
+      <option>Mercado Imobiliário – Comercial – Supermercados</option>
+      <option>Mercado Imobiliário – Comercial - Home Center</option>
+      <option>Mercado Imobiliário – Comercial - Hospital e Laboratórios</option>
+      <option>Mercado Imobiliário – Comercial - Hotéis / Resorts</option>
+      <option>Mercado Imobiliário – Comercial – Shopping</option>
+      <option>Mercado Imobiliário – Comercial - Pequenas edificações</option>
+      <option>Mercado Imobiliário – Comercial – Restaurantes</option>
+      <option>Mercado Imobiliário – Comercial - Agencia bancária</option>
+      <option>Mercado Imobiliário – Comercial - Outros - SESC</option>
+      <option>Mercado Industrial - Centro de distribuição</option>
+      <option>Mercado Industrial – Frigorífico</option>
+      <option>Mercado Industrial – Galpão</option>
+      <option>Mercado Industrial – Indústria</option>
+      <option>Mercado Industrial - Data Centers / CPD</option>
+      <option>Infraestrutura - Infraestrutura esportiva – Estádio</option>
+      <option>Infraestrutura - Infraestrutura da habitação – Urbanização</option>
+      <option>Outros</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label">Outros, qual?</label>
+  <div class="controls">
+    <input id="outros" name="outros" type="text" placeholder="" class="input-xlarge">
+    
+  </div>
+</div>
+
+
+
+<hr>
+
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label">13. Observação</label>
+  <div class="controls">                     
+    <textarea id="obs" name="obs" rows="5"></textarea>
+  </div>
+</div>
+
+<hr>
+
+
+          <div class="form-actions">  
+            <button type="submit" class="btn">Salvar</button>  
+            <button class="btn btn-primary">Próximo</button>  
+          </div>  
+
+
+
+
+</fieldset>
+</form>
+
+ 
+<div class="progress progress-striped active">
+  <div class="bar bar-success" style="width: 12.5%;"></div>
+</div>
+
+
+
+  </div>
+
+</div>
