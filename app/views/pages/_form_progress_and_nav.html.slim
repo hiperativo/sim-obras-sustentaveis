@@ -1,26 +1,29 @@
-- @pagina_atual = params[:action].split("_")[1]
-- @items = %w[ficha certificação terreno água energia fachada iluminação materiais]
-- @items2 = %w[ficha certificacao terreno agua energia fachada iluminacao materiais]
-= 
+- @pagina_atual = params[:action].split("cadastro_")[1]
+- @items = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "iluminação", "materiais e resíduos"]
+- @index_atual = @items.collect(&:parameterize).collect(&:underscore).index(@pagina_atual)
+- @pagina_anterior = @index_atual > 0 ? @items[@index_atual-1].parameterize.underscore : "#"
+- @proxima_pagina = @index_atual < (@items.size-1) ? @items[@index_atual+1].parameterize.underscore : "#"
 
 header.ui
 	.container
-		.span8.offset2
+		.span12
 			.pagination.pagination-centered
 				ul
-					li 
-						a href="/cadastro1_ficha.html" ««
+					= if @index_atual > 0
+						li 
+							a href="/cadastro_#{@pagina_anterior}.html" ««
+
 					- for item in @items
+						li class=("active" if item.parameterize.underscore == @pagina_atual)
+							= link_to item, "/cadastro_#{item.parameterize.underscore}.html"
 
-						li class=("active" if item.parameterize == @pagina_atual)
-							= link_to item, "/cadastro_#{item.parameterize}.html"
+					= if @index_atual < (@items.size-1)
+						li 
+							a href="/cadastro_#{@proxima_pagina}.html" »»
 
-					li 
-						a href="/cadastro3_terreno.html" »»
-
-			.progress.progress-striped.active
-				.bar style="width: #{((@items2.index(@pagina_atual)+1)/8.0)*100}%" 
-					| pág 
-					strong= @items2.index(@pagina_atual)+1 
-					|  de 
-					strong 8
+		.progress.progress-striped.active.span6.offset3
+			.bar style="width: #{((@index_atual+1)/8.0)*100}%" 
+				| pág 
+				strong= @index_atual
+				|  de 
+				strong 8
