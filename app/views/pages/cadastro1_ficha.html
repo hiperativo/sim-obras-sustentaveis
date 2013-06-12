@@ -6,16 +6,16 @@
 	 <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
-                <li class="active"><a href="/cadastro1_ficha.html">1. Ficha Técnica</a></li>
-                <li><a href="/cadastro2_certificacao.html">2. Certificação</a></li>
-                <li><a href="/cadastro3_terreno.html">3. Terreno</a></li>
-                <li><a href="/cadastro4_agua.html">4. Água</a></li>
-                <li><a href="/cadastro5_energia.html">5. Energia</a></li>
-                <li><a href="/cadastro6_fachada.html">6. Fachada</a></li>
-                <li><a href="/cadastro7_iluminacao.html">7. Iluminação</a></li>
-                <li><a href="/cadastro8_materiais.html">8. Materiais e resíduos</a></li>
+                <li class="active"><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
+                <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">Terreno</a></li>
+                <li><a href="/cadastro4_agua.html">Água</a></li>
+                <li><a href="/cadastro5_energia.html">Energia</a></li>
+                <li><a href="/cadastro6_fachada.html">Fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">Iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">Materiais e resíduos</a></li>
                 <li class="divider"></li>
               </ul>
         </div>
@@ -25,7 +25,7 @@
   <div class="span8">
 
 
-<form class="form-horizontal">
+<form class="form-horizontal" method="get" action="/cadastro2_certificacao.html">
 <fieldset>
 
 <!-- Form Name -->
@@ -33,16 +33,19 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">1. Código Obra</label>
+  <label class="control-label"><strong>1. Código Obra</strong></label>
   <div class="controls">
     <input id="cod_obra" name="cod_obra" type="text" placeholder="" class="input-xlarge">
     
   </div>
 </div>
 
+
+
+
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">2. Nome da obra</label>
+  <label class="control-label"><strong>2. Nome da obra</strong></label>
   <div class="controls">
     <input id="nome_obra" name="nome_obra" type="text" placeholder="" class="input-xlarge">
     
@@ -55,6 +58,8 @@
 <div class="control-group">
    <label class="control-label"><STRONG>3. Localização:</STRONG></label>
 </div>
+
+
 
   <!-- Select Basic -->
 <div class="control-group">
@@ -207,7 +212,7 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">4. m² unidade</label>
+  <label class="control-label"><strong>4. m² unidade</strong></label>
   <div class="controls">
     <input id="m2_unidade" name="m2_unidade" type="text" placeholder="" class="input-xlarge">
     
@@ -216,7 +221,7 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">5. m² útil total</label>
+  <label class="control-label"><strong>5. m² útil total</strong></label>
   <div class="controls">
     <input id="m2_util" name="m2_util" type="text" placeholder="" class="input-xlarge">
     
@@ -225,16 +230,19 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">6. Nº de andares</label>
+  <label class="control-label"><strong>6. Nº de andares</strong></label>
   <div class="controls">
     <input id="n_andares" name="n_andares" type="text" placeholder="" class="input-xlarge">
     
   </div>
 </div>
 
+
+<hr>
+
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">7. Início da obra (data prevista)</label>
+  <label class="control-label"><strong>7. Início da obra (data prevista)</strong></label>
   <div class="controls">
     <input id="data_inicio" name="data_inicio" type="text" placeholder="" class="input-xlarge">
     
@@ -243,7 +251,7 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">8. Término da obra (data prevista)</label>
+  <label class="control-label"><strong>8. Término da obra (data prevista)</strong></label>
   <div class="controls">
     <input id="data_termino" name="data_termino" type="text" placeholder="" class="input-xlarge">
     
@@ -505,9 +513,9 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label">Outros, qual?</label>
+ <label class="control-label">Outros, qual?</label>
   <div class="controls">
-    <input id="outros" name="outros" type="text" placeholder="" class="input-xlarge">
+    > > >  <input id="outros" name="outros" type="text" placeholder="" class="input-xlarge">
     
   </div>
 </div>
@@ -519,7 +527,7 @@
 
 <!-- Textarea -->
 <div class="control-group">
-  <label class="control-label">13. Observação</label>
+  <label class="control-label"><strong>13. Observação</strong></label>
   <div class="controls">                     
     <textarea id="obs" name="obs" rows="5"></textarea>
   </div>
@@ -529,8 +537,8 @@
 
 
           <div class="form-actions">  
-            <button type="submit" class="btn">Salvar</button>  
-            <button class="btn btn-primary">Próximo</button>  
+            <button class="btn">Salvar</button>  
+            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
           </div>  
 
 

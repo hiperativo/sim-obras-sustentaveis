@@ -2,22 +2,21 @@
 
 
 
-
   <div class="row">
 
-	<div class="span3">
+  <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
                 <li class="nav-header">Etapas de Cadastro</li>
                 <li class="divider"></li>
-                <li><a href="/cadastro1_ficha.html">1. Ficha Técnica</a></li>
-                <li><a href="/cadastro2_certificacao.html">2. Certificação</a></li>
-                <li><a href="/cadastro3_terreno.html">3. Terreno</a></li>
-                <li><a href="/cadastro4_agua.html">4. Água</a></li>
-                <li class="active"><a href="/cadastro5_energia.html">5. Energia</a></li>
-                <li><a href="/cadastro6_fachada.html">6. Fachada</a></li>
-                <li><a href="/cadastro7_iluminacao.html">7. Iluminação</a></li>
-                <li><a href="/cadastro8_materiais.html">8. Materiais e resíduos</a></li>
+                <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
+                <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">Terreno</a></li>
+                <li><a href="/cadastro4_agua.html">Água</a></li>
+                <li class="active"><a href="/cadastro5_energia.html">Energia</a></li>
+                <li><a href="/cadastro6_fachada.html">Fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">Iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">Materiais e resíduos</a></li>
                 <li class="divider"></li>
               </ul>
         </div>
@@ -35,9 +34,7 @@
 
 
 
-
-
-<form class="form-horizontal">
+<form class="form-horizontal" method="get" action="/cadastro6_fachada.html">
 <fieldset>
 
 <!-- Form Name -->
@@ -56,10 +53,10 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><input type="checkbox" name="VRF" value="
+  <label class="control-label"><input type="checkbox" name="VRF" id="VRF" value="
     VRF"><strong>VRF</strong></label>
   
-  <div class="controls">
+  <div class="controls" data-depends="VRF">
     <label class="radio">
       <input type="radio" name="vrf_sel" value="Ar">
      Ar
@@ -192,19 +189,19 @@
   <label class="control-label"><strong>35. Tipo de Insuflamento de ar</strong></label>
   <div class="controls">
     <label class="checkbox">
-      <input type="checkbox" name="variador_frequencia" value="Nos ventilador de Tomada de ar externo">
-      Nos ventilador de Tomada de ar externo
+      <input type="checkbox" name="insulfamento_ar" value="Teto">
+      Teto
     </label>
     <label class="checkbox">
-      <input type="checkbox" name="variador_frequencia" value="Nos Fan coils">
-      Nos Fan coils
+      <input type="checkbox" name="insulfamento_ar" value="Piso">
+      Piso
     </label>
     <label class="checkbox">
-      <input type="checkbox" name="variador_frequencia" value="Nos Chillers">
-      Nos Chillers
+      <input type="checkbox" name="insulfamento_ar" value="Vigas frias">
+      Vigas frias
     </label>
-   <label class="checkbox inline">
-      <input type="checkbox" name="variador_frequencia" value="Outros –">
+    <label class="checkbox inline">
+      <input type="checkbox" name="insulfamento_ar" value="Outros –">
       Outros
     </label><label class="checkbox inline">- <input type="text"></label>
   </div>
@@ -239,14 +236,14 @@
 
 
 
+
 <hr>
 
 
           <div class="form-actions">  
-            <button type="submit" class="btn">Salvar</button>  
-            <button class="btn btn-primary">Próximo</button>  
+            <button class="btn">Salvar</button>  
+            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
           </div>  
-
 
 
 
@@ -255,7 +252,7 @@
 
  
 <div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 50%;"></div>
+  <div class="bar bar-success" style="width: 62.5%;"></div>
 </div>
 
 
