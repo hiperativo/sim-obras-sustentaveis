@@ -7,7 +7,7 @@
   <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
                 <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
                 <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
@@ -48,7 +48,7 @@
  
  <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>24. Bacias e mictórios</strong></label>
+  <label class="control-label"><strong>25. Bacias e mictórios</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="bacias_mics" value="Bacias a vácuo">
@@ -80,7 +80,8 @@
     </label>
     <label class="checkbox inline">
       <input type="checkbox" name="bacias_mics" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
   </div>
 </div>
@@ -91,7 +92,7 @@
 
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>25. Torneiras</strong></label>
+  <label class="control-label"><strong>26. Torneiras</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="torneiras" value="Restritores de vazão" checked="checked">
@@ -107,8 +108,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="torneiras" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input class="input-mini" type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -118,7 +119,7 @@
 
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>26. Chuveiros</strong></label>
+  <label class="control-label"><strong>27. Chuveiros</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="chuveiros" value="Restritores de vazão">
@@ -126,8 +127,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="chuveiros" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input class="input-mini" type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -139,7 +140,7 @@
 
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>27. Irrigação</strong></label>
+  <label class="control-label"><strong>28. Irrigação</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="irrigacao" value="Irrigação automatizada">
@@ -147,8 +148,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="irrigacao" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input class="input-mini" type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -161,7 +162,7 @@
 
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>28. Piscina</strong></label>
+  <label class="control-label"><strong>29. Piscina</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="piscina" value="Aquecimento solar para piscina">
@@ -169,8 +170,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="piscina" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input class="input-mini" type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -184,21 +185,21 @@
 <!-- Multiple Radios -->
 <div class="control-group">
   
-<label class="control-label"><strong>29. Torres de resfriamento - Tipo</strong></label>
+<label class="control-label"><strong>30. Torres de resfriamento - Tipo</strong></label>
   <div class="controls">
     
-<label class="radio">
-      <input type="radio" name="torre_resfr" value="Outros">
-      Sim  /  
-    </label>
+
+       <label class="radio inline">
+      <input type="radio" name="vagas_verdes" value="Outros">
+      Sim
+    </label> 
+    <label class="radio inline">
+      <input type="radio" name="vagas_verdes" value="Não">
+      Não
+    </label><br>
     > > > <label class="radio inline"> Aberta<input type="radio" name="torre_resfr_tipo" value="Aberta"></label>
     <label class="radio inline"> Fechada<input type="radio" name="torre_resfr_tipo" value="Fechada"></label>
 
-
-    <label class="radio">
-      <input type="radio" name="torre_resfr" value="Aquecimento solar para piscina">
-      Não
-    </label>
 
   </div>
 </div>
@@ -210,14 +211,14 @@
 <hr>
 
 <div class="control-group">
-   <STRONG>30. FONTES NÃO POTÁVEIS DE ÁGUA – Tipos:</STRONG>
+   <STRONG>31. FONTES NÃO POTÁVEIS DE ÁGUA – Tipos:</STRONG>
 </div>
 
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="agua_pluvial" value="
-    Agua Pluvial"><strong>Água Pluvial</strong></label>
+    Agua Pluvial"><strong> Água Pluvial</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="agua_pluv" value="Para irrigação do paisagismo">
@@ -242,7 +243,8 @@
 
      <label class="checkbox inline">
       <input type="checkbox" name="agua_pluv" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -254,7 +256,7 @@
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="agua_lencol" value="
-    Agua de Lençol"><strong>Água de Lençol</strong></label>
+    Agua de Lençol"><strong> Água de Lençol</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="agua_lenc" value="Para irrigação do paisagismo">
@@ -279,7 +281,8 @@
 
      <label class="checkbox inline">
       <input type="checkbox" name="agua_lenc" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -293,7 +296,7 @@
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="agua_condensacao" value="
-    Água de Condensação"><strong>Água de Condensação</strong></label>
+    Água de Condensação"><strong> Água de Condensação</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="agua_conden" value="Para irrigação do paisagismo">
@@ -318,7 +321,8 @@
 
      <label class="checkbox inline">
       <input type="checkbox" name="agua_conden" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -334,8 +338,10 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><input type="checkbox" name="agua_cinza_trat" value="
-    Água Cinza Tratada"><strong>Água Cinza Tratada</strong></label>
+  <label class="control-label">
+    <input type="checkbox" name="agua_cinza_trat" value="
+    Água Cinza Tratada"><strong>  Água Cinza Tratada</strong></label>
+  
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="agua_cinza" value="Para irrigação do paisagismo">
@@ -360,7 +366,8 @@
 
      <label class="checkbox inline">
       <input type="checkbox" name="agua_cinza" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -376,7 +383,7 @@
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="agua_negra_trat" value="
-    Água Negra Tratada"><strong>Água Negra Tratada</strong></label>
+    Água Negra Tratada"><strong> Água Negra Tratada</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="agua_negra" value="Para irrigação do paisagismo">
@@ -401,7 +408,8 @@
 
      <label class="checkbox inline">
       <input type="checkbox" name="agua_negra" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -415,7 +423,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>31. Drenagem</strong></label>
+  <label class="control-label"><strong>32. Drenagem</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="drenagem" value="Pisos permeáveis">
@@ -432,7 +440,8 @@
     
     <label class="checkbox inline">
       <input type="checkbox" name="drenagem" value="Outros">
-      Outros </label><label class="checkbox inline">- <input type="text"></label>
+       Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
   </div>
 </div>
@@ -458,10 +467,8 @@
 <hr>
 
 
-          <div class="form-actions">  
-            <button class="btn">Salvar</button>  
-            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
-          </div>  
+
+
 
 
 
@@ -469,10 +476,62 @@
 </fieldset>
 </form>
 
- 
-<div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 50%;"></div>
+
+
+
+
+
+
+<div class="form-actions">  
+
+           
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn">Salvar</button>
+  <button type="button" class="btn">Salvar e Sair</button>
+
 </div>
+
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 50%;"> pág <strong>4</strong> de <strong>8</strong> </div>
+</div>
+
+
+
+<div class="pagination pagination-centered">
+              <ul>
+                <li><a href="/cadastro3_terreno.html">««</a></li>
+                <li><a href="/cadastro1_ficha.html">ficha</a></li>
+                <li><a href="/cadastro2_certificacao.html">certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">terreno</a></li>
+                <li class="active"><a href="/cadastro4_agua.html">água</a></li>
+                <li><a href="/cadastro5_energia.html">energia</a></li>
+                <li><a href="/cadastro6_fachada.html">fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">materiais e resíduos</a></li>
+                <li><a href="/cadastro5_energia.html">»»</a></li>
+
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+ 
+
 
 
 

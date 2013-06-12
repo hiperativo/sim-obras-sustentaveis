@@ -7,7 +7,7 @@
   <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
                 <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
                 <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
@@ -49,24 +49,24 @@
 
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>36. Proteções solares – Tipos</strong></label>
+  <label class="control-label"><strong>37. Proteções solares – Tipos</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="protecao_solar" value="Brises" checked="checked">
       Brises
     </label>
     > > > <label class="radio inline">
-      <input type="radio" name="protecao_solar" value="Horizontais">
+      <input type="radio" name="protecao_solar_brises" value="Horizontais">
       Horizontais
     </label> 
     <label class="radio inline">
-      <input type="radio" name="protecao_solar" value="Verticais">
+      <input type="radio" name="protecao_solar_brises" value="Verticais">
       Verticais
     </label>
     <label class="radio inline">
-      <input type="radio" name="protecao_solar" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+      <input type="radio" name="protecao_solar_brises" value="Outros">
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
 
@@ -75,8 +75,9 @@
       Persianas automatizadas internas
     </label>
    <label class="radio inline">
-      <input type="radio" name="vrf_sel" value="Outros">
-      Outros </label><label class="radio inline">- <input type="text"></label>
+      <input type="radio" name="protecao_solar" value="Outros">
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -86,7 +87,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>37. Vidros – Área envidraçada</strong></label>
+  <label class="control-label"><strong>38. Vidros – Área envidraçada</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="area_envidrcada" value="Insulado">
@@ -119,11 +120,11 @@
     <label class="radio inline">
       <input type="radio" name="sel_area_envidrcada" value="Mais de 80%">
       Mais de 80%
-    </label><br>
+    </label>
     <label class="checkbox inline">
       <input type="checkbox" name="area_envidrcada" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -135,7 +136,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>38. Elétrica – Tamanho da entrada – Tipo de fonte de energia</strong></label>
+  <label class="control-label"><strong>39. Elétrica – Tamanho da entrada – Tipo de fonte de energia</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="eletrica" value="Motor de alta eficiência">
@@ -151,11 +152,11 @@
     </label>
     
 > > > <label class="radio inline">
-      <input type="radio" name="sel_eletrica" value="De 0% a 40%">
+      <input type="radio" name="eletrica_sel_en_entrada" value="De 0% a 40%">
       Média
     </label>
     <label class="radio inline">
-      <input type="radio" name="sel_eletrica" value="De 40% a 60%">
+      <input type="radio" name="eletrica_sel_en_entrada" value="De 40% a 60%">
       Alta
     </label>
 
@@ -167,22 +168,23 @@
       Fonte de energia
     </label>
     > > > <label class="checkbox inline">
-      <input type="checkbox" name="eletrica" value="Elétrica">
+      <input type="checkbox" name="eletrica_sel_en_fonte" value="Elétrica">
       Elétrica
     </label>
     <label class="checkbox inline">
-      <input type="checkbox" name="eletrica" value="Gás">
+      <input type="checkbox" name="eletrica_sel_en_fonte" value="Gás">
       Gás
     </label>
     <label class="checkbox inline">
+      <input type="checkbox" name="eletrica_sel_en_fonte" value="Outros">
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
+
+
+    <label class="checkbox">
       <input type="checkbox" name="eletrica" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
-<br>
-    <label class="checkbox inline">
-      <input type="checkbox" name="eletrica" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -200,7 +202,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>39. Energia alternativa</strong></label>
+  <label class="control-label"><strong>40. Energia alternativa</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="energia_alternativa" value="Solar fotovoltaica">
@@ -220,8 +222,8 @@
     </label>
     <label class="checkbox inline">
       <input type="checkbox" name="energia_alternativa" value="Outros">
-      Outros
-    </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
   </div>
 </div>
@@ -246,16 +248,11 @@
 
 
 
-
-
-
 <hr>
 
 
-          <div class="form-actions">  
-            <button class="btn">Salvar</button>  
-            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
-          </div>  
+
+
 
 
 
@@ -263,10 +260,62 @@
 </fieldset>
 </form>
 
- 
-<div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 75%;"></div>
+
+
+
+
+
+
+<div class="form-actions">  
+
+           
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn">Salvar</button>
+  <button type="button" class="btn">Salvar e Sair</button>
+
 </div>
+
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 75%;"> pág <strong>6</strong> de <strong>8</strong> </div>
+</div>
+
+
+
+<div class="pagination pagination-centered">
+              <ul>
+                <li><a href="/cadastro5_energia.html">««</a></li>
+                <li><a href="/cadastro1_ficha.html">ficha</a></li>
+                <li><a href="/cadastro2_certificacao.html">certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">terreno</a></li>
+                <li><a href="/cadastro4_agua.html">água</a></li>
+                <li><a href="/cadastro5_energia.html">energia</a></li>
+                <li class="active"><a href="/cadastro6_fachada.html">fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">materiais e resíduos</a></li>
+                <li><a href="/cadastro7_iluminacao.html">»»</a></li>
+
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+ 
+
 
 
 

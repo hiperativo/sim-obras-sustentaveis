@@ -6,7 +6,7 @@
 	<div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
                 <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
                 <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
@@ -53,33 +53,35 @@
      <label class="radio inline">
       <input type="radio" name="vagas_verdes" value="Outros">
       Sim
-    </label> <label class="radio inline">> > > Quantidade: <input class="input-mini" type="text"></label>
-
-    <label class="radio">
+    </label> 
+    <label class="radio inline">
       <input type="radio" name="vagas_verdes" value="Não">
       Não
     </label>
+    <label class="text">> > > Quantidade: <input class="input-mini" type="text"></label>
+
   </div>
 </div>
 
 
-
+<hr>
 
  
  <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>19b. Estações de recarga de veículos elétricos</strong></label>
+  <label class="control-label"><strong>20. Estações de recarga de veículos elétricos</strong></label>
   
-  <div class="controls">
+   <div class="controls">
      <label class="radio inline">
-      <input type="radio" name="recarga_veiculos" value="Outros">
+      <input type="radio" name="recarca_veiculos" value="Outros">
       Sim
-    </label> <label class="radio inline">> > > Quantidade: <input class="input-mini" type="text"></label>
-
-    <label class="radio">
-      <input type="radio" name="recarga_veiculos" value="Não">
+    </label> 
+    <label class="radio inline">
+      <input type="radio" name="recarca_veiculos" value="Não">
       Não
     </label>
+    <label class="text">> > > Quantidade: <input class="input-mini" type="text"></label>
+
   </div>
 </div>
 
@@ -92,18 +94,19 @@
  
  <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>20. Bicicletários</strong></label>
+  <label class="control-label"><strong>21. Bicicletários</strong></label>
   
   <div class="controls">
      <label class="radio inline">
       <input type="radio" name="bicicletarios" value="Outros">
       Sim
-    </label> <label class="radio inline">> > > Quantidade: <input class="input-mini" type="text"></label>
-
-    <label class="radio">
+    </label> 
+    <label class="radio inline">
       <input type="radio" name="bicicletarios" value="Não">
       Não
     </label>
+    <label class="text">> > > Quantidade: <input class="input-mini" type="text"></label>
+
   </div>
 </div>
 
@@ -117,18 +120,19 @@
  
  <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>21. Vestiários com chuveiro</strong></label>
+  <label class="control-label"><strong>22. Vestiários com chuveiro</strong></label>
   
   <div class="controls">
      <label class="radio inline">
       <input type="radio" name="vestiarios" value="Outros">
       Sim
-    </label> <label class="radio inline">> > > Quantidade: <input class="input-mini" type="text"></label>
-
-    <label class="radio">
+    </label> 
+    <label class="radio inline">
       <input type="radio" name="vestiarios" value="Não">
       Não
     </label>
+    <label class="text">> > > Quantidade: <input class="input-mini" type="text"></label>
+
   </div>
 </div>
 
@@ -139,31 +143,31 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>22. Proximidade ao transporte público</strong></label>
+  <label class="control-label"><strong>23. Proximidade ao transporte público</strong></label>
   <div class="controls">
     <label class="checkbox inline">
       <input type="checkbox" name="transp_publico" value="Metro">
       Metro
-    </label><label class="radio inline">> > > Distância aprox.: <input class="input-mini" type="text">m</label>
+    </label><label class="text">> > > Distância aprox.: <input class="input-mini" type="text"></label>
 
     <br>
     <label class="checkbox inline">
       <input type="checkbox" name="transp_publico" value="Trem">
       Trem
-    </label><label class="radio inline">> > > Distância aprox.: <input class="input-mini" type="text">m</label>
+    </label><label class="text">> > > Distância aprox.: <input class="input-mini" type="text"></label>
 
     <br>
     <label class="checkbox inline">
       <input type="checkbox" name="transp_publico" value="Ponto de ônibus">
       Ponto de ônibus
-    </label><label class="radio inline">> > > Distância aprox.: <input class="input-mini" type="text">m</label>
+    </label><label class="text">> > > Distância aprox.: <input class="input-mini" type="text"></label>
 
     <br>
     <label class="checkbox inline">
       <input type="checkbox" name="transp_publico" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input class="input-mini" type="text"></label>
-    <label class="radio inline">> > > Distância aprox.: <input class="input-mini" type="text">m</label>
+     Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
+    <label class="text">> > > Distância aprox.: <input class="input-mini" type="text"></label>
   </div>
 </div>
 
@@ -174,7 +178,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>23. Redução do efeito de ilhas de calor no empreendimento</strong></label>
+  <label class="control-label"><strong>24. Redução do efeito de ilhas de calor no empreendimento</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="ilhas_calor" value="Alta refletância solar (cor branca)">
@@ -184,10 +188,10 @@
       <input type="checkbox" name="ilhas_calor" value="Telhado verde">
       Telhado verde
     </label>
-    <label class="checkbox inline">
+    <label class="checkbox">
       <input type="checkbox" name="ilhas_calor" value="Outros">
-      Outros
-    </label><label class="checkbox inline">- <input class="input-mini" type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -198,10 +202,8 @@
 <hr>
 
 
-          <div class="form-actions">  
-            <button class="btn">Salvar</button>  
-            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
-          </div>  
+
+
 
 
 
@@ -209,10 +211,62 @@
 </fieldset>
 </form>
 
- 
-<div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 37.5%;"></div>
+
+
+
+
+
+
+<div class="form-actions">  
+
+           
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn">Salvar</button>
+  <button type="button" class="btn">Salvar e Sair</button>
+
 </div>
+
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 37.5%;"> pág <strong>3</strong> de <strong>8</strong> </div>
+</div>
+
+
+
+<div class="pagination pagination-centered">
+              <ul>
+                <li><a href="/cadastro2_certificacao.html">««</a></li>
+                <li><a href="/cadastro1_ficha.html">ficha</a></li>
+                <li><a href="/cadastro2_certificacao.html">certificação</a></li>
+                <li class="active"><a href="/cadastro3_terreno.html">terreno</a></li>
+                <li><a href="/cadastro4_agua.html">água</a></li>
+                <li><a href="/cadastro5_energia.html">energia</a></li>
+                <li><a href="/cadastro6_fachada.html">fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">materiais e resíduos</a></li>
+                <li><a href="/cadastro4_agua.html">»»</a></li>
+
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+ 
+
 
 
 

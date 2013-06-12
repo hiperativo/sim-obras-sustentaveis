@@ -8,7 +8,7 @@
   <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
                 <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
                 <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
@@ -38,14 +38,14 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend><strong>Iluminação</strong></legend>
+<legend><strong>Materiais e resíduos</strong></legend>
 
 
 
  
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>42. Material de baixo VOC</strong></label>
+  <label class="control-label"><strong>43. Material de baixo VOC</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="materiais_VOC" value="Tintas">
@@ -57,8 +57,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="materiais_VOC" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -73,7 +73,7 @@
  
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>43. Madeira certificada</strong></label>
+  <label class="control-label"><strong>44. Madeira certificada</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="madeira_cert" value="Acabamentos">
@@ -85,8 +85,8 @@
     </label>
     <label class="radio inline">
       <input type="radio" name="madeira_cert" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -105,7 +105,7 @@
  
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>44. Pisos e carpetes certificados</strong></label>
+  <label class="control-label"><strong>45. Pisos e carpetes certificados</strong></label>
   <div class="controls">
     <label class="radio">
       <input type="radio" name="piso_carp_cert" value="Certificação Floor Score">
@@ -114,8 +114,8 @@
     
     <label class="radio inline">
       <input type="radio" name="piso_carp_cert" value="Outros">
-      Outros
-    </label><label class="radio inline">- <input type="text"></label>
+     Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -133,7 +133,7 @@
  
 <!-- Multiple Radios -->
 <div class="control-group">
-  <label class="control-label"><strong>45. Infraestrutura para coleta de resíduos recicláveis</strong></label>
+  <label class="control-label"><strong>46. Infraestrutura para coleta de resíduos recicláveis</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="infra_coleta" value="Depósito central">
@@ -147,10 +147,51 @@
     
     <label class="checkbox inline">
       <input type="checkbox" name="infra_coleta" value="Outros">
-      Outros
-    </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
+
+
+
+
+<hr>
+
+
+
+<!-- Multiple Checkboxes -->
+<div class="control-group">
+  <label class="control-label"><strong>47. Qualidade Ambiental (Ar) – Nível de filtragem</strong></label>
+  <div class="controls">
+    
+<label class="checkbox">
+      <input type="checkbox" name="qual_ambiental" value="Nível de Filtragem">
+      Nível de Filtragem
+    </label>
+    > > > <label class="radio inline">
+      <input type="radio" name="qual_ambiental_sel_filtragem" value="F5">
+      F5
+    </label>
+    <label class="radio inline">
+      <input type="radio" name="qual_ambiental_sel_filtragem" value="F7">
+      F7
+    </label>
+
+
+
+    <label class="checkbox">
+      <input type="checkbox" name="qual_ambiental" value="Sistemas de tratamento de ar interno">
+       Sistemas de tratamento de ar interno  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
+
+
+   
+
+    
+
+  </div>
+</div>
+
 
 
 
@@ -167,10 +208,8 @@
 <hr>
 
 
-          <div class="form-actions">  
-            <button class="btn">Salvar</button>  
-            <button type="submit" class="btn btn-success">Finalizar</button> </a> 
-          </div>  
+
+
 
 
 
@@ -178,10 +217,62 @@
 </fieldset>
 </form>
 
- 
-<div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 100%;"></div>
+
+
+
+
+
+
+<div class="form-actions">  
+
+           
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn">Salvar</button>
+  <button type="button" class="btn btn-success">Finalizar</button>
+
 </div>
+
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 100%;"> pág <strong>8</strong> de <strong>8</strong> </div>
+</div>
+
+
+
+<div class="pagination pagination-centered">
+              <ul>
+                <li><a href="/cadastro7_iluminacao.html">««</a></li>
+                <li><a href="/cadastro1_ficha.html">ficha</a></li>
+                <li><a href="/cadastro2_certificacao.html">certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">terreno</a></li>
+                <li><a href="/cadastro4_agua.html">água</a></li>
+                <li><a href="/cadastro5_energia.html">energia</a></li>
+                <li><a href="/cadastro6_fachada.html">fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">iluminação</a></li>
+                <li class="active"><a href="/cadastro8_materiais.html">materiais e resíduos</a></li>
+                <li class="disabled"><a href="#">»»</a></li>
+
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+ 
+
 
 
 

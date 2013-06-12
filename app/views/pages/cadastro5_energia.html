@@ -7,7 +7,7 @@
   <div class="span3">
     <div class="well" style="max-width: 340px; padding: 8px 0;">
               <ul class="nav nav-list">
-                <li class="nav-header">Etapas de Cadastro</li>
+                <li class="nav-header">Cadastro por temas</li>
                 <li class="divider"></li>
                 <li><a href="/cadastro1_ficha.html">Ficha Técnica</a></li>
                 <li><a href="/cadastro2_certificacao.html">Certificação</a></li>
@@ -47,14 +47,14 @@
  <hr>
 
 <div class="control-group">
-   <STRONG>32. AR CONDICIONADO – Tipos:</STRONG>
+   <STRONG>33. AR CONDICIONADO – Tipos:</STRONG>
 </div>
 
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="VRF" id="VRF" value="
-    VRF"><strong>VRF</strong></label>
+    VRF"><strong> VRF</strong></label>
   
   <div class="controls" data-depends="VRF">
     <label class="radio">
@@ -69,7 +69,8 @@
 
      <label class="radio inline">
       <input type="radio" name="vrf_sel" value="Outros">
-      Outros </label><label class="radio inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
   </div>
@@ -81,7 +82,7 @@
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="cnt_agua_gel" value="
-    Central de Agua Gelada"><strong>Central de Água Gelada</strong></label>
+    Central de Agua Gelada"><strong> Central de Água Gelada</strong></label>
   
   <div class="controls">
     <label class="radio">
@@ -96,7 +97,8 @@
 
      <label class="radio inline">
       <input type="radio" name="cnt_agua_gel_sel" value="Outros">
-      Outros </label><label class="radio inline">- <input type="text"></label>
+     Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
 
 
 
@@ -113,13 +115,11 @@
 <!-- Multiple Checkboxes -->
 <div class="control-group">
   <label class="control-label"><input type="checkbox" name="cnt_agua_gel" value="
-    Central de Agua Gelada"><strong>Outros</strong></label>
+    Central de Agua Gelada"><strong> Outros</strong></label>
   
   <div class="controls">
-    
-    
 
-     <label class="radio inline"><input type="text"></label>
+     <label class="text"><input type="text" placeholder="Qual?"></label>
 
 
 
@@ -133,7 +133,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>33. Tratamento de ar externo</strong></label>
+  <label class="control-label"><strong>34. Tratamento de ar externo</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="tratamento_ar" value="Roda entálpica">
@@ -145,8 +145,8 @@
     </label>
     <label class="checkbox inline">
       <input type="checkbox" name="tratamento_ar" value="Outros –">
-      Outros
-    </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -156,7 +156,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>34. Variador de frequência</strong></label>
+  <label class="control-label"><strong>35. Variador de frequência</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="variador_frequencia" value="Nos ventilador de Tomada de ar externo">
@@ -172,8 +172,8 @@
     </label>
    <label class="checkbox inline">
       <input type="checkbox" name="variador_frequencia" value="Outros –">
-      Outros
-    </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
 
@@ -186,7 +186,7 @@
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
-  <label class="control-label"><strong>35. Tipo de Insuflamento de ar</strong></label>
+  <label class="control-label"><strong>36. Tipo de Insuflamento de ar</strong></label>
   <div class="controls">
     <label class="checkbox">
       <input type="checkbox" name="insulfamento_ar" value="Teto">
@@ -202,10 +202,15 @@
     </label>
     <label class="checkbox inline">
       <input type="checkbox" name="insulfamento_ar" value="Outros –">
-      Outros
-    </label><label class="checkbox inline">- <input type="text"></label>
+      Outros  -   <input type="text" class="input-medium inline" placeholder="Qual?">
+    </label>
   </div>
 </div>
+
+
+
+
+
 
 
 
@@ -240,20 +245,71 @@
 <hr>
 
 
-          <div class="form-actions">  
-            <button class="btn">Salvar</button>  
-            <button type="submit" class="btn btn-primary">Próximo</button> </a> 
-          </div>  
+
+
+
 
 
 
 </fieldset>
 </form>
 
- 
-<div class="progress progress-striped active">
-  <div class="bar bar-success" style="width: 62.5%;"></div>
+
+
+
+
+
+
+<div class="form-actions">  
+
+           
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn">Salvar</button>
+  <button type="button" class="btn">Salvar e Sair</button>
+
 </div>
+
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 62.5%;"> pág <strong>5</strong> de <strong>8</strong> </div>
+</div>
+
+
+
+<div class="pagination pagination-centered">
+              <ul>
+                <li><a href="/cadastro4_agua.html">««</a></li>
+                <li><a href="/cadastro1_ficha.html">ficha</a></li>
+                <li><a href="/cadastro2_certificacao.html">certificação</a></li>
+                <li><a href="/cadastro3_terreno.html">terreno</a></li>
+                <li><a href="/cadastro4_agua.html">água</a></li>
+                <li class="active"><a href="/cadastro5_energia.html">energia</a></li>
+                <li><a href="/cadastro6_fachada.html">fachada</a></li>
+                <li><a href="/cadastro7_iluminacao.html">iluminação</a></li>
+                <li><a href="/cadastro8_materiais.html">materiais e resíduos</a></li>
+                <li><a href="/cadastro6_fachada.html">»»</a></li>
+
+
+              </ul>
+            </div>
+
+
+
+
+
+
+
+ 
+
 
 
 
