@@ -1,4 +1,4 @@
 SimObrasSustentaveis::Application.routes.draw do
-  root to: "pages#index"
+  root to: "pages#login"
   get ":action" => "pages"
 end
