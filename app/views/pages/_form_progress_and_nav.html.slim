@@ -9,7 +9,7 @@ header.ui
 		.span12
 			.pagination.pagination-centered
 				ul
-					= if @index_atual > 0
+					- if @index_atual > 0
 						li 
 							a href="/cadastro_#{@pagina_anterior}.html" ««
 
@@ -17,7 +17,7 @@ header.ui
 						li class=("active" if item.parameterize.underscore == @pagina_atual)
 							= link_to item, "/cadastro_#{item.parameterize.underscore}.html"
 
-					= if @index_atual < (@items.size-1)
+					- if @index_atual < (@items.size-1)
 						li 
 							a href="/cadastro_#{@proxima_pagina}.html" »»
 
