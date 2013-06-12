@@ -9,19 +9,34 @@ html
 	body
 
 		<div class="navbar">
-  		<div class="navbar-inner">
+		<div class="navbar-inner">
 
-    		<a class="brand" href="/home.html">SIMSUSTENTAVEL</a>
+			<a class="brand" href="/home.html">SIMSUSTENTAVEL</a>
 
 
-   			<ul class="nav pull-right">
-   			<li><a href="#"><i class="icon-user"></i> Roberto Della Pena <span class="btn btn-mini btn-danger" type="button"><i class="icon-trash"></i> Sair</span></a></li>
+			<ul class="nav pull-right">
+			<li><a href="#"><i class="icon-user"></i> Roberto Della Pena <span class="btn btn-mini btn-danger" type="button"><i class="icon-trash"></i> Sair</span></a></li>
 			</ul>
 
 
-	  	</div>
+		</div>
 		</div>
 
-        .container
+		/ .navbar
+		/ 	.navbar-inner
+		/ 		= link_to "Sim Sustentável", "/home.html"
+
+		/ 		ul.nav.pull-right
+		/ 			li
+		/ 				a href="#"
+		/ 					i.icon-user
+		/ 					| Roberto Della Pena
+
+		/ 				a href="#"
+		/ 					i.icon-trash
+		/ 					| Sair
+
+
+		.container
 		
 			= yield
