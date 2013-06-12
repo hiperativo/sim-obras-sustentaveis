@@ -6,13 +6,6 @@
 header.ui
 	.container
 		.span8.offset2
-			.progress.progress-striped.active
-				.bar style="width: #{((@items2.index(@pagina_atual)+1)/8.0)*100}%" 
-					| pág 
-					strong 2 
-					| de 
-					strong 8
-
 			.pagination.pagination-centered
 				ul
 					li 
@@ -24,3 +17,10 @@ header.ui
 
 					li 
 						a href="/cadastro3_terreno.html" »»
+
+			.progress.progress-striped.active
+				.bar style="width: #{((@items2.index(@pagina_atual)+1)/8.0)*100}%" 
+					| pág 
+					strong= @items2.index(@pagina_atual)+1 
+					|  de 
+					strong 8
