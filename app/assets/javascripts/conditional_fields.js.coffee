@@ -7,7 +7,6 @@ class ConditionalFields
 
 	get: => @conditional_fields = $("[data-depends]")
 	hide: => @conditional_fields?.hide()
-
 	set_to_appear: =>
 		null
 
