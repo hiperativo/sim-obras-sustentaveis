@@ -1,2 +1,17 @@
 //= require twitter-bootstrap-static/bootstrap
 //= require twitter-bootstrap-static/fontawesome
+
+$white: #fff
+$white_glass: transparentize($white, 0.2)
+
+header.ui
+	:position fixed
+	:bottom 0
+	:left 0
+	:background-color $white_glass
+	:width 100%
+	:padding-top 20px
+	:border 1px solid #eee
+
+body
+	:margin-bottom 120px
