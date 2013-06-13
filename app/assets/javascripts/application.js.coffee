@@ -4,4 +4,5 @@
 #= require conditional_fields
 
 $ ->
-	new ConditionalFields
+	if $(".conditional-fields").size() > 0
+		new ConditionalFields $(".conditional-fields").first()

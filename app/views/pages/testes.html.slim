@@ -1,2 +1,3 @@
-= simple_form_for :teste do |f|
-	= f.input Teste
+= simple_form_for :teste, url:"teste", html:{class:"conditional-fields", id:"teste"} do |f|
+	= f.input :outros, as: :boolean
+	= f.input :especifique, wrapper_html:{data:{requires:"outros"}}
