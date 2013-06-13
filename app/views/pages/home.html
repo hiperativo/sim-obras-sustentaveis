@@ -4,30 +4,361 @@
   <div class="row">
 
 	
-  <div class="span3">
-    
+   <div class="span2">
+    <p>
+        <a class="btn btn-medium btn-success" href="/cadastro_ficha_tecnica.html">
+          <i class="icon-plus-sign icon-2x"></i> <br>Novo cadastro<br>de obra
+        </a>
+    </p>
+
+    <p>
+        <a class="btn btn-medium" href="log.html">
+          <i class="icon-book icon-2x"></i> <br>Ver/exportar <br>LOG
+        </a>
+    </p>
+          <p>
+        <a class="btn btn-medium" href="cadastro_usuario.html">
+          <i class="icon-user icon-2x"></i> <br>Ver/Cadastrar <br>usuário
+        </a>
+    </p>
+
+    </p>
         
     </div>
 
 
-    <div class="span8">
-    	<p>
-        <a class="btn btn-large btn-success" href="/cadastro_ficha_tecnica.html">
-          <i class="icon-plus-sign icon-2x"></i> <br>Cadastrar <br>obra</a>
+    <div class="span8 well" style="background-color: #fff;">
+    	
+      <h2>Obras cadastradas</h2>
+      <p class="lead">Utilize a ferramenta abaixo para cadastrar, buscar ou excluir uma obra do sistema</p><br><br>
 
-        <a class="btn btn-large" href="#">
-          <i class="icon-search icon-2x"></i> <br>Buscar/editar <br>obras</a>
+      <div class="well">
+        <span id="filters_box"></span>
+        <form class="form-search">
+          <input type="text" class="input-medium" placeholder="Buscar obras">
+          <button type="submit" class="btn btn-primary">
+            <i class="icon-search"></i>
+          </button>
+          <span style="float:right"><a href="#" class="btn btn-info"><i class="icon-white icon-share"></i> Exportar todas as obras</a></span>
+        </form>
+      </div>
 
-        <a class="btn btn-large" href="#">
-          <i class="icon-share icon-2x"></i> <br>Ver/Exportar <br>dados</a>
+      <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Código da obra</th>
+                  <th>Nome da obra</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>85678</td>
+                  <td>Jardim das Pardizes</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>34566</td>
+                  <td>Boulevard Londrina Shopping</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
 
-        <a class="btn btn-large" href="#">
-          <i class="icon-book icon-2x"></i> <br>Ver/exportar <br>LOG</a>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>43256</td>
+                  <td>Águas Claras</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>87564</td>
+                  <td>Avon Cabreúva</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>85674</td>
+                  <td>Building the Future</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>15325</td>
+                  <td>Centro Administrativo Rio Negro - Demini</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>94764</td>
+                  <td>Delboni Auriemo</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>05865</td>
+                  <td>Eco Berrini</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>85674</td>
+                  <td>Edifício Marques dos Reis</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>47746</td>
+                  <td>Jatoba</td>
+                  <td class="last links">
+                    <ul class="inline">
+                              <li title="Mostrar" rel="tooltip" class="icon show_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-eye-open"></i>
+                                  <span style="display:none">Mostrar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Editar" rel="tooltip" class="icon edit_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-pencil"></i>
+                                  <span style="display:none">Editar</span>
+                                </a>
+                              </li>
+                            
+                              <li title="Remover" rel="tooltip" class="icon delete_member_link ">
+                                <a class="pjax" href="#">
+                                  <i class="icon-remove"></i>
+                                  <span style="display:none">Remover</span>
+                                </a>
+                              </li>
+                            </ul>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <a class="btn btn-large" href="#">
-          <i class="icon-user icon-2x"></i> <br>Ver/Cadastrar <br>usuário</a>
+            <div class="pagination">
+              <ul>
+                <li><a href="#">« Anterior</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Próximo »</a></li>
+              </ul>
+            </div>
 
-      </p>
+
     </div>
 
 </div>
