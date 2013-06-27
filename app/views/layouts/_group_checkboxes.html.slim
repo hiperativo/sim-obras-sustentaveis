@@ -1,0 +1,43 @@
+- if prefix.nil?
+	- prefix = "" 
+- else
+	- prefix += "_"
+
+hr
+
+.control-group
+	label.control-label.emphasis 
+		= group_name
+	.controls
+		- for item in collection do
+			- unless item.class == Array
+				- @input_method = item.parameterize.underscore
+				- @input_label = item
+			- else
+				- @input_method = item[0]
+				- @input_label = item[1]
+
+			- unless @input_label == "Outros"
+				label.checkbox
+					= f.input_field "#{prefix}#{@input_method}"
+					= @input_label
+			- else
+				label.checkbox
+					= f.input_field "#{prefix}#{@input_method}_enable", as: :boolean
+					= @input_label
+				|  
+				- if item.class == Array 
+					- @outros_method = "#{@input_method}_enable"
+				- else
+					- @outros_method = "#{prefix}outros_enable"
+
+				= f.input_field "#{prefix}#{@input_method}", placeholder: "Qual?", data:{requires: @outros_method}
+				
+				- if intercalar_distancia_aproximada
+					|  
+					= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
+						data:{requires: "#{prefix}#{@input_method}_enable"}
+
+			- if intercalar_distancia_aproximada
+				= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
+					data:{requires: "#{prefix}#{@input_method}"}

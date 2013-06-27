@@ -1,0 +1,77 @@
+h2 Ficha técnica
+hr
+
+= f.input :codigo_obra, label: "1. Código Obra"
+= f.input :nome_da_obra, label: "2. Nome da Obra"
+
+hr
+h3 3. Localização:
+
+= f.input :tipo_de_logradouro, collection: ["Acesso", "Alameda", "Avenida", "Calçada", "Caminho", "Estrada", "Fazenda", "Ladeira", "Outros", "Praça", "Rodovia", "Rua", "Travessa", "Via"]
+= f.input :logradouro
+= f.input :bairro
+= f.input :cep
+= f.input :estado, collection: ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
+= f.input :cidade, collection: ["Adamantina", "Adolfo", "Aguaí", "Águas da Prata", "Águas de Lindóia", "Águas de Santa Bárbara", "Águas de São Pedro", "Agudos", "Alambari", "Alfredo Marcondes", "Altair", "Altinópolis", "Alto Alegre", "Alumínio", "Álvares Florence", "Álvares Machado", "Álvaro de Carvalho", "Alvinlândia", "Americana", "Américo Brasiliense", "Américo de Campos", "Amparo", "Analândia", "Andradina", "Angatuba", "Anhembi", "Anhumas", "Aparecida", "Aparecida d'Oeste", "Apiaí", "Araçariguama", "Araçatuba", "Araçoiaba da Serra", "Aramina", "Arandu", "Arapeí", "Araraquara", "Araras", "Arco-Íris", "Arealva", "Areias", "Areiópolis", "Ariranha", "Artur Nogueira", "Arujá", "Aspásia", "Assis", "Atibaia", "Auriflama", "Avaí", "Avanhandava", "Avaré"]
+
+hr
+= f.input :m2_unidade, label: "4. m² unidade", label_html:{class:"emphasis"}
+= f.input :m2_util_total, label: "5. m² útil total", label_html:{class:"emphasis"}
+= f.input :numero_de_andares, label: "6. Nº de andares", label_html:{class:"emphasis"}
+
+hr
+= f.input :inicio_da_obra, as: :string, label_html:{class:"emphasis"}, label:"7. Início da Obra", input_html:{type: "date"}
+= f.input :termino_da_obra, as: :string, label_html:{class:"emphasis"}, label:"8. Termino da Obra", input_html:{type: "date"}
+
+hr
+h3 9. Fases:
+= f.input :projeto
+= f.input :lancamento
+= f.input :fundacao
+= f.input :estrutura
+= f.input :acabamento
+= f.input :paralisada
+= f.input :concluida
+
+hr
+h3 10. Proprietários: 
+= f.input :proprietario1
+= f.input :proprierario2
+= f.input :proprietario3
+= f.input :proprietario4
+
+hr
+h3 11. Investidores: 
+= f.input :investidor1
+= f.input :investidor2
+= f.input :investidor3
+= f.input :investidor4
+
+hr
+/ Aqui, seguindo o fundamento DRY (dont repeat yourself; não se repita)
+/ foi feito um looping, ou seja, um código que é repetido por um certo numero de vezes.
+/ O código abaixo é todo comentado para que se entenda com clareza.
+
+/ Todo número possui uma função chamada times. Ela executa um bloco de código (do...end)
+/ tantas vezes for o tamanho do número. A cada vez que o bloco for executado, a variável n vai
+/ acrescentar +1, começando de 0
+- 4.times do |n|
+	.control-group
+		/ como o n começa em 0, temos que adicionar +1 para
+		/ ficar humano (pois computadores contam a partir de 0)
+		/ Dentro de uma string ("string"), os valores que vão dentro de #{}
+		/ são executados como programação e o resultado é inserido dentro da string.
+		/ Á isso se dá o nome de interpolação.
+
+		= f.label "Construtora #{n+1}"
+		.controls
+			= f.input_field "construtora#{n+1}_codigo", class: "input-mini", placeholder: "Cód"
+			= f.input_field "construtora#{n+1}_razao_social", placeholder: "Razão Social"
+
+hr
+h3 13. Tipologia:	
+= f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"]
+= f.input :tipo_de_obra_outros, label: "Outros", wrapper_html:{data:{requires: "tipo_de_obra", desires: "Outros"}}
+
+hr
+= f.input :ficha_tecnica_observacao, input_html:{rows: 5}, label: "14. Observação", label_html:{class: "emphasis"}

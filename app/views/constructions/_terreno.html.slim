@@ -1,0 +1,10 @@
+h2 Terreno
+
+- for g in @boolean_radios_terreno do
+	hr
+	= f.input g[0], label: g[1], collection: ["Sim", "Não"], as: :radio_buttons, boolean_style: :nested, label_html:{class:"emphasis"}
+
+	= f.input "#{g[0]}_quantidade", label: false, placeholder: "Quantidade",
+		wrapper_html:{data:{requires: g[0], desires: "Sim"}}
+
+= render partial: "layouts/group_checkboxes", locals: @transportes_publicos.merge(f: f)

@@ -1,0 +1,13 @@
+h3 33. Ar condicionado
+
+- for t in @tipos_ar_condicionado
+
+	label.control-label style="float: none"
+		= t[:label]
+		= f.input_field t[:input_method], boolean_style: "nested"
+	.controls data-requires="#{t[:input_method]}"
+		= f.input_field "#{t[:input_method]}_tipo", label: false, 
+			collection: ["Ar", "Água"] << "Outros", as: :radio_buttons, boolean_style: :nested
+
+	= f.input "#{t[:input_method]}_tipo", label: false, placeholder: "Qual?",
+		wrapper_html:{data:{requires: "#{t[:input_method]}", desires: "Outros"}}

@@ -1,8 +1,3 @@
-- @pagina_atual = params[:action].split("cadastro_")[1]
-- @items = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "iluminação", "materiais e resíduos"]
-- @index_atual = @items.collect(&:parameterize).collect(&:underscore).index(@pagina_atual)
-- @pagina_anterior = @index_atual > 0 ? @items[@index_atual-1].parameterize.underscore : "#"
-- @proxima_pagina = @index_atual < (@items.size-1) ? @items[@index_atual+1].parameterize.underscore : "#"
 
 header.ui
 	.container

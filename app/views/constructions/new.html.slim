@@ -1,0 +1,25 @@
+= simple_form_for @obra, html:{class: "form-horizontal conditional-fields", data:{object:"construction"}} do |f|
+	= f.input_field :passo, value: params[:passo], as: :hidden
+	- for passo in @passos do
+		= content_tag :fieldset, id: passo, style: ("display: none" unless params[:passo] == sluggify(passo))
+			= render partial: sluggify(passo), locals: {f: f}
+
+	.form-actions
+		= f.submit "Salvar", class: "btn btn-primary"
+		|  
+		= f.submit "Salvar e sair", class: "btn btn-info"
+
+	footer.ui
+		.container
+			.span12
+				.pagination.pagination-centered
+					ul
+						- for passo in @passos
+							li class=("active" if sluggify(passo) == params[:passo])
+								= link_to passo, passo: sluggify(passo)
+			.progress.progress-striped.active.span6.offset3
+				/ .bar style="width: #{((@passos.collect{|p| sluggify p}.index(params[:passo])+1)/@passos.size.to_f)*100}%" 
+					| pág 
+					strong= @passos.collect{|p| sluggify p}.index(params[:passo])+1
+					|  de 
+					strong 8

@@ -1,0 +1,10 @@
+h2 Àgua
+= render partial: "layouts/group_checkboxes", locals: @bacias_mictorios.merge(f:f)
+
+- for r in @radios_agua do
+	hr
+	= f.input r[:input_method], label: "26. Torneiras", label_html:{class:"emphasis"}, 
+		collection: r[:opcoes] << "Outros", as: :radio_buttons, boolean_style: :nested
+
+	= f.input r[:input_method], label: false, placeholder: "Qual?",
+		wrapper_html:{data:{requires: r[:input_method], desires: "Outros"}}

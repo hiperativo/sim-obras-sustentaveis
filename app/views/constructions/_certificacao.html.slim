@@ -1,0 +1,20 @@
+h2 Certificação
+
+- @groups_checkboxes_certificacao.each do |g|
+	= render partial: "layouts/group_checkboxes", locals: g.merge(f: f)
+
+hr
+
+= f.input :versao_do_sistema, label: "17. Versão do Sistema", label_html:{class:"emphasis"}, 
+	collection: ["LEED – v2", "LEED – v 2.2", "LEED – V3", "LEED – V4", "Outros"], as: :radio_buttons, boolean_style: :nested
+
+= f.input :versao_do_sistema, label: false, placeholder: "Qual?",
+	wrapper_html:{data:{requires: "versao_do_sistema", desires: "Outros"}}
+
+hr
+
+= f.input :perfil_nivel_de_certificacao, label: "18. Perfil/Nível de Certificação", label_html:{class:"emphasis"}, 
+	collection: ["LEED - Platinum", "LEED - Gold", "LEED - Silver", "LEED - Certified", "Procel – A", "Procel – B", "Procel – C", "Procel – D", "Procel - E", "Outros"], as: :radio_buttons, boolean_style: :nested
+
+= f.input :versao_do_sistema, label: false, placeholder: "Qual?",
+	wrapper_html:{data:{requires: "perfil_nivel_de_certificacao", desires: "Outros"}}

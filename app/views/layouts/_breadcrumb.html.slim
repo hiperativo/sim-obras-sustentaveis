@@ -1,0 +1,12 @@
+/ .breadcrumb
+/ 	/ - if breadcrumbs.nil?
+/ 	/ 	- breadcrumbs = [{value: "#", name: "Obras"}] 
+		
+/ 	- @path = "obras"
+/ 	- breadcrumbs.each_with_index do |breadcrumb, n|
+/ 		li 
+/ 			- @active = (n+1 == breadcrumbs.length)
+/ 			- @path += breadcrumb[:value] + "/"
+/ 			= link_to breadcrumb[:name], @path
+/ 			- unless @active
+/ 				span.divider= "→"

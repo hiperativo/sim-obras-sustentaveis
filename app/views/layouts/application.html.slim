@@ -1,42 +1,36 @@
+/ = debug url_for admin_session
+/ = debug params
+/ = debug admin_signed_in?
+
 doctype html
 html
 	head
 		title Sim — Obras Sustentáveis
+		meta name="viewport" content="width=device-width, initial-scale=1.0"
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 
 	body
 
-		/ <div class="navbar">
-		/ <div class="navbar-inner">
-
-		/ 	<a class="brand" href="/home.html">SIMSUSTENTAVEL</a>
-
-
-		/ 	<ul class="nav pull-right">
-		/ 	<li><a href="#"><i class="icon-user"></i> Roberto Della Pena <span class="btn btn-mini btn-danger" type="button"><i class="icon-trash"></i> Sair</span></a></li>
-		/ 	</ul>
-
-
-		/ </div>
-		/ </div>
-
-		.navbar
+		header.navbar
 			.navbar-inner
-				= link_to "Sim Sustentável", "/home.html", class: "brand"
+				= link_to "Sim Sustentável", "/", class: "brand"
 
 				ul.nav.pull-right
 					li
-						a href="#"
-							i.icon-user
-							|  Roberto Della Pena
+						- if admin_signed_in?
+							= link_to current_admin do
+								i.icon-user 
+								= current_admin.name
 
-					a.btn.btn-mini.btn-danger href="#"
+					= link_to destroy_admin_session_path, class: "btn btn-mini btn-danger", method: :delete do
 						i.icon-trash
 						|  Sair
 
-
 		.container
-		
-			= yield
+			.row
+				= render partial: "layouts/side_navigation"
+				.span8.well style="background-color: #fff;"
+					= render partial: "layouts/breadcrumb"
+					= yield
