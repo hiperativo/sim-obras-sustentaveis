@@ -34,15 +34,19 @@ hr
 							- if item[:children_type] == :radio
 								- @children_final_method = "#{prefix}#{item[:parent_method]}_" + item[:children_method]
 								= f.input_field @children_final_method.gsub("__", "_"), collection: item[:children], as: :radio_buttons, boolean_style: :nested
-							-# if item[:children_type] == :check_box
-							-#	= f.input_field "#{prefix}#{@input_method}", collection: item[:children], as: :check_boxes, boolean_style: :nested
+							- if item[:children_type] == :check_box
+								.sub-checks style="padding-left:10px"
+									- for c in item[:children]
+										label 
+											= c
+											= f.input_field "#{prefix}#{@input_method}_#{c.parameterize.underscore}", as: :boolean
 			- else
 				label.checkbox
 					= f.input_field "#{prefix}#{@input_method}_enable", as: :boolean
 					= @input_label
 				|  
 				- if item.class == Array 
-					- @outros_method = "#{@input_method}_enable"
+					- @outros_method = "#{prefix}#{@input_method}_enable"
 				- else
 					- @outros_method = "#{prefix}outros_enable"
 

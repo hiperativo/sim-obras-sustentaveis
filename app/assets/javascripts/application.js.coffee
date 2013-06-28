@@ -37,7 +37,8 @@ $ ->
 		$("[data-passo]").parent().removeClass("active")
 		$(this).parent().addClass("active")
 		$("#"+passo).show()
-		
+		window.history.pushState "", "", "?passo=#{passo}"
+
 		if $(".progress .bar").size()
 			passos = $(".progress").data().passos
 			$(".progress .bar").width (( (passos.indexOf(passo) + 1)/passos.length)*100)+"%"

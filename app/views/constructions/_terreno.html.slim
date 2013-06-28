@@ -9,8 +9,4 @@ h2 Terreno
 
 = render partial: "layouts/group_checkboxes", locals: @transportes_publicos.merge(f: f)
 
-hr
-
-= f.input :como_esta_reduzindo_ilhas_de_calor, collection: ["Alta refletância solar (cor branca)", "Telhado verde", "Outros"], as: :radio_buttons, boolean_style: :nested
-
-= f.input :como_esta_reduzindo_ilhas_de_calor, wrapper_html:{data:{requires: "como_esta_reduzindo_ilhas_de_calor", desires: "Outros"}}, label: false, placeholder: "Qual?"
+= render partial: "layouts/group_checkboxes", locals: @ilhas_de_calor.merge(f: f)

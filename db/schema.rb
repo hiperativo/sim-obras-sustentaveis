@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628040441) do
+ActiveRecord::Schema.define(:version => 20130628094413) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -236,6 +236,11 @@ ActiveRecord::Schema.define(:version => 20130628040441) do
     t.boolean  "tratamento_de_ar_externo_trocador_de_calor"
     t.boolean  "vidros_area_envidracada_insulado"
     t.string   "como_esta_reduzindo_ilhas_de_calor"
+    t.boolean  "como_esta_reduzindo_ilhas_de_calor_alta_refletancia"
+    t.boolean  "como_esta_reduzindo_ilhas_de_calor_telhado_verde"
+    t.string   "como_esta_reduzindo_ilhas_de_calor_outros"
+    t.string   "tipo_de_insuflamento_de_ar_outros"
+    t.string   "vidros_area_envidracada_outros"
   end
 
 end

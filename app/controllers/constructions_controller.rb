@@ -11,7 +11,7 @@ class ConstructionsController < ApplicationController
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
 		@obra.save
 		if @pagina+1 < @passos.size
-			redirect_to action: "edit", passo: @passos[@pagina+1].parameterize.underscore
+			redirect_to action: "edit", id: @obra.id, passo: @passos[@pagina+1].parameterize.underscore
 		else
 			redirect_to action: "index"
 		end
@@ -74,9 +74,10 @@ class ConstructionsController < ApplicationController
 		}
 
 		@ilhas_de_calor = { 
-			group_name: "16. Como você está reduzindo os efeitos das ilhas de calor? de sistema",
+			options: [],
+			group_name: "24. Como você está reduzindo os efeitos das ilhas de calor? de sistema",
 			prefix: "como_esta_reduzindo_ilhas_de_calor", 
-			collection: ["Alta refletância solar (cor branca)", "Telhado verde", "Outros"]
+			collection: [[:alta_refletancia, "Alta refletância solar (cor branca)"], "Telhado verde", "Outros"]
 		}
 
 
@@ -167,6 +168,18 @@ class ConstructionsController < ApplicationController
 			},
 		]
 
+		@drenagem = {
+				options: [],
+				group_name: "32. Drenagem",
+				prefix: "drenagem", 
+				input_method: :drenagem,
+				collection: [
+					"Pisos permeáveis",
+					"Caixa de retardo",
+					[:remocao_de_solidos_suspensos, "Remoção de sólidos suspensos – Filtros Vortex"],
+					"Outros"
+				]
+			}
 
 		@tipos_ar_condicionado = [
 			{
@@ -201,11 +214,13 @@ class ConstructionsController < ApplicationController
 			}
 		]
 
+		@check_boxes_ar.map{|a|a[:collection]<<"Outros"}
+
 		@vidros_energia_eletrica = 
 			[
 				{
 					options: [], 
-					group_name: "38. Vidros – Área envidraçada Insulado",
+					group_name: "38. Vidros – Área envidraçada",
 					prefix: "vidros_area_envidracada", 
 					collection:
 					[
@@ -224,7 +239,8 @@ class ConstructionsController < ApplicationController
 								"De 60% a 80%",
 								"Mais de 80%",
 							]
-						}
+						},
+						"Outros"
 					]
 				},
 				{

@@ -1,8 +1,10 @@
 ul.inline
-	li.icon.show_member_link rel="tooltip" title="Mostrar"
-		= link_to c do
-			i.icon-eye-open
-			span style="display:none"
+	- super_admin?
+		li.icon.show_member_link rel="tooltip" title="Mostrar"
+			= link_to c do
+				i.icon-eye-open
+				span style="display:none"
+				
 	li.icon.edit_member_link rel="tooltip" title="Editar"
 		= link_to edit_construction_path(c) do
 			i.icon-pencil

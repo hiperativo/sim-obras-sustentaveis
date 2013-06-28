@@ -2,6 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :super_admin?
   def super_admin?
-  	false
+  	request.local?
   end
 end

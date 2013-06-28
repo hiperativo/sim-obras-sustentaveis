@@ -16,5 +16,11 @@ class Construction < ActiveRecord::Base
 	:eletrica_tipo_enable,
 	:energia_alternativa_outros_enable,
 	:iluminacao_outros_enable,
-	:equipamentos_outros_enable
+	:equipamentos_outros_enable,
+	:como_esta_reduzindo_ilhas_de_calor_outros_enable,
+	:drenagem_outros_enable,
+	:tratamento_de_ar_externo_outros_enable,
+	:variador_frequencia_outros_enable,
+	:tipo_de_insuflamento_de_ar_outros_enable,
+	:vidros_area_envidracada_outros_enable
 end

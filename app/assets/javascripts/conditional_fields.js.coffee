@@ -9,8 +9,8 @@ class ConditionalFields
 		@conditional_fields = $("[data-requires]")
 
 	setup_fields: => 
-		@conditional_fields.hide()
 		@conditional_fields.each (index, conditional_field) =>
+			console.log $(conditional_field)
 			required_element_name = $(conditional_field).data("requires")
 			desired_value = $(conditional_field).data("desires")
 			desired_value ?= true
@@ -22,7 +22,9 @@ class ConditionalFields
 				if @check_conditions(e.target, desired_value) 
 					@show conditional_field
 				else 
-					@hide conditional_field
+					@hide(conditional_field)
+
+			required_element.change()
 
 	check_conditions: (field, value) =>
 		field_type = $(field).attr "type"
