@@ -16,3 +16,4 @@ gem 'slim-rails'
 gem 'bourbon'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'

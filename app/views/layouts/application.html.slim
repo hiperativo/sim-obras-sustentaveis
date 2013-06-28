@@ -17,20 +17,28 @@ html
 			.navbar-inner
 				= link_to "Sim Sustentável", "/", class: "brand"
 
-				ul.nav.pull-right
-					li
-						- if admin_signed_in?
+				ul.nav
+					li= link_to "Obras", constructions_path
+
+				- if admin_signed_in?
+					ul.nav.pull-right
+						li
 							= link_to current_admin do
 								i.icon-user 
+								|  
 								= current_admin.name
 
-					= link_to destroy_admin_session_path, class: "btn btn-mini btn-danger", method: :delete do
-						i.icon-trash
-						|  Sair
+						= link_to destroy_admin_session_path, class: "btn btn-mini btn-danger", method: :delete do
+							i.icon-trash
+							|  Sair
 
 		.container
 			.row
-				= render partial: "layouts/side_navigation"
+
+				- if admin_signed_in?
+					= render partial: "layouts/side_navigation"
+				- else
+					.span2  
 				.span8.well style="background-color: #fff;"
 					= render partial: "layouts/breadcrumb"
 					= yield

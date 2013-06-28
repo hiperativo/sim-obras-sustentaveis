@@ -2,7 +2,44 @@
 #= require jquery_ujs
 #= require twitter/bootstrap
 #= require conditional_fields
+#= require cidades_estados
+#= require jquery.ui.all
+
+class CitiesLoader
+	constructor: (options) ->
+		options.city_selector.html "<option>Selecione o estado</option>"
+		options.state_selector.change (e) =>
+			cidades_atuais = ""
+			cidades_atuais += for cidade in options.data[$(e.target).val()].cidades
+				"<option value=\"#{cidade}\">#{cidade}</option>"
+			options.city_selector.html cidades_atuais
+
 
 $ ->
 	if $(".conditional-fields").size() > 0
 		new ConditionalFields $(".conditional-fields").first()
+
+	if $("#construction_cidade").size()
+		new CitiesLoader 
+			data: cidades_estados
+			state_selector: $("#construction_estado")
+			city_selector: $("#construction_cidade")
+
+	$(".datepicker").datepicker
+		changeYear: true
+		changeMonth: true
+		dateFormat: "dd/mm/yy"
+		yearRange: "1980:2020"
+
+	$("[data-passo]").click ->
+		passo = $(this).data().passo
+		$("fieldset").hide()
+		$("[data-passo]").parent().removeClass("active")
+		$(this).parent().addClass("active")
+		$("#"+passo).show()
+		
+		if $(".progress .bar").size()
+			passos = $(".progress").data().passos
+			$(".progress .bar").width (( (passos.indexOf(passo) + 1)/passos.length)*100)+"%"
+			$(".progress .passo-atual").html passos.indexOf(passo)+1
+		false

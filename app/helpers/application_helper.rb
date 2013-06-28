@@ -9,4 +9,5 @@ module ApplicationHelper
 	def sluggify(word)
 		word.parameterize.gsub "-", "_"
 	end
+
 end

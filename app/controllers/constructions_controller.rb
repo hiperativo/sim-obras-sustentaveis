@@ -6,11 +6,12 @@ class ConstructionsController < ApplicationController
 	end
 	
 	def create
-		@obra = Construction.new(params[:construction]).save
+		@obra = Construction.new(params[:construction])
 		@passo = params[:construction][:passo].parameterize.underscore
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
+		@obra.save
 		if @pagina+1 < @passos.size
-			redirect_to action: "new", passo: @passos[@pagina+1].parameterize.underscore
+			redirect_to action: "edit", passo: @passos[@pagina+1].parameterize.underscore
 		else
 			redirect_to action: "index"
 		end
@@ -22,6 +23,13 @@ class ConstructionsController < ApplicationController
 
 	def edit
 		@obra = Construction.find(params[:id])
+	end
+
+	def destroy
+		@obra = Construction.find(params[:id])
+		@obra.destroy
+		redirect_to action: "index"
+
 	end
 
 	def update
@@ -59,11 +67,18 @@ class ConstructionsController < ApplicationController
 		]
 
 		@transportes_publicos = {
-				options: [:intercalar_distancia_aproximada], 
-				group_name: "23. Transporte público",
-				prefix: "proximidade_ao_tpublico", 
-				collection: ["Metro", "Trem", "Ponto de ônibus", "Outros"]
-			}
+			options: [:intercalar_distancia_aproximada], 
+			group_name: "23. Transporte público",
+			prefix: "proximidade_ao_tpublico", 
+			collection: ["Metro", "Trem", "Ponto de ônibus", "Outros"]
+		}
+
+		@ilhas_de_calor = { 
+			group_name: "16. Como você está reduzindo os efeitos das ilhas de calor? de sistema",
+			prefix: "como_esta_reduzindo_ilhas_de_calor", 
+			collection: ["Alta refletância solar (cor branca)", "Telhado verde", "Outros"]
+		}
+
 
 		@bacias_mictorios = {
 			options: [], 
@@ -295,6 +310,7 @@ class ConstructionsController < ApplicationController
 					radios: ["Depósito central","Depósito no pavimento"]
 				}
 			]
+
 
 	end
 

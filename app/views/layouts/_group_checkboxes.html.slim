@@ -50,9 +50,9 @@ hr
 				
 				- if options.include? :intercalar_distancia_aproximada
 					|  
-					= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
+					= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada (metros)",
 						data:{requires: "#{prefix}#{@input_method}_enable"}
 
 			- if options.include? :intercalar_distancia_aproximada
-				= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
+				= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada (metros)",
 					data:{requires: "#{prefix}#{@input_method}"}

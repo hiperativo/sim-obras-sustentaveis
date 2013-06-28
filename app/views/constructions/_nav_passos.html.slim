@@ -1,0 +1,7 @@
+nav.passos.span12
+	.pagination.pagination-centered
+		ul
+			- for passo in @passos
+				li class=("active" if sluggify(passo) == params[:passo])
+					= link_to passo, "#", data:{passo:sluggify(passo)}
+					/	= link_to passo, edit_construction_path(@obra, passo: sluggify(passo)), data:{passo:sluggify(passo)}

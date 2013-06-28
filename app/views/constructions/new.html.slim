@@ -1,15 +1,10 @@
 = render partial: "formulario_completo"
 footer.ui
 	.container
-		.span12
-			.pagination.pagination-centered
-				ul
-					- for passo in @passos
-						li class=("active" if sluggify(passo) == params[:passo])
-							= link_to passo, passo: sluggify(passo)
-		.progress.progress-striped.active.span6.offset3
-			.bar style="width: #{((@passos.collect{|p| sluggify p}.index(params[:passo])+1)/@passos.size.to_f)*100}%" 
+		= render partial: "nav_passos"
+		.progress.progress-striped.active.span6.offset3 data-passos=@passos.map{|p| sluggify p}.to_json
+			.bar style="width: #{((@passos.collect{|p| sluggify p}.index(params[:passo])+1)/@passos.size.to_f)*100}%"
 				| pág 
-				strong= @passos.collect{|p| sluggify p}.index(params[:passo])+1
+				strong.passo-atual= @passos.collect{|p| sluggify p}.index(params[:passo])+1
 				|  de 
 				strong 8
