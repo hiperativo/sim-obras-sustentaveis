@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628094413) do
+ActiveRecord::Schema.define(:version => 20130628105546) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -241,6 +241,13 @@ ActiveRecord::Schema.define(:version => 20130628094413) do
     t.string   "como_esta_reduzindo_ilhas_de_calor_outros"
     t.string   "tipo_de_insuflamento_de_ar_outros"
     t.string   "vidros_area_envidracada_outros"
+    t.boolean  "coleta_de_residuos_reciclaveis_nivel_de_filtragem"
+    t.string   "coleta_de_residuos_reciclaveis_nivel_de_filtragem_tipo"
+    t.string   "coleta_de_residuos_reciclaveis_sistema_trat_ar_interno"
+    t.string   "sist_trat_ar_interno"
+    t.string   "coleta_de_residuos_reciclaveis_nivel_filtragem"
+    t.boolean  "teve_consultoria"
+    t.string   "teve_consultoria_qual_empresa"
   end
 
 end

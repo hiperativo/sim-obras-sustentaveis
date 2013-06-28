@@ -70,6 +70,12 @@ hr
 			= f.input_field "construtora#{n+1}_razao_social", placeholder: "Razão Social"
 
 hr
+
+= f.input :teve_consultoria, label: "12. Teve consultoria?", label_html: {class: "emphasis"}
+= f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria"}}
+
+hr
+
 h3 13. Tipologia:	
 = f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"]
 = f.input :tipo_de_obra_outros, label: "Outros", wrapper_html:{data:{requires: "tipo_de_obra", desires: "Outros"}}

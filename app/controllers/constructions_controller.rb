@@ -290,7 +290,6 @@ class ConstructionsController < ApplicationController
 							children_type: :check_box,
 							children_method: nil,
 							children: ["Área privativa", "Área comum"]
-
 						},
 						"Lâmpadas LED",
 						"Integração da iluminação com a iluminação natural",
@@ -313,18 +312,46 @@ class ConstructionsController < ApplicationController
 				{
 					method: :material_de_baixo_voc,
 					name: "43. Material de baixo VOC",
-					radios: ["Acabamentos", "Mobiliários"]
+					radios: ["Tintas", "Adesivos"]
+
 				},
 				{
 					method: :madeira_certificada, 
 					name: "44. Madeira certificada",
-					radios: ["Certificação Floor Score"]
+					radios: ["Acabamentos", "Mobiliários"]
 				},
 				{
 					method: :pisos_e_carpetes_certificados, 
 					name: "45. Pisos e carpetes certificados",
-					radios: ["Depósito central","Depósito no pavimento"]
+					radios: ["Certificação Floor Score"]
 				}
+			]
+			@materiais_checkboxes = [
+				{
+					options: [],
+					group_name: "Infraestrutura para coleta de resíduos recicláveis",
+					prefix: "coleta_de_residuos_reciclaveis", 
+					collection: ["Depósito central", "Depósito no pavimento", "Outros"]
+				},
+				{
+					options: [],
+					group_name: "Qualidade Ambiental (Ar) – Nível de filtragem",
+					prefix: "coleta_de_residuos_reciclaveis", 
+					collection: 
+					[
+						{
+							parent_method: :nivel_de_filtragem,
+							parent_label: "Nível de Filtragem",
+							children_type: :radio,
+							children_method: "tipo",
+							children: ["F5", "F7"]
+
+						},
+						[:sistema_trat_ar_interno, "Sistemas de tratamento de ar interno"],
+						[:nivel_filtragem, "Outros"]
+					]
+				}
+
 			]
 
 

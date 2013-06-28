@@ -22,5 +22,7 @@ class Construction < ActiveRecord::Base
 	:tratamento_de_ar_externo_outros_enable,
 	:variador_frequencia_outros_enable,
 	:tipo_de_insuflamento_de_ar_outros_enable,
-	:vidros_area_envidracada_outros_enable
+	:vidros_area_envidracada_outros_enable,
+	:coleta_de_residuos_reciclaveis_outros_enable,
+	:coleta_de_residuos_reciclaveis_nivel_filtragem_enable
 end

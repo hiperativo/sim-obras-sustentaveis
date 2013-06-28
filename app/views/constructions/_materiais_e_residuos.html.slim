@@ -8,3 +8,6 @@ h2 Materias e Resíduos
 			= f.input_field mr[:method], label: p, as: :radio, collection:[p], boolean_style: :nested
 			- if p == "Outros"
 				= f.input_field mr[:method], placeholder: "Qual?", data:{requires: mr[:method], desires: "Outros"}
+
+- for mc in @materiais_checkboxes do
+	= render partial: "layouts/group_checkboxes", locals:mc.merge(f:f)
