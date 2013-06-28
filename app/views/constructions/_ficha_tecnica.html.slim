@@ -14,6 +14,14 @@ h3 3. Localização:
 = f.input :estado, collection: ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
 = f.input :cidade, as: :select, collection: []
 hr
+
+- 5.times do |n|
+	h3 Contato #{n+1}
+	= f.input "contato#{n+1}_nome", label: "Nome"
+	= f.input "contato#{n+1}_telefone", label: "Telefone"
+	= f.input "contato#{n+1}_email", label: "E-mail"
+
+hr
 = f.input :m2_unidade, label: "4. m² unidade", label_html:{class:"emphasis"}
 = f.input :m2_util_total, label: "5. m² útil total", label_html:{class:"emphasis"}
 = f.input :numero_de_andares, label: "6. Nº de andares", label_html:{class:"emphasis"}

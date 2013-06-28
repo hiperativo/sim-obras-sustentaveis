@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628105546) do
+ActiveRecord::Schema.define(:version => 20130628110141) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -248,6 +248,21 @@ ActiveRecord::Schema.define(:version => 20130628105546) do
     t.string   "coleta_de_residuos_reciclaveis_nivel_filtragem"
     t.boolean  "teve_consultoria"
     t.string   "teve_consultoria_qual_empresa"
+    t.string   "contato1_nome"
+    t.string   "contato1_telefone"
+    t.string   "contato1_email"
+    t.string   "contato2_nome"
+    t.string   "contato2_telefone"
+    t.string   "contato2_email"
+    t.string   "contato3_nome"
+    t.string   "contato3_telefone"
+    t.string   "contato3_email"
+    t.string   "contato4_nome"
+    t.string   "contato4_telefone"
+    t.string   "contato4_email"
+    t.string   "contato5_nome"
+    t.string   "contato5_telefone"
+    t.string   "contato5_email"
   end
 
 end
