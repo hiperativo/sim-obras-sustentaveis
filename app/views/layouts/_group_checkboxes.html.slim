@@ -1,26 +1,41 @@
-- if prefix.nil?
-	- prefix = "" 
-- else
-	- prefix += "_"
-
 hr
 
 .control-group
 	label.control-label.emphasis 
 		= group_name
-	.controls
+		- if options.include? :enable_disable
+			= f.input_field prefix 
+	.controls data-requires=(prefix if options.include? :enable_disable)
+		- if prefix.nil?
+			- prefix = "" 
+		- else
+			- prefix += "_"
+
 		- for item in collection do
-			- unless item.class == Array
-				- @input_method = item.parameterize.underscore
-				- @input_label = item
-			- else
+			- if item.class == Array
 				- @input_method = item[0]
 				- @input_label = item[1]
+			- elsif item.class == Hash
+				- if item[:parent_method].nil? and item[:children_type] == :radio
+					- @input_method = item[:children_method]+"_enable"
+				- else 
+					- @input_method = item[:parent_method]
+				- @input_label = item[:parent_label]
+			- else
+				- @input_method = item.parameterize.underscore
+				- @input_label = item
 
 			- unless @input_label == "Outros"
 				label.checkbox
-					= f.input_field "#{prefix}#{@input_method}"
+					= f.input_field "#{prefix}#{@input_method}", as: :boolean
 					= @input_label
+					.children data-requires="#{prefix}#{@input_method}"
+						- if item.class == Hash
+							- if item[:children_type] == :radio
+								- @children_final_method = "#{prefix}#{item[:parent_method]}_" + item[:children_method]
+								= f.input_field @children_final_method.gsub("__", "_"), collection: item[:children], as: :radio_buttons, boolean_style: :nested
+							- if item[:children_type] == :check_box
+								= f.input_field "#{prefix}#{@input_method}", collection: item[:children], as: :check_boxes, boolean_style: :nested
 			- else
 				label.checkbox
 					= f.input_field "#{prefix}#{@input_method}_enable", as: :boolean
@@ -33,11 +48,11 @@ hr
 
 				= f.input_field "#{prefix}#{@input_method}", placeholder: "Qual?", data:{requires: @outros_method}
 				
-				- if intercalar_distancia_aproximada
+				- if options.include? :intercalar_distancia_aproximada
 					|  
 					= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
 						data:{requires: "#{prefix}#{@input_method}_enable"}
 
-			- if intercalar_distancia_aproximada
+			- if options.include? :intercalar_distancia_aproximada
 				= f.input_field "#{prefix}#{@input_method}_distancia_aproximada", placeholder: "Distancia aproximada",
 					data:{requires: "#{prefix}#{@input_method}"}

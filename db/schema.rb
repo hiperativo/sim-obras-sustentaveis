@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625211437) do
+ActiveRecord::Schema.define(:version => 20130627225908) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "constructions", :force => true do |t|
-    # ficha técnica
     t.datetime "created_at",                                                     :null => false
     t.datetime "updated_at",                                                     :null => false
     t.string   "codigo_obra"
@@ -69,8 +68,6 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.string   "tipo_de_obra"
     t.string   "tipo_de_obra_outros"
     t.text     "ficha_tecnica_observacao"
-
-    # certificação
     t.boolean  "sistema_leed"
     t.boolean  "sistema_aqua"
     t.boolean  "sistema_procel_edifica"
@@ -79,7 +76,6 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "sistema_dgnb"
     t.boolean  "sistema_lbc"
     t.string   "sistema_outros"
-    
     t.boolean  "leed_nc"
     t.boolean  "leed_cs"
     t.boolean  "leed_ci"
@@ -92,14 +88,11 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "procel_comercial"
     t.string   "tipo_de_sistema_outros"
     t.string   "versao_do_sistema"
-
     t.string   "leed_platinum"
     t.string   "leed_gold"
     t.string   "leed_silver"
     t.string   "leed_certified"
-    
     t.string   "perfil_nivel_de_certificacao"
-
     t.boolean  "vagas_verdes"
     t.integer  "vagas_verdes_quantidade"
     t.boolean  "estacoes_de_recarga_de_veiculos_eletricos"
@@ -108,7 +101,6 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.integer  "bicicletarios_quantidade"
     t.boolean  "vestiarios_com_chuveiro"
     t.integer  "vestiarios_com_chuveiro_quantidade"
-
     t.boolean  "proximidade_ao_tpublico_metro"
     t.integer  "proximidade_ao_tpublico_metro_distancia_aproximada"
     t.boolean  "proximidade_ao_tpublico_trem"
@@ -117,11 +109,9 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.string   "proximidade_ao_tpublico_ponto_de_onibus_distancia_aproximada"
     t.string   "proximidade_ao_tpublico_outros"
     t.string   "proximidade_ao_tpublico_outros_distancia_aproximada"
-
     t.boolean  "reducao_do_efeito_de_ilhas_de_calor_alta_refletância_solar"
     t.boolean  "reducao_do_efeito_de_ilhas_de_calor_telhado_verde"
     t.string   "reducao_do_efeito_de_ilhas_de_calor__outros"
-    
     t.boolean  "bacias_e_mictorios_bacias_a_vacuo"
     t.boolean  "bacias_e_mictorios_bacias_dual_flux"
     t.boolean  "bacias_e_mictorios_het"
@@ -130,19 +120,12 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "bacias_e_mictorios_mictorio_fechamento_hidromecanico"
     t.boolean  "bacias_e_mictorios_mictorio_fechamento_com_sensor_de_presenca"
     t.string   "outros"
-
     t.string   "torneiras"
-    
     t.string   "chuveiros"
-    
     t.string   "irrigacao"
-    
     t.string   "piscina"
-    
     t.boolean  "torres_de_resfriamento"
-    
     t.string   "torres_de_resfriamento_tipo"
-
     t.boolean  "agua_pluvial"
     t.boolean  "agua_pluvial_para_irrigacao_do_paisagismo"
     t.boolean  "agua_pluvial_para_lavagem_de_pisos"
@@ -182,14 +165,11 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "drenagem_caixa_de_retardo"
     t.boolean  "drenagem_remocao_de_solidos_suspensos"
     t.string   "drenagem_outros"
-    
     t.boolean  "vrf"
     t.string   "vrf_tipo"
     t.boolean  "central_de_agua_gelada"
     t.string   "central_de_agua_gelada_tipo"
     t.string   "ar_condicionado_outros"
-    t.string   "tratamento_de_ar_externo_roda_entalpica"
-    t.string   "tratamento_de_ar_externo_trocador_de_calor"
     t.string   "tratamento_de_ar_externo_outros"
     t.boolean  "variador_frequencia_nos_ventiladores_de_tomadas_de_ar_externos"
     t.boolean  "variador_frequencia_nos_fan_coils"
@@ -204,8 +184,8 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "vidros_area_envidracada"
     t.boolean  "vidros_area_envidracada_laminado"
     t.boolean  "vidros_area_envidracada_low_e"
-    t.boolean  "vidros_area_envidraçada_da_fachada"
-    t.string   "vidros_area_envidraçada_da_fachada_porcentagem"
+    t.boolean  "vidros_area_envidracada_da_fachada"
+    t.string   "vidros_area_envidracada_da_fachada_porcentagem"
     t.boolean  "eletrica_motor_de_alta_eficiencia"
     t.boolean  "eletrica_medicao_setorizada_de_consumo_de_energia"
     t.boolean  "eletrica_entrada_de_energia"
@@ -214,7 +194,7 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.boolean  "eletrica_fonte_de_energia_eletrica"
     t.boolean  "eletrica_fonte_de_energia_gas"
     t.string   "eletrica_fonte_de_energia_outros"
-    t.boolean  "energia_alternativa_solar_fotovaltaica"
+    t.boolean  "energia_alternativa_solar_fotovoltaica"
     t.boolean  "energia_alternativa_aquecimento_solar_de_agua"
     t.boolean  "energia_alternativa_eolica"
     t.boolean  "energia_alternativa_biomassa"
@@ -250,6 +230,11 @@ ActiveRecord::Schema.define(:version => 20130625211437) do
     t.string   "construtora2_razao_social"
     t.string   "construtora3_razao_social"
     t.string   "construtora4_razao_social"
+    t.boolean  "agua_de_condensacao"
+    t.boolean  "agua_condensacao"
+    t.boolean  "tratamento_de_ar_externo_roda_entalpica"
+    t.boolean  "tratamento_de_ar_externo_trocador_de_calor"
+    t.boolean  "vidros_area_envidracada_insulado"
   end
 
 end

@@ -3,11 +3,23 @@ h3 33. Ar condicionado
 - for t in @tipos_ar_condicionado
 
 	label.control-label style="float: none"
-		= t[:label]
 		= f.input_field t[:input_method], boolean_style: "nested"
+		|  
+		= t[:label]
 	.controls data-requires="#{t[:input_method]}"
 		= f.input_field "#{t[:input_method]}_tipo", label: false, 
 			collection: ["Ar", "Água"] << "Outros", as: :radio_buttons, boolean_style: :nested
 
 	= f.input "#{t[:input_method]}_tipo", label: false, placeholder: "Qual?",
-		wrapper_html:{data:{requires: "#{t[:input_method]}", desires: "Outros"}}
+		wrapper_html:{data:{requires: "#{t[:input_method]}_tipo", desires: "Outros"}}
+
+label.control-label style="float: none"
+	= f.input_field "ar_condicionado_outros_enable", boolean_style: "nested", as: :boolean
+	|  
+	| Outros
+
+.controls data-requires="ar_condicionado_outros_enable"
+		= f.input_field :ar_condicionado_outros, label: false, placeholder: "Qual?"
+
+- for c in @check_boxes_ar
+	= render partial: "layouts/group_checkboxes", locals: c.merge(f:f)

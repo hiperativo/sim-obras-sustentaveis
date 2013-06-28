@@ -4,5 +4,17 @@ class Construction < ActiveRecord::Base
 	:tipo_de_sistema_outros_enable,
 	:proximidade_ao_tpublico_outros_enable,
 	:bacias_e_mictorios_outros_enable,
-	:bacias_e_mictorios_outros
+	:bacias_e_mictorios_outros,
+	:agua_pluvial_outros_enable,
+	:agua_de_lencol_outros_enable,
+	:agua_condensacao_tratada_outros_enable,
+	:agua_cinza_tratada_outros_enable,
+	:agua_negra_tratada_outros_enable,
+	:ar_condicionado_outros_enable,
+	:eletrica_fonte_de_energia_outros_enable,
+	:eletrica_outros_enable,
+	:eletrica_tipo_enable,
+	:energia_alternativa_outros_enable,
+	:iluminacao_outros_enable,
+	:equipamentos_outros_enable
 end

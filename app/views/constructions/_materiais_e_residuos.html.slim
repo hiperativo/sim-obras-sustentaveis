@@ -1,0 +1,10 @@
+h2 Materias e Resíduos
+- for mr in @materiais_e_residuos_radios do
+	hr
+	label.control-label.emphasis
+		= mr[:name]
+	.controls
+		- for p in mr[:radios]<<"Outros"
+			= f.input_field mr[:method], label: p, as: :radio, collection:[p], boolean_style: :nested
+			- if p == "Outros"
+				= f.input_field mr[:method], placeholder: "Qual?", data:{requires: mr[:method], desires: "Outros"}

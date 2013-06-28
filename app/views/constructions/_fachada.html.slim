@@ -1,0 +1,13 @@
+label.control-label.emphasis
+	| 37. Proteções solares – Tipos
+.controls
+	- for p in ["Brises", "Persianas automatizadas internas", "Outros"]
+
+		= f.input_field :tipos_de_protecoes_solares, label: p, as: :radio, collection:[p], boolean_style: :nested
+		- if p == "Brises"
+			= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Brises", requires_exactly:"[value='Brises']"}, collection: ["Horizontais", "Verticais", "Outros brises"], label: false, include_blank: false
+
+	= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Outros", exactly:"[value='outros']"}
+
+- for v in @vidros_energia_eletrica do 
+	= render partial: "layouts/group_checkboxes", locals: v.merge(f:f)

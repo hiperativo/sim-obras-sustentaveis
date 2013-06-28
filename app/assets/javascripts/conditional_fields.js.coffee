@@ -16,6 +16,8 @@ class ConditionalFields
 			desired_value ?= true
 			# required_element = $("#" + @form_object + "_" + required_element_name)
 			required_element = $("[name='#{@form_object}[#{required_element_name}]']")
+			exactly = $(conditional_field).data().requiresExactly
+			required_element = required_element.filter(exactly) if exactly?
 			required_element.change (e) =>
 				if @check_conditions(e.target, desired_value) 
 					@show conditional_field
