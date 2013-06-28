@@ -2,7 +2,6 @@ class ConstructionsController < ApplicationController
 	before_filter :authenticate_admin!, :set_variables
 
 	def new
-		params[:passo] = @passos.first.parameterize.underscore if params[:passo].nil?
 		@obra = Construction.new
 	end
 	
@@ -18,13 +17,25 @@ class ConstructionsController < ApplicationController
 	end
 
 	def index
-		@obras = Construction.all
+		@obras = Construction.order(:created_at)
+	end
+
+	def edit
+		@obra = Construction.find(params[:id])
+	end
+
+	def update
+		@obra = Construction.find(params[:id])
+		@obra.update_attributes params[:construction]
+		redirect_to action: "index"
 	end
 
 	protected
 
 	def set_variables
 		@passos = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "iluminação", "materiais e resíduos"]
+		params[:passo] = @passos.first.parameterize.underscore if params[:passo].nil?
+
 		@groups_checkboxes_certificacao = [
 			{
 				options: [], 

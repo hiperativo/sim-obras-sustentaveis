@@ -1,0 +1,9 @@
+= render partial: "formulario_completo"
+footer.ui
+	.container
+		.span12
+			.pagination.pagination-centered
+				ul
+					- for passo in @passos
+						li class=("active" if sluggify(passo) == params[:passo])
+							= link_to passo, passo: sluggify(passo)

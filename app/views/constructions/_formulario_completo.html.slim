@@ -1,0 +1,10 @@
+= simple_form_for @obra, html:{class: "form-horizontal conditional-fields", data:{object:"construction"}} do |f|
+	= f.input_field :passo, value: params[:passo], as: :hidden
+	- for passo in @passos do
+		= content_tag :fieldset, id: passo, style: ("display: none" unless params[:passo] == sluggify(passo))
+			= render partial: sluggify(passo), locals: {f: f}
+
+	.form-actions
+		= f.submit "Salvar", class: "btn btn-primary"
+		|  
+		= f.submit "Salvar e sair", class: "btn btn-info"
