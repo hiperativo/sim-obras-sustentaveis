@@ -1,3 +1,4 @@
+= debug params
 = simple_form_for @obra, html:{class: "form-horizontal conditional-fields", data:{object:"construction"}} do |f|
 	= f.input_field :passo, value: params[:passo], as: :hidden
 	- for passo in @passos do

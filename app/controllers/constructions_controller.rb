@@ -5,7 +5,7 @@ class ConstructionsController < ApplicationController
 		params[:passo] = @passos.first.parameterize.underscore if params[:passo].nil?
 		@obra = Construction.new
 	end
-
+	
 	def create
 		@obra = Construction.new(params[:construction]).save
 		@passo = params[:construction][:passo].parameterize.underscore
