@@ -7,13 +7,15 @@ class ConstructionsController < ApplicationController
 	
 	def create
 		@obra = Construction.new(params[:construction])
-		@passo = params[:construction][:passo].parameterize.underscore
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
 		@obra.save
-		if @pagina+1 < @passos.size
-			redirect_to action: "edit", id: @obra.id, passo: @passos[@pagina+1].parameterize.underscore
-		else
+
+		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
+
+		if params["commit"] == "Salvar e sair"
 			redirect_to action: "index"
+		else
+			redirect_to action: "edit", id: @obra.id, passo: @passos[@passo_index+1].parameterize.underscore
 		end
 	end
 
@@ -35,7 +37,14 @@ class ConstructionsController < ApplicationController
 	def update
 		@obra = Construction.find(params[:id])
 		@obra.update_attributes params[:construction]
-		redirect_to action: "index"
+		
+		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
+		
+		if params["commit"] == "Salvar e sair"
+			redirect_to action: "index"
+		else
+			redirect_to action: "edit", passo: @passos[@passo_index+1].parameterize.underscore
+		end
 	end
 
 	protected

@@ -79,8 +79,8 @@ hr
 
 hr
 
-= f.input :teve_consultoria, label: "12. Teve consultoria?", label_html: {class: "emphasis"}
-= f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria"}}
+= f.input :teve_consultoria, label: "12. Teve consultoria?", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
+= f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria", desires:"Sim"}}
 
 hr
 

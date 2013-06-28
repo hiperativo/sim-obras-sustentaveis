@@ -1,5 +1,5 @@
 class Construction < ActiveRecord::Base
-	attr_accessor :passo, :sistema, 
+	attr_accessor :passo, :proximo_passo, :sistema, 
 	:sistema_outros_enable,
 	:tipo_de_sistema_outros_enable,
 	:proximidade_ao_tpublico_outros_enable,
