@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ../../..
+bundle install
+bundle exec rake db:migrate
+foreman start -p 9000
