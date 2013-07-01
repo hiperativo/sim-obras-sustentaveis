@@ -3,10 +3,10 @@ h2 Obras cadastradas
 - unless @obras.empty?
 	p.lead Utilize a ferramenta abaixo para cadastrar, buscar ou excluir uma obra do sistema
 	.well
-		form.form-search
+		.form-search
 			input.input-medium.filter placeholder="Buscar obras" type="text"
 				|  
-				button.btn.btn-primary type="submit" 
+				button.btn.btn-primary
 					i.icon-search
 
 			- if super_admin?
