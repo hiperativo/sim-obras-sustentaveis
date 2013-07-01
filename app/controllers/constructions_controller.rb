@@ -14,7 +14,9 @@ class ConstructionsController < ApplicationController
 
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
 
-		if params["commit"] == "Salvar e sair"
+
+
+		if params["commit"] == "Salvar e sair" or params[:construction][:passo]=="materiais_e_residuos"
 			redirect_to action: "index"
 		else
 			redirect_to action: "edit", id: @obra.id, passo: @passos[@passo_index+1].parameterize.underscore
@@ -41,7 +43,7 @@ class ConstructionsController < ApplicationController
 		respond_to do |f|
 			f.html 	{render}
 			f.xls 	{
-				send_data @obras.to_csv(col_sep: "\t"), type: "application/xls;charset=utf-8", filename:"lista-de-obras-#{I18n.l(Time.now, format: :short).parameterize}.xls"
+				send_data @obras.to_csv(col_sep: "\t").to_s.encode!("windows-1252"), type: "application/xls;charset=windows-1252", filename:"lista-de-obras-#{I18n.l(Time.now, format: :short).parameterize}.xls"
 			}
 		end
 	end
@@ -65,7 +67,7 @@ class ConstructionsController < ApplicationController
 		
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
 		
-		if params["commit"] == "Salvar e sair"
+		if params["commit"] == "Salvar e sair" or params[:construction][:passo]=="materiais_e_residuos"
 			redirect_to action: "index"
 		else
 			redirect_to action: "edit", passo: @passos[@passo_index+1].parameterize.underscore

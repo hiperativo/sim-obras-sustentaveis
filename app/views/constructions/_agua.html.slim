@@ -9,7 +9,7 @@ h2 Àgua
 	= f.input r[:input_method], label: false, placeholder: "Qual?",
 		wrapper_html:{data:{requires: r[:input_method], desires: "Outros"}}
 
-= f.input :torres_de_resfriamento, as: :radio_buttons, boolean_style: :nested, collection: %w[Sim Não], label_html:{class:"emphasis"}
+= f.input :torres_de_resfriamento, as: :radio_buttons, boolean_style: :nested, collection: %w[Sim Não], label_html:{class:"emphasis"}, checked: @obra.torres_de_resfriamento
 
 = f.input :torres_de_resfriamento_tipo, collection: %w[Aberta Fechada], as: :radio_buttons, boolean_style: :nested, wrapper_html:{data:{requires:"torres_de_resfriamento", desires: "Sim"}}
 

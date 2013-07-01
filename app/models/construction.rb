@@ -37,7 +37,6 @@ class Construction < ActiveRecord::Base
 						when "ActiveSupport::TimeWithZone" 	then I18n.l(v, format: :long)
 						else v.to_s
 					end
-					v.encode!("windows-1252")
 				end
 			end
 		end
