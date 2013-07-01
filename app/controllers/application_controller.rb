@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
 	def super_admin?
 		current_admin.role == "administrador"
-		true
 	end
 
 	def autenticar_super_admin?

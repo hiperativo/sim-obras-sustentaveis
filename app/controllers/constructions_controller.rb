@@ -6,6 +6,10 @@ class ConstructionsController < ApplicationController
 
 	end
 	
+	def show
+		@obra = Construction.find params[:id]
+	end
+
 	def create
 		@obra = Construction.new(params[:construction])
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
