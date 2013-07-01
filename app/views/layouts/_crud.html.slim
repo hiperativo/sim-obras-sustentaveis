@@ -1,5 +1,5 @@
 ul.inline
-	- if super_admin? and c.class == Construction
+	- if c.class == Construction
 		li.icon.show_member_link rel="tooltip" title="Mostrar"
 			= link_to(polymorphic_path c) do
 				i.icon-eye-open

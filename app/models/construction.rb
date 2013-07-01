@@ -30,8 +30,17 @@ class Construction < ActiveRecord::Base
 		CSV.generate(options) do |csv|
 			csv << column_names
 			all.each do |item|
-				csv << item.attributes.values_at(*column_names)
+				csv << item.attributes.values_at(*column_names).map do |v|
+					v = case v.class.to_s
+						when "TrueClass" 					then "Sim"
+						when "FalseClass" 					then "Não"
+						when "ActiveSupport::TimeWithZone" 	then I18n.l(v, format: :long)
+						else v.to_s
+					end
+					v.encode!("windows-1252")
+				end
 			end
 		end
 	end
+
 end

@@ -3,12 +3,8 @@ class ConstructionsController < ApplicationController
 
 	def new
 		@obra = Construction.new
-
 	end
 	
-	def show
-		@obra = Construction.find params[:id]
-	end
 
 	def create
 		@obra = Construction.new(params[:construction])
@@ -26,13 +22,27 @@ class ConstructionsController < ApplicationController
 	end
 
 	def show
+		@obra = Construction.find(params[:id])
+		@table = @obra.attributes.map do |key, value|
+			if !value.blank?
+				[key]<< case value.class.to_s
+					when "TrueClass" 					then "Sim"
+					when "FalseClass" 					then "Não"
+					when "ActiveSupport::TimeWithZone" 	then I18n.l(value, format: :long)
+					else value
+				end
+			end
+		end
+		@table = [@table.compact]
 	end
 
 	def index
 		@obras = Construction.order(:created_at)
 		respond_to do |f|
 			f.html 	{render}
-			f.xls 	{ send_data @obras.to_csv(col_sep: "\t") }
+			f.xls 	{
+				send_data @obras.to_csv(col_sep: "\t"), type: "application/xls;charset=utf-8", filename:"lista-de-obras-#{I18n.l(Time.now, format: :short).parameterize}.xls"
+			}
 		end
 	end
 

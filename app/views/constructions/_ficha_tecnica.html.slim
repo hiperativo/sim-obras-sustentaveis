@@ -10,7 +10,7 @@ h3 3. Localização:
 = f.input :tipo_de_logradouro, collection: ["Acesso", "Alameda", "Avenida", "Calçada", "Caminho", "Estrada", "Fazenda", "Ladeira", "Outros", "Praça", "Rodovia", "Rua", "Travessa", "Via"]
 = f.input :logradouro
 = f.input :bairro
-= f.input :cep
+= f.input :cep, label: "CEP"
 = f.input :estado, collection: ["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO"]
 = f.input :cidade, as: :select, collection: []
 hr
@@ -34,12 +34,12 @@ hr
 hr
 h3 9. Fases:
 = f.input :projeto		, input_html: @datepicker
-= f.input :lancamento	, input_html: @datepicker
-= f.input :fundacao		, input_html: @datepicker
+= f.input :lancamento	, input_html: @datepicker, label: "Lançamento"
+= f.input :fundacao		, input_html: @datepicker, label: "Fundação"
 = f.input :estrutura	, input_html: @datepicker
 = f.input :acabamento	, input_html: @datepicker
 = f.input :paralisada	, input_html: @datepicker
-= f.input :concluida	, input_html: @datepicker
+= f.input :concluida	, input_html: @datepicker, label: "Conclusão"
 
 hr
 h3 10. Proprietários: 

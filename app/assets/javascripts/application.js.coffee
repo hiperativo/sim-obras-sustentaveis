@@ -16,6 +16,18 @@ class CitiesLoader
 
 
 $ ->
+
+	$(".filter").keyup (e)->
+		hay = new RegExp $(e.target).val(), "i"
+		$("[data-cell]").each ->
+			# console.log $(this).data().cell
+			search = String($(this).data().cell).match(hay)
+			$(this).parent().show()
+			if search
+				console.log search.length, hay
+			else
+				$(this).parent().hide()
+
 	if $(".conditional-fields").size() > 0
 		new ConditionalFields $(".conditional-fields").first()
 
