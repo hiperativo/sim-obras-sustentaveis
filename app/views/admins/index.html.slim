@@ -1,0 +1,13 @@
+h2 Cadastro de usuários
+p.lead Utilize a ferramenta abaixo para cadastrar ou excluir um usuário
+
+= link_to new_admin_path, class: "btn btn-large btn-primary", type: "button" do
+	i.icon-plus
+	|  Criar novo usuário
+
+hr
+
+- @table = [Admin.all.each_with_index.map { |c,i| [i+1, c.name, c.email, c.role, render(partial: "layouts/crud", locals:{c: c})] }]
+- @table.unshift [%w[# Nome Email Tipo]]
+
+= render partial: "layouts/table", locals:{table: @table}

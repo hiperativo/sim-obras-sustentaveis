@@ -25,4 +25,13 @@ class Construction < ActiveRecord::Base
 	:vidros_area_envidracada_outros_enable,
 	:coleta_de_residuos_reciclaveis_outros_enable,
 	:coleta_de_residuos_reciclaveis_nivel_filtragem_enable
+
+	def self.to_csv(options={})
+		CSV.generate(options) do |csv|
+			csv << column_names
+			all.each do |item|
+				csv << item.attributes.values_at(*column_names)
+			end
+		end
+	end
 end

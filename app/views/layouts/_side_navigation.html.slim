@@ -8,11 +8,11 @@ nav.sidebar
 		- if super_admin?
 			
 			li
-				= link_to "log.html", class: "a btn btn-large" do
+				= link_to logs_path, class: "a btn btn-large" do
 					i.icon-book.icon-2x
 					|  Ver/exportar LOG
 
 			li
-				a.btn.btn-large href="cadastro_usuario.html"
+				= link_to admins_path, class: "btn btn-large" do
 					i.icon-user.icon-2x
 					|  Ver/Cadastrar usuário

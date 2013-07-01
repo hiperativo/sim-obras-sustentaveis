@@ -1,17 +1,14 @@
 ul.inline
-	- super_admin?
+	- if super_admin? and c.class == Construction
 		li.icon.show_member_link rel="tooltip" title="Mostrar"
-			= link_to c do
+			= link_to(polymorphic_path c) do
 				i.icon-eye-open
-				span style="display:none"
 				
 	li.icon.edit_member_link rel="tooltip" title="Editar"
-		= link_to edit_construction_path(c) do
+		= link_to(polymorphic_path c, action: :edit) do
 			i.icon-pencil
-			span style="display:none"
 	
-	- super_admin?
+	- if super_admin?
 		li.icon.delete_member_link rel="tooltip" title="Remover"
-			= link_to construction_path(c), method: :delete do
+			= link_to c, method: :delete do
 				i.icon-remove
-				span style="display:none"

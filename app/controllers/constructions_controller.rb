@@ -3,12 +3,14 @@ class ConstructionsController < ApplicationController
 
 	def new
 		@obra = Construction.new
+
 	end
 	
 	def create
 		@obra = Construction.new(params[:construction])
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
 		@obra.save
+		log current_admin, "Adicionou obra", @obra.nome_da_obra
 
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
 
@@ -19,8 +21,15 @@ class ConstructionsController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 	def index
 		@obras = Construction.order(:created_at)
+		respond_to do |f|
+			f.html 	{render}
+			f.xls 	{ send_data @obras.to_csv(col_sep: "\t") }
+		end
 	end
 
 	def edit
@@ -30,13 +39,15 @@ class ConstructionsController < ApplicationController
 	def destroy
 		@obra = Construction.find(params[:id])
 		@obra.destroy
+		log current_admin, "Apagou obra", @obra.nome_da_obra
+		
 		redirect_to action: "index"
-
 	end
 
 	def update
 		@obra = Construction.find(params[:id])
 		@obra.update_attributes params[:construction]
+		log current_admin, "Editou obra", @obra.nome_da_obra
 		
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
 		

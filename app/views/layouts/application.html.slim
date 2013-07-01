@@ -1,7 +1,6 @@
 / = debug url_for admin_session
 / = debug params
 / = debug admin_signed_in?
-
 doctype html
 html
 	head
@@ -23,10 +22,10 @@ html
 				- if admin_signed_in?
 					ul.nav.pull-right
 						li
-							= link_to current_admin do
+							= link_to edit_admin_path(current_admin) do
 								i.icon-user 
-								|  
-								= current_admin.name
+								= " " + current_admin.name
+
 
 						= link_to destroy_admin_session_path, class: "btn btn-mini btn-danger", method: :delete do
 							i.icon-trash
@@ -40,5 +39,7 @@ html
 				- else
 					.span2  
 				.span8.well style="background-color: #fff;"
+					- for key, msg in flash
+						= content_tag :div, msg, class: "alert alert-#{key}"
 					= render partial: "layouts/breadcrumb"
 					= yield

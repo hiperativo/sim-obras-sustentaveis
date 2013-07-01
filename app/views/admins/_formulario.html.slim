@@ -1,0 +1,15 @@
+= simple_form_for @admin, html:{class: ""}, defaults:{label: false} do |f|
+	= f.input :name, placeholder: "Nome"
+	= f.input :email, placeholder: "E-mail"
+	- if params[:action] == "new" or params[:action] == "create"
+		= f.input :password, placeholder: "Senha"
+		= f.input :password_confirmation, placeholder: "Confirmação da senha"
+	- if super_admin?
+		= f.input :role, collection: Admin::ROLES, as: :radio_buttons, boolean_style: :nested, collection_html: {class: "inline"}
+	.form-actions
+		= f.submit "Gravar", class: "btn btn-primary"
+		|  
+		- if params[:action] == "new" or params[:action] == "create"
+			= f.submit "Gravar e criar outro", class: "btn btn-info"
+			|  
+			= f.submit "Cancelar", class: "btn btn-danger"

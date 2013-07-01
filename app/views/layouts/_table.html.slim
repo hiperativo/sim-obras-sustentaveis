@@ -1,0 +1,8 @@
+table.table.table-striped
+	- table.each_with_index do |section, s|
+		= content_tag (s==0 ? :thead : :tbody) do
+			- section.each_with_index do |row, x|
+					tr
+						- row.each_with_index do |cell, y|
+							= content_tag (s==0 ? :th : :td) do 
+								= cell.blank? ? content_tag(:span, "não preenchido", style:"opacity: 0.4") : cell

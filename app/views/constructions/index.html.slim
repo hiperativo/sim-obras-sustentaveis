@@ -3,31 +3,22 @@ h2 Obras cadastradas
 - unless @obras.empty?
 	p.lead Utilize a ferramenta abaixo para cadastrar, buscar ou excluir uma obra do sistema
 	.well
-		span#filters_box
 		form.form-search
 			input.input-medium placeholder="Buscar obras" type="text"
 				|  
 				button.btn.btn-primary type="submit" 
 					i.icon-search
-				- super_admin?
-					span style="float:right"
-						a.btn.btn-info href="#"
-							i.icon-white.icon-share
-							|  Exportar todas as obras
 
+			- if super_admin?
+				|  
+				= link_to(polymorphic_path(Construction, format: :xls), class:"btn btn-info") do
+					i.icon-white.icon-share
+					|  Exportar todas as obras
 
-		- @table = [@obras.each_with_index.map { |c,i| [i+1, c.codigo_obra, c.nome_da_obra, render(partial: "layouts/crud", locals:{c: c})] }]
-		- @table.unshift [["#", "Código da obra", "Nome da obra"]]
+	- @table = [@obras.each_with_index.map { |c,i| [i+1, c.codigo_obra, c.nome_da_obra, render(partial: "layouts/crud", locals:{c: c})] }]
+	- @table.unshift [["#", "Código da obra", "Nome da obra"]]
 
-	table.table.table-striped
-		- @table.each_with_index do |section, s|
-			= content_tag (s==0 ? :thead : :tbody) do
-				- section.each_with_index do |row, x|
-						tr
-							- row.each_with_index do |cell, y|
-								= content_tag (s==0 ? :th : :td) do 
-									= cell.blank? ? content_tag(:span, "não preenchido", style:"opacity: 0.4") : cell
-	
+	= render partial: "layouts/table", locals:{table: @table}
 - else
 	markdown:
 		Até o presente momento não há obras cadastradas.
