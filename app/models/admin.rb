@@ -4,6 +4,9 @@ class Admin < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
+  validates :email, presence: true
+  validates :name, presence: true
+  validates :role, presence: true
 
   devise :database_authenticatable, 
          :rememberable, :trackable, :validatable, :registerable

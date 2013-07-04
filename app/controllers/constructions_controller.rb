@@ -1,5 +1,5 @@
 class ConstructionsController < ApplicationController
-	before_filter :authenticate_admin!, :set_variables
+	before_action :authenticate_admin!, :set_variables
 
 	def new
 		@obra = Construction.new

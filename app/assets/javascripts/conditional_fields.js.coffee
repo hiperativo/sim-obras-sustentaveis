@@ -10,7 +10,6 @@ class ConditionalFields
 
 	setup_fields: => 
 		@conditional_fields.each (index, conditional_field) =>
-			console.log $(conditional_field)
 			required_element_name = $(conditional_field).data("requires")
 			desired_value = $(conditional_field).data("desires")
 			desired_value ?= true
