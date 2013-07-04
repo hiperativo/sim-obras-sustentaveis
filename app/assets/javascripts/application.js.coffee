@@ -15,13 +15,16 @@ class CitiesLoader
 			options.city_selector.html cidades_atuais
 
 $ ->
-	$(window).on 'beforeunload', ->
-		"Não!!!"
+	if $(".warn-before-leaving").size()
+		$(window).bind 'beforeunload', ->
+			"Os dados ainda não foram salvos. Tem certeza que deseja ir para outra página?"
+
+		$(".warn-before-leaving").submit ->
+			$(window).unbind 'beforeunload'
 
 	$(".filter").keyup (e)->
 		hay = new RegExp $(e.target).val(), "i"
 		$("[data-cell]").each ->
-			# console.log $(this).data().cell
 			search = String($(this).data().cell).match(hay)
 			$(this).parent().show()
 			if search

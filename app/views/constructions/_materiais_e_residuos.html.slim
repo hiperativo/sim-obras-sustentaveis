@@ -5,7 +5,7 @@ h2 Materias e Resíduos
 		= mr[:name]
 	.controls
 		- for p in mr[:radios]<<"Outros"
-			= f.input_field mr[:method], label: p, as: :radio, collection:[p], boolean_style: :nested
+			= f.input_field mr[:method], label: p, as: :radio_buttons, collection:[p], boolean_style: :nested
 			- if p == "Outros"
 				= f.input_field mr[:method], placeholder: "Qual?", data:{requires: mr[:method], desires: "Outros"}
 

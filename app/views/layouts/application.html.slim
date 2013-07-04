@@ -20,7 +20,7 @@ html
 
 					ul.nav.pull-right
 						li
-							= link_to edit_admin_path(current_admin) do
+							= link_to "#", data:{toggle:"tooltip"}, title: "Você está logado." do
 								i.icon-user 
 								= " " + current_admin.name
 

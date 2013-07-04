@@ -7,7 +7,7 @@ label.control-label.emphasis
 .controls
 	- for p in ["Brises", "Persianas automatizadas internas", "Outros"]
 
-		= f.input_field :tipos_de_protecoes_solares, label: p, as: :radio, collection:[p], boolean_style: :nested
+		= f.input_field :tipos_de_protecoes_solares, label: p, as: :radio_buttons, collection:[p], boolean_style: :nested
 		- if p == "Brises"
 			= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Brises", requires_exactly:"[value='Brises']"}, collection: ["Horizontais", "Verticais", "Outros Brises"], label: false
 			= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Outros Brises"}
