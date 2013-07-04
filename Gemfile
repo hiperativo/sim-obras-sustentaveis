@@ -15,6 +15,8 @@ gem 'uglifier'
 gem 'slim-rails'
 gem 'bourbon'
 
+gem 'rails_12factor'
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'cancan'
