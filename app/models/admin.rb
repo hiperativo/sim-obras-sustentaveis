@@ -8,6 +8,8 @@ class Admin < ActiveRecord::Base
   validates :name, presence: true
   validates :role, presence: true
 
+
+
   devise :database_authenticatable, 
          :rememberable, :trackable, :validatable, :registerable
          # :registerable, :recoverable
