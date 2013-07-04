@@ -1,15 +1,11 @@
 = simple_form_for @admin, html:{class: ""}, defaults:{label: false} do |f|
 	= f.input :name, placeholder: "Nome"
 	= f.input :email, placeholder: "E-mail"
+	- unless params[:action] == "new" or params[:action] == "create"
+		= f.input :current_password, placeholder: "Senha antiga", :required => true
 
-	- if params[:action] == "new" or params[:action] == "create"
-		= f.input :password, placeholder: "Senha"
-		= f.input :password_confirmation, placeholder: "Confirmação da senha"
-	- else
-
-		= f.input :old_password, placeholder: "Senha antiga"		
-		= f.input :new_password, placeholder: "Nova senha"
-		= f.input :new_password_confirmation, placeholder: "Confirmação da senha"		
+	= f.input :password, placeholder: (params[:action] == "edit" ? "Nova senha" : "Nova senha")
+	= f.input :password_confirmation, placeholder: "Confirmação da senha"
 
 	- if super_admin?
 		= f.input :role, collection: Admin::ROLES, as: :radio_buttons, boolean_style: :nested, collection_html: {class: "inline"}
