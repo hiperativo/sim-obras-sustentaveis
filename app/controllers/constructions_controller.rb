@@ -9,18 +9,23 @@ class ConstructionsController < ApplicationController
 	def create
 		@obra = Construction.new(params[:construction])
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
-		@obra.save
-		log current_admin, "Adicionou obra", @obra.nome_da_obra
-
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
+		
+		if @obra.save
+			log current_admin, "Adicionou obra", @obra.nome_da_obra
 
 
 
-		if params["commit"] == "Salvar e sair" or params[:construction][:passo]=="materiais_e_residuos"
-			redirect_to action: "index"
+
+			if params["commit"] == "Salvar e sair" or params[:construction][:passo]=="materiais_e_residuos"
+				redirect_to action: "index"
+			else
+				redirect_to action: "edit", id: @obra.id, passo: @passos[@passo_index+1].parameterize.underscore
+			end
 		else
-			redirect_to action: "edit", id: @obra.id, passo: @passos[@passo_index+1].parameterize.underscore
+			render action: :new, passo: @passos[@passo_index].parameterize.underscore
 		end
+
 	end
 
 	def show

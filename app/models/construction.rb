@@ -26,6 +26,9 @@ class Construction < ActiveRecord::Base
 	:coleta_de_residuos_reciclaveis_outros_enable,
 	:coleta_de_residuos_reciclaveis_nivel_filtragem_enable
 
+	validates :nome_da_obra, presence: true
+	validates :codigo_obra, presence: true
+
 	def self.to_csv(options={})
 		CSV.generate(options) do |csv|
 			csv << column_names

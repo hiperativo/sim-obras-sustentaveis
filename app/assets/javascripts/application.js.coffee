@@ -14,8 +14,9 @@ class CitiesLoader
 				"<option value=\"#{cidade}\">#{cidade}</option>"
 			options.city_selector.html cidades_atuais
 
-
 $ ->
+	$(window).on 'beforeunload', ->
+		"Não!!!"
 
 	$(".filter").keyup (e)->
 		hay = new RegExp $(e.target).val(), "i"

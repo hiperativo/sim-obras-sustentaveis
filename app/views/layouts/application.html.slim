@@ -1,6 +1,3 @@
-/ = debug url_for admin_session
-/ = debug params
-/ = debug admin_signed_in?
 doctype html
 html
 	head
@@ -11,15 +8,16 @@ html
 		= csrf_meta_tags
 
 	body
-
+		meta name="viewport" content="width=device-width, initial-scale=1.0"
 		header.navbar
 			.navbar-inner
 				= link_to "Sim Sustentável", "/", class: "brand"
 
-				ul.nav
-					li= link_to "Obras", constructions_path
-
 				- if admin_signed_in?
+
+					ul.nav
+						li= link_to "Obras", constructions_path
+
 					ul.nav.pull-right
 						li
 							= link_to edit_admin_path(current_admin) do
@@ -31,15 +29,18 @@ html
 							i.icon-trash
 							|  Sair
 
-		.container
-			.row
+		= yield :login
+		- unless yield.blank?
+			.container
+				
+				.row
+					- if admin_signed_in?
+						= render partial: "layouts/side_navigation"
+					- else
+						.span2  
+					.span8.well style="background-color: #fff;"
+						= bootstrap_flash
+						= render partial: "layouts/breadcrumb"
+						= yield
 
-				- if admin_signed_in?
-					= render partial: "layouts/side_navigation"
-				- else
-					.span2  
-				.span8.well style="background-color: #fff;"
-					- for key, msg in flash
-						= content_tag :div, msg, class: "alert alert-#{key}"
-					= render partial: "layouts/breadcrumb"
-					= yield
+		footer= yield :footer
