@@ -118,7 +118,7 @@ class ConstructionsController < ApplicationController
 			options: [],
 			group_name: "25. Como você está reduzindo o efeito de ilhas de calor no empreendimento?",
 			prefix: "como_esta_reduzindo_ilhas_de_calor", 
-			collection: [[:alta_refletancia, "Alta refletância solar (cor branca)"], "Telhado verde", "Vagas Cobertas", "Piso Concregama", "Outros"]
+			collection: [[:alta_refletancia, "Alta refletância solar"], "Telhado verde", "Vagas Cobertas", "Piso Concregama", "Outros"]
 		}
 
 
@@ -227,7 +227,7 @@ class ConstructionsController < ApplicationController
 
 		@drenagem = {
 				options: [],
-				group_name: "33. Drenagem",
+				group_name: "34. Drenagem",
 				prefix: "drenagem", 
 				input_method: :drenagem,
 				collection: [
@@ -295,35 +295,35 @@ class ConstructionsController < ApplicationController
 				# 		"Outros"
 				# 	]
 				# },
-				{
-					options: [], 
-					group_name: "39. Elétrica – Tamanho da entrada – Tipo de fonte de energia",
-					prefix: "eletrica", 
-					collection:
-					[
-						"Motor de alta eficiência",
-						"Medição setorizada de consumo de energia",
-						{
-							parent_method: nil,
-							parent_label: "Entrada de energia",
-							children_type: :radio,
-							children_method: "tipo",
-							children:["Média","Alta"]
-						},
-						{
-							parent_method: :fonte_de_energia,
-							parent_label: "Fonte de energia",
-							children_type: :check_box,
-							children_method: nil,
-							children: ["Elétrica", "Gás", "Outros"]
-						},
-						[:fonte_de_energia_outros, "Outros"]
-					]
-				},
+				# {
+				# 	options: [], 
+				# 	group_name: "39. Elétrica – Tamanho da entrada – Tipo de fonte de energia",
+				# 	prefix: "eletrica", 
+				# 	collection:
+				# 	[
+				# 		"Motor de alta eficiência",
+				# 		"Medição setorizada de consumo de energia",
+				# 		{
+				# 			parent_method: nil,
+				# 			parent_label: "Entrada de energia",
+				# 			children_type: :radio,
+				# 			children_method: "tipo",
+				# 			children:["Média","Alta"]
+				# 		},
+				# 		{
+				# 			parent_method: :fonte_de_energia,
+				# 			parent_label: "Fonte de energia",
+				# 			children_type: :check_box,
+				# 			children_method: nil,
+				# 			children: ["Elétrica", "Gás", "Outros"]
+				# 		},
+				# 		[:fonte_de_energia_outros, "Outros"]
+				# 	]
+				# },
 				{
 
 					options: [],
-					group_name: "40. Energia alternativa",
+					group_name: "41. Energia alternativa",
 					prefix: "energia_alternativa", 
 					collection: ["Solar fotovoltaica", "Aquecimento solar de água", "Eólica", "Biomassa", "Outros"]
 				}

@@ -13,8 +13,5 @@ label.control-label.emphasis
 
 	= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Outros", exactly:"[value='outros']"}
 
-
-/ - for v in @vidros_energia_eletrica do 
-/ 	= render partial: "layouts/group_checkboxes", locals: v.merge(f:f)
-
+hr
 = render partial: "layouts/group_checkboxes", locals: @iluminacao_equipamentos[0].merge(f:f)

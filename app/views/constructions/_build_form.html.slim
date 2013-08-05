@@ -1,60 +1,141 @@
+hr
 - data = form_data(index)
 - main_input = databased(data["label"])
 - numero = data["número"]+". " if data.include?("número")
-= f.input main_input, 
-	label: "#{numero} "+data["label"],
-	label_html:{class:"emphasis"},  
-	collection: only_keys(data["opções"]),
-	as: :radio_buttons, boolean_style: :nested
 
-- for option in data["opções"]
-	- case option.class.to_s
-	- when "String"
-		- if option == "Outros"
-			= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(main_input, "Outros")
+- case data["escolha"]
+- when "múltipla"
+	.control-group
+		.control-label: label.emphasis= "#{numero} "+data["label"]
+		.controls
+			- for option in only_keys(data["opções"])
+				label.checkbox
+					= option
+					= f.input_field databased(main_input+"_"+option), as: :boolean
 
-	- when "Hash"
-		div *requires(main_input, option.keys.first)
-			- case option.values.first.class.to_s
-			- when "Hash"
-				- case option.values.first["escolha"]
-				- when "múltipla"
-					- for sub_option in option.values.first["opções"]
-						- case sub_option.class.to_s
-						- when "Hash"
-							.control-group
-								label.control-label.emphasis
-									= f.input_field databased(main_input+"_enable_"+sub_option.keys.first), as: :boolean
-									= sub_option.keys.first
+	- for option in data["opções"]
+		- case option.class.to_s
+		- when "String"
+			- if option == "Outros"
+				= f.input main_input+"_outros", label: main_input.capitalize+" / Outros", placeholder: "Qual?", wrapper_html: requires(main_input+"_outros")
 
-								.controls *requires(databased(main_input + "_enable_" + sub_option.keys.first))
-									= f.input_field databased("#{main_input}_"+sub_option.keys.first), as: :radio_buttons, collection: sub_option.values.first, boolean_style: :nested
+		- when "Hash"
+			div *requires(databased(main_input+"_"+option.keys.first))
+				- case option.values.first.class.to_s
+				- when "Hash"
+					- case option.values.first["escolha"]
+					- when "múltipla"
+						- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
+							.control-group	
+								label.control-label
+									= "Quais?"
+								.controls
+									- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
+										label.checkbox
+											- case sub_option.class.to_s
+											- when "String"
+												= sub_option
+												= f.input_field databased(main_input+"_"+option.keys.first+"_"+sub_option), as: :boolean
+						- for sub_option in option.values.first["opções"]
+							- case sub_option.class.to_s
+							- when "Hash"
+								.control-group
+									label.control-label.emphasis
+										= f.input_field databased(main_input+"_enable_"+sub_option.keys.first), as: :boolean
+										= sub_option.keys.first
 
-					- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
-						.control-group	
-							label.control-label
-								= "Quais?"
-							.controls
-								- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
-									label.checkbox
-										- case sub_option.class.to_s
-										- when "String"
+									.controls *requires(databased(main_input + "_enable_" + sub_option.keys.first))
+										= f.input_field databased("#{main_input}_"+option.keys.first+"_"+sub_option.keys.first), as: :radio_buttons, collection: sub_option.values.first, boolean_style: :nested
+
+							- when "String"
+								- if sub_option == "Outros"
+									= f.input databased(main_input+"_"+option.keys.first+"_"+sub_option), label: option.keys.first+" / Outros", placeholder: "Qual?", wrapper_html: requires(databased(main_input+"_"+option.keys.first+"_"+sub_option))
+
+								
+					- else
+						= f.input databased(option.keys[0]), collection: option.values.first["opções"], as: :radio_buttons, boolean_style: :nested
+						
+						- if option.values.first["opções"].include? "Outros"
+							= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
+
+
+				- when "Array"
+					.control-group
+						.control-label: label= option.keys.first
+						.controls
+							- for sub_option in option.values.first
+								- case sub_option.class.to_s
+								- when "String"
+									- case option.keys.first
+									- when "Sim", "Não"
+										label.radio
 											= sub_option
-											= f.input_field databased(sub_option), as: :boolean
-							
-				- else
-					= f.input databased(option.keys[0]), collection: option.values.first["opções"], as: :radio_buttons, boolean_style: :nested
-					- if option.values.first["opções"].include? "Outros"
-						= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
+											= f.input_field databased(main_input+"_"+sub_option), type: "radio"
+									- else 
+										label.radio
+											= sub_option
+											= f.input_field databased(main_input+"_"+sub_option), type: "radio"
+					- if option.values.first.include?("Outros")
+						= f.input databased(option.keys.first+"_outros"), label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
+- else
+	= f.input main_input, 
+		label: "#{numero} "+data["label"],
+		label_html:{class:"emphasis"},  
+		collection: only_keys(data["opções"]),
+		as: :radio_buttons, boolean_style: :nested
+
+	- for option in data["opções"]
+		- case option.class.to_s
+		- when "String"
+			- if option == "Outros"
+				= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(main_input, "Outros")
+
+		- when "Hash"
+			div *requires(main_input, option.keys.first)
+				- case option.values.first.class.to_s
+				- when "Hash"
+					- case option.values.first["escolha"]
+					- when "múltipla"
+
+						- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
+							.control-group	
+								label.control-label
+									= "Quais?"
+								.controls
+									- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
+										label.checkbox
+											- case sub_option.class.to_s
+											- when "String"
+												= sub_option
+												= f.input_field databased(main_input+"_"+sub_option), as: :boolean
+								
+						- for sub_option in option.values.first["opções"]
+							- case sub_option.class.to_s
+							- when "Hash"
+								.control-group
+									label.control-label.emphasis
+										= f.input_field databased(main_input+"_enable_"+sub_option.keys.first), as: :boolean
+										= sub_option.keys.first
+
+									.controls *requires(databased(main_input + "_enable_" + sub_option.keys.first))
+										= f.input_field databased("#{main_input}_"+sub_option.keys.first), as: :radio_buttons, collection: sub_option.values.first, boolean_style: :nested
+
+							- when "String"
+								- if sub_option == "Outros"
+									= f.input databased(main_input+"_"+option.keys.first+"_"+sub_option+"_quais"), label: false, placeholder: "Qual?", wrapper_html: requires(databased main_input+"_"+sub_option)
+					- else
+						= f.input databased(option.keys[0]), collection: option.values.first["opções"], as: :radio_buttons, boolean_style: :nested
+						
+						- if option.values.first["opções"].include? "Outros"
+							= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
 
 
-			- when "Array"
-				= f.input databased(option.keys[0]), collection: option.values.first, as: :radio_buttons, boolean_style: :nested
-				/ = debug option.values.first.include?("Outros")
-				- if option.values.first.include?("Outros")
-					= f.input databased(option.keys.first+"_outros"), label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
-					/ = f.input databased(option.values.first+"_outros"), label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
-
-
-
-
+				- when "Array"
+					- case option.keys.first
+					- when "Sim", "Não"
+						= f.input databased(main_input+"_"+option.keys.first), collection: option.values.first, as: :radio_buttons, boolean_style: :nested
+					- else 
+						= f.input databased(option.keys[0]), collection: option.values.first, as: :radio_buttons, boolean_style: :nested
+					- if option.values.first.include?("Outros")
+						= f.input databased(option.keys.first+"_outros"), label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
+						/ = f.input databased(option.values.first+"_outros"), label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")

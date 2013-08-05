@@ -1,6 +1,7 @@
 h2 Certificação
 
 - @groups_checkboxes_certificacao.each do |g|
+	hr
 	= render partial: "layouts/group_checkboxes", locals: g.merge(f: f)
 
 hr
@@ -9,6 +10,4 @@ hr
 
 = f.input :versao_do_sistema, label: false, placeholder: "Qual?",
 	wrapper_html:{data:{requires: "versao_do_sistema", desires: "Outros"}}
-hr
-
 = render partial: "build_form", locals: {index:"A", f:f}

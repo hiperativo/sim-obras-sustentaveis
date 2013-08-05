@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130805042330) do
+ActiveRecord::Schema.define(version: 20130805200300) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "",            null: false
@@ -315,6 +315,11 @@ ActiveRecord::Schema.define(version: 20130805042330) do
     t.string   "ventilacao"
     t.string   "iluminacao"
     t.string   "outros_caixa_de_texto"
+    t.string   "torres_de_resfriamento_sim"
+    t.string   "ar_condicionado_condensacao_vrf"
+    t.string   "ar_condicionado_condensacao_central_de_agua_gelada"
+    t.string   "perfil_nivel_de_certificacao_enable_categoria_n_1_relacao_do_"
+    t.string   "ar_condicionado_condensacao_bom"
   end
 
   create_table "logs", force: true do |t|

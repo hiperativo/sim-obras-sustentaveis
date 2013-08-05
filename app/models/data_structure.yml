@@ -35,7 +35,7 @@ A:
 
 B:
   label: Medição de água
-  número: "32"
+  número: "33"
   opções:
     - Medição individualizada das unidades
     - Medição setorizada de consumos:
@@ -56,23 +56,28 @@ C:
       - Superior
       - Excelente
     - Central de Água Gelada:
-      - Queima direita
-      - Queima indireta
+      - Chiller elétrico:
+        - Queima direita
+        - Queima indireta
+      - Chiller de absorção
     - Outros
 
 D:
   label: Equipamentos
   número: "42"
+  escolha: múltipla
   opções:
     - Motores de alta eficiência
     - Elevadores
     - Variadores de frequência:
-      - Nos ventiladores de Tomadas de ar externos
-      - Nas bombas de água gelada
-      - Nas torres de resfriamento
-      - Nos Fan Coils
-      - Nos Chillers
-      - Outros
+        escolha: múltipla
+        opções:
+          - Nos ventiladores de Tomadas de ar externos
+          - Nas bombas de água gelada
+          - Nas torres de resfriamento
+          - Nos Fan Coils
+          - Nos Chillers
+          - Outros
     - Outros
 
 E:
@@ -91,6 +96,7 @@ E:
 F:
   label: Elétrica – Tamanho da entrada – Tipo de fonte de energia
   número: "39"
+  escolha: "múltipla"
   opções:
     - Medição setorizada de consumo de energia
     - Entrada de energia:
@@ -125,3 +131,14 @@ G:
           - Iluminação
           - Outros
     - Sistema de gerenciamento de consumo
+
+H:
+  label: Torres de resfriamento
+  número: "31"
+  opções:
+    - Sim:
+        - Aberta
+        - Fechada
+        - Dry cooler
+        - Controle automático de purga
+    - Não

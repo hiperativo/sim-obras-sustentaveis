@@ -15,6 +15,7 @@ h3 3. Localização:
 = f.input :cidade, as: :select, collection: []
 hr
 
+h3 4. Contatos
 - 5.times do |n|
 	h3 Contato #{n+1}
 	= f.input "contato#{n+1}_nome", label: "Nome"
@@ -24,10 +25,13 @@ hr
 	= f.input "contato#{n+1}_funcao", label: "Função"
 
 hr
-= f.input :m2_unidade, label: "4. m² unidade", label_html:{class:"emphasis"}
-= f.input :m2_util_total, label: "5. m² útil total", label_html:{class:"emphasis"}
-= f.input :numero_de_unidades, label: "6. Nº de unidades", label_html:{class:"emphasis"}
-= f.input :numero_de_andares, label: "7. Nº de andares", label_html:{class:"emphasis"}
+
+h3 5. Metragens/números
+
+= f.input :m2_unidade, label: "m² unidade", label_html:{class:"emphasis"}
+= f.input :m2_util_total, label: "m² útil total", label_html:{class:"emphasis"}
+= f.input :numero_de_unidades, label: "Nº de unidades", label_html:{class:"emphasis"}
+= f.input :numero_de_andares, label: "Nº de andares", label_html:{class:"emphasis"}
 
 hr
 = f.input :estrutura_utilizada, label: "8. Estrutura utilizada", label_html:{class:"emphasis"}, 
@@ -38,16 +42,14 @@ hr
 
 - @datepicker = {class:"datepicker"}
 hr
-= f.input :inicio_da_obra, as: :string, label_html:{class:"emphasis"}, label:"10. Início da Obra", input_html: @datepicker
-= f.input :termino_da_obra, as: :string, label_html:{class:"emphasis"}, label:"11. Termino da Obra", input_html: @datepicker
+
+h3 8. Datas
+= f.input :inicio_da_obra, as: :string, label_html:{class:""}, label:"Início da Obra", input_html: @datepicker
+= f.input :termino_da_obra, as: :string, label_html:{class:""}, label:"Termino da Obra", input_html: @datepicker
 
 hr
 
-
-
-hr
-
-h3 12. Fases:
+h3 9. Fases:
 = f.input :projeto		, input_html: @datepicker
 = f.input :lancamento	, input_html: @datepicker, label: "Lançamento"
 = f.input :fundacao		, input_html: @datepicker, label: "Fundação"
@@ -57,14 +59,14 @@ h3 12. Fases:
 = f.input :concluida	, input_html: @datepicker, label: "Conclusão"
 
 hr
-h3 13. Proprietários: 
+h3 10. Proprietários: 
 = f.input :proprietario1
 = f.input :proprierario2
 = f.input :proprietario3
 = f.input :proprietario4
 
 hr
-h3 14. Investidores: 
+h3 11. Investidores: 
 = f.input :investidor1
 = f.input :investidor2
 = f.input :investidor3
@@ -78,6 +80,8 @@ hr
 / Todo número possui uma função chamada times. Ela executa um bloco de código (do...end)
 / tantas vezes for o tamanho do número. A cada vez que o bloco for executado, a variável n vai
 / acrescentar +1, começando de 0
+
+h3 12. Construtoras
 - 4.times do |n|
 	.control-group
 		/ como o n começa em 0, temos que adicionar +1 para
@@ -93,15 +97,14 @@ hr
 			= f.input_field "construtora#{n+1}_razao_social", placeholder: "Razão Social"
 
 hr
+h3 13. Tipologia:	
+= f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"]
 
-= f.input :teve_consultoria, label: "15. Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc)", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
+= f.input :tipo_de_obra_outros, label: "Outros", wrapper_html:{data:{requires: "tipo_de_obra", desires: "Outros"}}
+
+= f.input :teve_consultoria, label: "14. Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc)", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
 = f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria", desires:"Sim"}}
 
 hr
 
-h3 15. Tipologia:	
-= f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"]
-= f.input :tipo_de_obra_outros, label: "Outros", wrapper_html:{data:{requires: "tipo_de_obra", desires: "Outros"}}
-
-hr
-= f.input :ficha_tecnica_observacao, input_html:{rows: 5}, label: "16. Observação", label_html:{class: "emphasis"}
+= f.input :ficha_tecnica_observacao, input_html:{rows: 5}, label: "15. Observação", label_html:{class: "emphasis"}

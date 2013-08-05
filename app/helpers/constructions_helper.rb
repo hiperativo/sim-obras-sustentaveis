@@ -13,7 +13,7 @@ module ConstructionsHelper
 	# end
 
 	def databased(name)
-		name.parameterize.underscore.slice(0..64)
+		name.parameterize.underscore.slice(0..62)
 	end
 
 	def requires(input, value=nil)

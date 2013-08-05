@@ -7,5 +7,7 @@ h2 Terreno
 	= f.input "#{g[0]}_quantidade", label: false, placeholder: "Quantidade",
 		wrapper_html:{data:{requires: g[0], desires: "Sim"}}
 
+hr
 = render partial: "layouts/group_checkboxes", locals: @transportes_publicos.merge(f: f)
+hr
 = render partial: "layouts/group_checkboxes", locals: @ilhas_de_calor.merge(f: f)
