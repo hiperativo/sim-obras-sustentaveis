@@ -1,0 +1,120 @@
+A:
+  label: Perfil/Nível de Certificação
+  opções:
+    - LEED - Platinum
+    - LEED - Gold
+    - LEED - Silver
+    - LEED - Certified
+    - Procel – A
+    - Procel – B
+    - Procel – C
+    - Procel – D
+    - Procel - E
+    - Outros
+    - Aqua:
+        escolha: múltipla
+        opções:
+          - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_aqua
+            - Bom
+            - Superior
+            - Excelente
+          - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_aqua
+          - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_aqua
+          - Categoria n°4 Gestão da energia: *opcoes_categoria_aqua
+          - Categoria n°5 Gestão da água: *opcoes_categoria_aqua
+          - Categoria n°6 Gestão dos resíduos de uso e operação do edifício: *opcoes_categoria_aqua
+          - Categoria n°7 Manutenção - Permanência do desempenho ambiental: *opcoes_categoria_aqua
+          - Categoria n°8 Conforto higrotérmico: *opcoes_categoria_aqua
+          - Categoria n°9 Conforto acústico: *opcoes_categoria_aqua
+          - Categoria n°10 Conforto visual: *opcoes_categoria_aqua
+          - Categoria n°11 Conforto olfativo: *opcoes_categoria_aqua
+          - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_aqua
+          - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_aqua
+          - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_aqua
+
+B:
+  label: Medição de água
+  opções:
+    - Medição individualizada das unidades
+    - Medição setorizada de consumos:
+        opções:
+          - Irrigação
+          - Torres de resfriamento
+          - Sistemas sanitários
+          - Outros
+    - Sistema de gerenciamento de consumo
+
+C:
+  label: Ar condicionado — condensação
+  escolha: múltipla
+  opções:
+    - VRF:
+      - Bom
+      - Superior
+      - Excelente
+    - Central de Água Gelada:
+      - Queima direita
+      - Queima indireta
+    - Outros
+
+D:
+  label: Equipamentos
+  opções:
+    - Motores de alta eficiência
+    - Elevadores
+    - Variadores de frequência:
+      - Nos ventiladores de Tomadas de ar externos
+      - Nas bombas de água gelada
+      - Nas torres de resfriamento
+      - Nos Fan Coils
+      - Nos Chillers
+      - Outros
+    - Outros
+
+E:
+  label: Existe área envidraçada na fachada?
+  opções:
+    - Sim:
+        escolha: múltipla
+        opções:
+          - Insulado
+          - Laminado
+          - Low-e (baixa emissividade)
+          - Outros
+    - Não
+
+F:
+  label: Elétrica – Tamanho da entrada – Tipo de fonte de energia
+  opções:
+    - Medição setorizada de consumo de energia
+    - Entrada de energia:
+        opções:
+          - Alta
+          - Média
+          - Baixa
+    - Fonte de energia:
+        escolha: múltipla
+        opções:
+          - Elétrica
+          - Gás
+          - Outros
+    - Geração:
+        escolha: múltipla
+        opções:
+          - Peak shaving
+          - Possui 100% de backup
+    - Cogeração
+    - Outros
+
+G:
+  label: Medição de energia
+  opções:
+    - Medição setorizada de consumo:
+        escolha: múltipla
+        opções:
+          - Elevadores
+          - Ar condicionado
+          - Ventilação
+          - Iluminação
+          - Outros
+    - Sistema de gerenciamento de consumo

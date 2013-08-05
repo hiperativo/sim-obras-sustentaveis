@@ -1,5 +1,6 @@
 h2 Àgua
 = render partial: "layouts/group_checkboxes", locals: @bacias_mictorios.merge(f:f)
+= render partial: "layouts/group_checkboxes", locals: @torneiras.merge(f:f)
 
 - for r in @radios_agua do
 	hr
@@ -13,6 +14,8 @@ h2 Àgua
 
 = f.input :torres_de_resfriamento_tipo, collection: %w[Aberta Fechada], as: :radio_buttons, boolean_style: :nested, wrapper_html:{data:{requires:"torres_de_resfriamento", desires: "Sim"}}
 
+= f.input :torres_de_resfriamento_tipo_especifico, collection: ["Dry cooler", "Controle automático de purga"], as: :radio_buttons, boolean_style: :nested, wrapper_html:{data:{requires:"torres_de_resfriamento_tipo", desires: "Fechada"}}
+
 hr
 
 h3 style="text-align: left; width: 100%" 31. Fontes não potáveis de água
@@ -23,4 +26,5 @@ h3 style="text-align: left; width: 100%" 31. Fontes não potáveis de água
 	= f.input "#{a[:input_method]}_tipo", label: false, placeholder: "Qual?",
 		wrapper_html:{data:{requires: "#{a[:input_method]}_tipo", desires: "Outros"}}
 
+= render partial: "build_form", locals: {index:"B", f:f}
 = render partial: "layouts/group_checkboxes", locals: @drenagem.merge(f: f)

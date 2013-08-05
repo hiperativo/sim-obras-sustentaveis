@@ -20,11 +20,21 @@ hr
 	= f.input "contato#{n+1}_nome", label: "Nome"
 	= f.input "contato#{n+1}_telefone", label: "Telefone"
 	= f.input "contato#{n+1}_email", label: "E-mail"
+	= f.input "contato#{n+1}_razao_social", label: "Razão Social"
+	= f.input "contato#{n+1}_funcao", label: "Função"
 
 hr
 = f.input :m2_unidade, label: "4. m² unidade", label_html:{class:"emphasis"}
 = f.input :m2_util_total, label: "5. m² útil total", label_html:{class:"emphasis"}
+= f.input :numero_de_unidades, label: "X. Nº de unidades", label_html:{class:"emphasis"}
 = f.input :numero_de_andares, label: "6. Nº de andares", label_html:{class:"emphasis"}
+
+hr
+= f.input :estrutura_utilizada, label: "X. Estrutura utilizada", label_html:{class:"emphasis"}, 
+	collection: ["Alvenaria estrutural", "Concreto armado convencional", "Concreto armado pré-moldado", "Estrutura metálica", "Parede de concreto", "Steel frame"], as: :radio_buttons, boolean_style: :nested
+	
+= f.input :laje_utilizada, label: "X. Laje utilizada", label_html:{class:"emphasis"}, 
+	collection: ["Laje nervurada cubeta", "Laje nervurada treliçada", "Maciça convencional com vigas", "Maciça plana", "Pré-laje de concreto", "Steel deck", "Não utiliza"], as: :radio_buttons, boolean_style: :nested
 
 - @datepicker = {class:"datepicker"}
 hr
@@ -32,6 +42,11 @@ hr
 = f.input :termino_da_obra, as: :string, label_html:{class:"emphasis"}, label:"8. Termino da Obra", input_html: @datepicker
 
 hr
+
+
+
+hr
+
 h3 9. Fases:
 = f.input :projeto		, input_html: @datepicker
 = f.input :lancamento	, input_html: @datepicker, label: "Lançamento"
@@ -79,7 +94,7 @@ hr
 
 hr
 
-= f.input :teve_consultoria, label: "12. Teve consultoria?", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
+= f.input :teve_consultoria, label: "12. Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc)", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
 = f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria", desires:"Sim"}}
 
 hr

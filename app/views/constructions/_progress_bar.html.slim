@@ -3,4 +3,4 @@
 		| pág 
 		strong.passo-atual= @passos.collect{|p| sluggify p}.index(params[:passo])+1
 		|  de 
-		strong 8
+		strong= @passos.size

@@ -15,7 +15,7 @@ class CitiesLoader
 			options.city_selector.html cidades_atuais
 
 $ ->
-	if $(".warn-before-leaving").size()
+	if $(".warn-before-leaving").size() and "<%= ENV["RAILS_ENV"] %>" != "development"
 		$(window).bind 'beforeunload', ->
 			"Os dados ainda não foram salvos. Tem certeza que deseja ir para outra página?"
 

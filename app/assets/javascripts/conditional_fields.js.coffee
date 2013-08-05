@@ -27,11 +27,13 @@ class ConditionalFields
 
 	check_conditions: (field, value) =>
 		field_type = $(field).attr "type"
-
 		value is switch field.tagName
 			when "INPUT" then switch field_type
 				when "checkbox" then field.checked
-				when "radio" then $(field).val()
+				when "radio" 
+					console.log value, field, $(field).val()
+					# $(field).val()
+					$("input[name='"+$(field).attr("name")+"']:checked").val()
 				else $(field).text()
 			when "SELECT" then $(field).find(":selected").attr("value")
 
@@ -41,7 +43,5 @@ class ConditionalFields
 
 	hide: (field) =>
 		$(field).hide()
-
-
 
 @ConditionalFields = ConditionalFields

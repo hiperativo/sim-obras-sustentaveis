@@ -1,5 +1,9 @@
 class ConstructionsController < ApplicationController
 	before_action :authenticate_admin!, :set_variables
+	def structure
+		require "yaml"
+		render json: (YAML.load_file Rails.root.join "app", "models", "data_structure.yml")
+	end
 
 	def new
 		@obra = Construction.new
@@ -13,10 +17,6 @@ class ConstructionsController < ApplicationController
 		
 		if @obra.save
 			log current_admin, "Adicionou obra", @obra.nome_da_obra
-
-
-
-
 			if params["commit"] == "Salvar e sair" or params[:construction][:passo]=="materiais_e_residuos"
 				redirect_to action: "index"
 			else
@@ -82,7 +82,7 @@ class ConstructionsController < ApplicationController
 	protected
 
 	def set_variables
-		@passos = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "iluminação", "materiais e resíduos"]
+		@passos = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "materiais e resíduos"]
 		params[:passo] = @passos.first.parameterize.underscore if params[:passo].nil?
 
 		@groups_checkboxes_certificacao = [
@@ -116,11 +116,24 @@ class ConstructionsController < ApplicationController
 
 		@ilhas_de_calor = { 
 			options: [],
-			group_name: "24. Como você está reduzindo os efeitos das ilhas de calor? de sistema",
+			group_name: "24. Como você está reduzindo o efeito de ilhas de calor no empreendimento?",
 			prefix: "como_esta_reduzindo_ilhas_de_calor", 
-			collection: [[:alta_refletancia, "Alta refletância solar (cor branca)"], "Telhado verde", "Outros"]
+			collection: [[:alta_refletancia, "Alta refletância solar (cor branca)"], "Telhado verde", "Vagas Cobertas", "Piso Concregama", "Outros"]
 		}
 
+
+		@torneiras = {
+			options: [], 
+			group_name: "X. Torneiras",
+			prefix: "torneiras", 
+			collection: [
+				"Restritores de vazão",
+				"Acionamento hidromecânico",
+				"Sensor de presença",
+				"Regulador de vazão",
+				[:outros, "Outros"]
+			]
+		}
 
 		@bacias_mictorios = {
 			options: [], 
@@ -131,7 +144,6 @@ class ConstructionsController < ApplicationController
 				"Bacias dual flux",
 				[:het, "HET – Vasos com consumo menor de 4 litros"],
 				"Mictórios secos",
-				"Mictório eficiente",
 				[:mictorio_fechamento_hidromecanico, "Mictório com fechamento hidromecânico"],
 				[:mictorio_fechamento_com_sensor_de_presenca, "Mictório com fechamento com sensor de presença"],
 				[:outros, "Outros"]
@@ -139,33 +151,37 @@ class ConstructionsController < ApplicationController
 		}
 
 		@radios_agua = [
-				{
-					input_method: :torneiras,
-					label: "26. Torneiras",
-					opcoes: ["Restritores de vazão", "Acionamento hidromecânico", "Sensor de presença"]
-				},
 
 				{
 					input_method: :chuveiros,
 					label: "27. Chuveiros",
-					opcoes: ["Restritores de vazão"]
+					opcoes: ["Restritores de vazão", 
+					"Chuveiros eficientes (com baixa vazão e tecnologia incorporada para aumento de sensação da pressão)"]
 				},
 
 				{
 					input_method: :irrigacao,
 					label: "28. Irrigação",
-					opcoes: ["Irrigação automatizada"]
+					opcoes: ["Irrigação automatizada",
+						"Sensor de chuva",
+						"Sensor de umidade do solo",
+						"Estação meteorological"]
 				},
+
 
 				{
 					input_method: :piscina,
 					label: "29. Piscina",
 					opcoes: ["Aquecimento solar para piscina"]
 				}
-
 			]
 
-		@opcoes_agua = ["Para irrigação do paisagismo", "Para lavagem de pisos", "Para bacias", "Para ar condicionado", "Piscina", "Outros"]
+		@opcoes_agua = [
+			"Para irrigação do paisagismo", 
+			"Para lavagem de pisos", 
+			[:para_bacias,"Para bacias e mictórios"], 
+			"Outros"
+		]
 		@fontes_de_agua = [
 			{
 				options: [:enable_disable],
@@ -218,6 +234,7 @@ class ConstructionsController < ApplicationController
 					"Pisos permeáveis",
 					"Caixa de retardo",
 					[:remocao_de_solidos_suspensos, "Remoção de sólidos suspensos – Filtros Vortex"],
+					"Captação e aproveitamente de água pluvial",
 					"Outros"
 				]
 			}
@@ -237,15 +254,9 @@ class ConstructionsController < ApplicationController
 
 			{
 				options: [], 
-				group_name: "34. Tratamento de ar externo",
+				group_name: "34. Ar externo",
 				prefix: "tratamento_de_ar_externo", 
-				collection: ["Roda entálpica", "Trocador de calor"]
-			},
-			{
-				options: [], 
-				group_name: "35. Variador de frequência",
-				prefix: "variador_frequencia", 
-				collection: ["Nos ventiladores de Tomadas de ar externos", "Nos Fan coils", "Nos Chillers"]
+				collection: ["Roda entálpica", "Trocador de calor", [:controle_de_demanda_de_ventilacao_por_, "Controle de demanda de ventilação por CO2"]]
 			},
 			{
 				options: [], 
@@ -259,31 +270,31 @@ class ConstructionsController < ApplicationController
 
 		@vidros_energia_eletrica = 
 			[
-				{
-					options: [], 
-					group_name: "38. Vidros – Área envidraçada",
-					prefix: "vidros_area_envidracada", 
-					collection:
-					[
-						"Insulado",
-						"Laminado",
-						[:low_e, "Low-e (baixa emissividade)"],
-						{
-							parent_method: "da_fachada",
-							parent_label: "Área envidraçada da fachada",
-							children_type: :radio,
-							children_method: "porcentagem",
-							children:
-							[
-								"De 0% a 40%",
-								"De 40% a 60%",
-								"De 60% a 80%",
-								"Mais de 80%",
-							]
-						},
-						"Outros"
-					]
-				},
+				# {
+				# 	options: [], 
+				# 	group_name: "38. Vidros – Área envidraçada",
+				# 	prefix: "vidros_area_envidracada", 
+				# 	collection:
+				# 	[
+				# 		"Insulado",
+				# 		"Laminado",
+				# 		[:low_e, "Low-e (baixa emissividade)"],
+				# 		{
+				# 			parent_method: "da_fachada",
+				# 			parent_label: "Área envidraçada da fachada",
+				# 			children_type: :radio,
+				# 			children_method: "porcentagem",
+				# 			children:
+				# 			[
+				# 				"De 0% a 40%",
+				# 				"De 40% a 60%",
+				# 				"De 60% a 80%",
+				# 				"Mais de 80%",
+				# 			]
+				# 		},
+				# 		"Outros"
+				# 	]
+				# },
 				{
 					options: [], 
 					group_name: "39. Elétrica – Tamanho da entrada – Tipo de fonte de energia",

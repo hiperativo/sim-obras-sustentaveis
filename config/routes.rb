@@ -1,4 +1,5 @@
 SimObrasSustentaveis::Application.routes.draw do
+	get "/obras/estrutura" => "constructions#structure"
 	devise_for :admins, path_prefix: "my"
 	resources :logs
 	resources :admins

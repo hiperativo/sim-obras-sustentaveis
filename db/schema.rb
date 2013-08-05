@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130630203326) do
+ActiveRecord::Schema.define(version: 20130805042330) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "",            null: false
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20130630203326) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "constructions", force: true do |t|
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.string   "codigo_obra"
     t.string   "nome_da_obra"
     t.string   "tipo_de_logradouro"
@@ -264,6 +264,57 @@ ActiveRecord::Schema.define(version: 20130630203326) do
     t.string   "contato5_nome"
     t.string   "contato5_telefone"
     t.string   "contato5_email"
+    t.string   "contato1_razao_social"
+    t.string   "contato2_razao_social"
+    t.string   "contato3_razao_social"
+    t.string   "contato4_razao_social"
+    t.string   "contato5_razao_social"
+    t.string   "contato1_funcao"
+    t.string   "contato2_funcao"
+    t.string   "contato3_funcao"
+    t.string   "contato4_funcao"
+    t.string   "contato5_funcao"
+    t.string   "numero_de_unidades"
+    t.string   "estrutura_utilizada"
+    t.string   "laje_utilizada"
+    t.boolean  "como_esta_reduzindo_ilhas_de_calor_vagas_cobertas"
+    t.boolean  "como_esta_reduzindo_ilhas_de_calor_piso_concregama"
+    t.boolean  "torneiras_restritores_de_vazao"
+    t.boolean  "torneiras_acionamento_hidromecanico"
+    t.boolean  "torneiras_sensor_de_presenca"
+    t.boolean  "torneiras_regulador_de_vazao"
+    t.boolean  "torneiras_outros_enable"
+    t.string   "torneiras_outros"
+    t.string   "torres_de_resfriamento_tipo_especifico"
+    t.boolean  "agua_pluvial_para_bacias_e_mictorios"
+    t.string   "medicao_de_agua"
+    t.string   "perfil_nivel_de_certificacao_outros"
+    t.string   "medicao_setorizada_de_consumos"
+    t.string   "medicao_de_agua_outros"
+    t.string   "drenagem_captacao_e_aproveitamente_de_agua_pluvial"
+    t.string   "ar_condicionado"
+    t.string   "ar_condicionado_condensacao"
+    t.string   "ar_condicionado_condensacao_outros"
+    t.string   "equipamentos"
+    t.string   "variadores_de_frequencia"
+    t.string   "variadores_de_frequencia_outros"
+    t.string   "tratamento_de_ar_externo_controle_de_demanda_de_ventilacao_por_"
+    t.string   "existe_area_envidracada_na_fachada"
+    t.string   "insulado"
+    t.string   "laminado"
+    t.string   "low_e_baixa_emissividade"
+    t.string   "eletrica_tamanho_da_entrada_tipo_de_fonte_de_energia"
+    t.string   "entrada_de_energia"
+    t.string   "eletrica"
+    t.string   "gas"
+    t.string   "peak_shaving"
+    t.string   "possui_100_de_backup"
+    t.string   "eletrica_tamanho_da_entrada_tipo_de_fonte_de_energia_outros"
+    t.string   "medicao_de_energia"
+    t.string   "elevadores"
+    t.string   "ventilacao"
+    t.string   "iluminacao"
+    t.string   "outros_caixa_de_texto"
   end
 
   create_table "logs", force: true do |t|
