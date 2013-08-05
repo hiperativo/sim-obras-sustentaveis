@@ -1,8 +1,8 @@
 - data = form_data(index)
 - main_input = databased(data["label"])
-
+- numero = data["número"]+". " if data.include?("número")
 = f.input main_input, 
-	label: data["label"],
+	label: "#{numero} "+data["label"],
 	label_html:{class:"emphasis"},  
 	collection: only_keys(data["opções"]),
 	as: :radio_buttons, boolean_style: :nested

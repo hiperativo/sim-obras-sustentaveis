@@ -4,7 +4,7 @@ h2 Certificação
 	= render partial: "layouts/group_checkboxes", locals: g.merge(f: f)
 
 hr
-= f.input :versao_do_sistema, label: "17. Versão do Sistema", label_html:{class:"emphasis"},
+= f.input :versao_do_sistema, label: "18. Versão do Sistema", label_html:{class:"emphasis"},
 	collection: ["LEED – v2", "LEED – v 2.2", "LEED – V3", "LEED – V4", "Outros"].map{|i| [i, i.parameterize]}, as: :radio_buttons, boolean_style: :nested
 
 = f.input :versao_do_sistema, label: false, placeholder: "Qual?",

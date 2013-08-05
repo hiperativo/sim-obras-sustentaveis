@@ -1,5 +1,6 @@
 A:
   label: Perfil/Nível de Certificação
+  número: "19"
   opções:
     - LEED - Platinum
     - LEED - Gold
@@ -34,6 +35,7 @@ A:
 
 B:
   label: Medição de água
+  número: "32"
   opções:
     - Medição individualizada das unidades
     - Medição setorizada de consumos:
@@ -47,6 +49,7 @@ B:
 C:
   label: Ar condicionado — condensação
   escolha: múltipla
+  número: "35"
   opções:
     - VRF:
       - Bom
@@ -59,6 +62,7 @@ C:
 
 D:
   label: Equipamentos
+  número: "42"
   opções:
     - Motores de alta eficiência
     - Elevadores
@@ -73,6 +77,7 @@ D:
 
 E:
   label: Existe área envidraçada na fachada?
+  número: "38"
   opções:
     - Sim:
         escolha: múltipla
@@ -85,6 +90,7 @@ E:
 
 F:
   label: Elétrica – Tamanho da entrada – Tipo de fonte de energia
+  número: "39"
   opções:
     - Medição setorizada de consumo de energia
     - Entrada de energia:
@@ -108,6 +114,7 @@ F:
 
 G:
   label: Medição de energia
+  número: "40"
   opções:
     - Medição setorizada de consumo:
         escolha: múltipla

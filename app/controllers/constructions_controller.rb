@@ -88,35 +88,35 @@ class ConstructionsController < ApplicationController
 		@groups_checkboxes_certificacao = [
 			{
 				options: [], 
-				group_name: "15. Sistema",
+				group_name: "16. Sistema",
 				prefix: "sistema", 
 				collection: ["LEED", "Aqua", "Procel Edifica", "Qualiverde", "Bream", "DGNB", "LBC", "Outros"]
 			},
 			{
 				options: [], 
-				group_name: "16. Tipo de sistema",
+				group_name: "17. Tipo de sistema",
 				prefix: nil, 
 				collection: ["LEED NC", "LEED CS", "LEED CI", "LEED EB", [:aqua_bairros, "Aqua Bairros e loteamentos"], [:aqua_edificios, "Aqua Edifícios Habitacionais"], "Aqua Serviços", "Aqua Operação e Uso", "Procel Residencial", "Procel Comercial", [:tipo_de_sistema_outros, "Outros"]]
 			}
 		]
 
 		@boolean_radios_terreno = [
-			[:vagas_verdes, "19. Vagas verdes"],
-			[:estacoes_de_recarga_de_veiculos_eletricos, "20. Estações de recarga de veículos elétricos"],
-			[:bicicletarios, "21. Bicicletários"],
-			[:vestiarios_com_chuveiro, "22. Vestiários com chuveiro"]
+			[:vagas_verdes, "20. Vagas verdes"],
+			[:estacoes_de_recarga_de_veiculos_eletricos, "21. Estações de recarga de veículos elétricos"],
+			[:bicicletarios, "22. Bicicletários"],
+			[:vestiarios_com_chuveiro, "23. Vestiários com chuveiro"]
 		]
 
 		@transportes_publicos = {
 			options: [:intercalar_distancia_aproximada], 
-			group_name: "23. Transporte público",
+			group_name: "24. Transporte público",
 			prefix: "proximidade_ao_tpublico", 
 			collection: ["Metro", "Trem", "Ponto de ônibus", "Outros"]
 		}
 
 		@ilhas_de_calor = { 
 			options: [],
-			group_name: "24. Como você está reduzindo o efeito de ilhas de calor no empreendimento?",
+			group_name: "25. Como você está reduzindo o efeito de ilhas de calor no empreendimento?",
 			prefix: "como_esta_reduzindo_ilhas_de_calor", 
 			collection: [[:alta_refletancia, "Alta refletância solar (cor branca)"], "Telhado verde", "Vagas Cobertas", "Piso Concregama", "Outros"]
 		}
@@ -124,7 +124,7 @@ class ConstructionsController < ApplicationController
 
 		@torneiras = {
 			options: [], 
-			group_name: "X. Torneiras",
+			group_name: "27. Torneiras",
 			prefix: "torneiras", 
 			collection: [
 				"Restritores de vazão",
@@ -137,7 +137,7 @@ class ConstructionsController < ApplicationController
 
 		@bacias_mictorios = {
 			options: [], 
-			group_name: "24. Bacias e Mictorios",
+			group_name: "26. Bacias e Mictorios",
 			prefix: "bacias_e_mictorios", 
 			collection: [
 				"Bacias a vácuo",
@@ -154,14 +154,14 @@ class ConstructionsController < ApplicationController
 
 				{
 					input_method: :chuveiros,
-					label: "27. Chuveiros",
+					label: "28. Chuveiros",
 					opcoes: ["Restritores de vazão", 
 					"Chuveiros eficientes (com baixa vazão e tecnologia incorporada para aumento de sensação da pressão)"]
 				},
 
 				{
 					input_method: :irrigacao,
-					label: "28. Irrigação",
+					label: "29. Irrigação",
 					opcoes: ["Irrigação automatizada",
 						"Sensor de chuva",
 						"Sensor de umidade do solo",
@@ -171,7 +171,7 @@ class ConstructionsController < ApplicationController
 
 				{
 					input_method: :piscina,
-					label: "29. Piscina",
+					label: "30. Piscina",
 					opcoes: ["Aquecimento solar para piscina"]
 				}
 			]
@@ -227,7 +227,7 @@ class ConstructionsController < ApplicationController
 
 		@drenagem = {
 				options: [],
-				group_name: "32. Drenagem",
+				group_name: "33. Drenagem",
 				prefix: "drenagem", 
 				input_method: :drenagem,
 				collection: [
@@ -254,13 +254,13 @@ class ConstructionsController < ApplicationController
 
 			{
 				options: [], 
-				group_name: "34. Ar externo",
+				group_name: "36. Ar externo",
 				prefix: "tratamento_de_ar_externo", 
 				collection: ["Roda entálpica", "Trocador de calor", [:controle_de_demanda_de_ventilacao_por_, "Controle de demanda de ventilação por CO2"]]
 			},
 			{
 				options: [], 
-				group_name: "36. Tipo de Insuflamento de ar",
+				group_name: "37. Tipo de Insuflamento de ar",
 				prefix: "tipo_de_insuflamento_de_ar", 
 				collection: ["Teto", "Piso", "Vigas frias"]
 			}
@@ -332,7 +332,7 @@ class ConstructionsController < ApplicationController
 			@iluminacao_equipamentos = [
 				{
 					options: [], 
-					group_name: "41. Tipo de iluminação – Área",
+					group_name: "42. Tipo de iluminação – Área",
 					prefix: "iluminacao", 
 					collection:
 					[
@@ -381,13 +381,13 @@ class ConstructionsController < ApplicationController
 			@materiais_checkboxes = [
 				{
 					options: [],
-					group_name: "Infraestrutura para coleta de resíduos recicláveis",
+					group_name: "46. Infraestrutura para coleta de resíduos recicláveis",
 					prefix: "coleta_de_residuos_reciclaveis", 
 					collection: ["Depósito central", "Depósito no pavimento", "Outros"]
 				},
 				{
 					options: [],
-					group_name: "Qualidade Ambiental (Ar) – Nível de filtragem",
+					group_name: "47. Qualidade Ambiental (Ar) – Nível de filtragem",
 					prefix: "coleta_de_residuos_reciclaveis", 
 					collection: 
 					[
