@@ -26,26 +26,18 @@ hr
 					- case option.values.first["escolha"]
 					- when "múltipla"
 						- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
-							.control-group	
-								label.control-label
-									= option.keys.first
-								.controls
-									- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
-										label.checkbox
-											- case sub_option.class.to_s
-											- when "String"
-												= sub_option
-												= f.input_field databased(main_input+"_"+option.keys.first+"_"+sub_option), as: :boolean
+							= render partial: "sub_opcoes", locals:{label: option.keys.first, options: option.values.first["opções"], f:f, escolha: "múltipla", parent: main_input}
 						- for sub_option in option.values.first["opções"]
 							- case sub_option.class.to_s
 							- when "Hash"
-								.control-group
-									label.control-label.emphasis
-										= f.input_field databased(main_input+"_enable_"+sub_option.keys.first), as: :boolean
-										= sub_option.keys.first
+								/ = render partial: "sub_opcoes", locals:{options: option}
+								/ .control-group
+								/ 	label.control-label.emphasis
+								/ 		= f.input_field databased(main_input+"_enable_"+sub_option.keys.first), as: :boolean
+								/ 		= sub_option.keys.first
 
-									.controls *requires(databased(main_input + "_enable_" + sub_option.keys.first))
-										= f.input_field databased("#{main_input}_"+option.keys.first+"_"+sub_option.keys.first), as: :radio_buttons, collection: sub_option.values.first, boolean_style: :nested
+								/ 	.controls *requires(databased(main_input + "_enable_" + sub_option.keys.first))
+								/ 		= f.input_field databased("#{main_input}_"+option.keys.first+"_"+sub_option.keys.first), as: :radio_buttons, collection: sub_option.values.first, boolean_style: :nested
 
 							- when "String"
 								- if sub_option == "Outros"

@@ -1,0 +1,14 @@
+.control-group
+	label.control-label.emphasis
+		= label
+		- case escolha
+		- when "múltipla"
+		- else 
+			= f.input_field(databased(parent+"_enable_"+label), as: :boolean)
+	.controls
+		- for option in options.map{|o| o if o.is_a?(String) }.compact
+			label.checkbox
+				- case option.class.to_s
+				- when "String"
+					= option
+					= f.input_field databased(parent+"_"+label+"_"+option), as: :boolean
