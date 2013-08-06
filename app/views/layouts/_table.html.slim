@@ -5,4 +5,8 @@ table.table.table-striped
 					tr
 						- row.each_with_index do |cell, y|
 							= content_tag((s==0 ? :th : :td), data: ({cell: cell} if y==2 and s>0 and params[:controller] == "constructions")) do 
-								= cell.blank? ? content_tag(:span, "não preenchido", style:"opacity: 0.4") : cell
+								- case cell
+								- when nil then content_tag(:span, "não preenchido", style:"opacity: 0.4")
+								- when "0" then "Não"
+								- else cell end
+								= debug cell

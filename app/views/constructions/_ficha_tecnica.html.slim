@@ -34,10 +34,10 @@ h3 5. Metragens/números
 = f.input :numero_de_andares, label: "Nº de andares", label_html:{class:"emphasis"}
 
 hr
-= f.input :estrutura_utilizada, label: "8. Estrutura utilizada", label_html:{class:"emphasis"}, 
+= f.input :estrutura_utilizada, label: "6. Estrutura utilizada", label_html:{class:"emphasis"}, 
 	collection: ["Alvenaria estrutural", "Concreto armado convencional", "Concreto armado pré-moldado", "Estrutura metálica", "Parede de concreto", "Steel frame"], as: :radio_buttons, boolean_style: :nested
 	
-= f.input :laje_utilizada, label: "9. Laje utilizada", label_html:{class:"emphasis"}, 
+= f.input :laje_utilizada, label: "7. Laje utilizada", label_html:{class:"emphasis"}, 
 	collection: ["Laje nervurada cubeta", "Laje nervurada treliçada", "Maciça convencional com vigas", "Maciça plana", "Pré-laje de concreto", "Steel deck", "Não utiliza"], as: :radio_buttons, boolean_style: :nested
 
 - @datepicker = {class:"datepicker"}
@@ -97,10 +97,11 @@ h3 12. Construtoras
 			= f.input_field "construtora#{n+1}_razao_social", placeholder: "Razão Social"
 
 hr
-h3 13. Tipologia:	
-= f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"]
+= f.input :tipo_de_obra, collection: ["Mercado Imobiliário – Residencial - Edifício Residencial", "Mercado Imobiliário – Comercial - Edifício comercial saletas", "Mercado Imobiliário – Comercial - Edifício corporativo", "Mercado Imobiliário – Comercial - Universidades / Escolas", "Mercado Imobiliário – Comercial – Supermercados", "Mercado Imobiliário – Comercial - Home Center", "Mercado Imobiliário – Comercial - Hospital e Laboratórios", "Mercado Imobiliário – Comercial - Hotéis / Resorts", "Mercado Imobiliário – Comercial – Shopping", "Mercado Imobiliário – Comercial - Pequenas edificações", "Mercado Imobiliário – Comercial – Restaurantes", "Mercado Imobiliário – Comercial - Agencia bancária", "Mercado Imobiliário – Comercial - Outros - SESC", "Mercado Industrial - Centro de distribuição", "Mercado Industrial – Frigorífico", "Mercado Industrial – Galpão", "Mercado Industrial – Indústria", "Mercado Industrial - Data Centers / CPD", "Infraestrutura - Infraestrutura esportiva – Estádio", "Infraestrutura - Infraestrutura da habitação – Urbanização", "Outros"], label:"13. Tipologia", label_html:{class:"emphasis"}
 
 = f.input :tipo_de_obra_outros, label: "Outros", wrapper_html:{data:{requires: "tipo_de_obra", desires: "Outros"}}
+
+hr
 
 = f.input :teve_consultoria, label: "14. Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc)", label_html: {class: "emphasis"}, as: :radio_buttons, collection: %w[Sim Não], boolean_style: :nested
 = f.input :teve_consultoria_qual_empresa, label: "Qual empresa?", wrapper_html:{data:{requires:"teve_consultoria", desires:"Sim"}}

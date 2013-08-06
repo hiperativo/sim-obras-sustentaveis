@@ -30,6 +30,7 @@ h3 style="text-align: left; width: 100%" 32. Fontes não potáveis de água
 	= f.input "#{a[:input_method]}_tipo", label: false, placeholder: "Qual?",
 		wrapper_html:{data:{requires: "#{a[:input_method]}_tipo", desires: "Outros"}}
 
+
 = render partial: "build_form", locals: {index:"B", f:f}
 hr
 = render partial: "layouts/group_checkboxes", locals: @drenagem.merge(f: f)

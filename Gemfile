@@ -15,7 +15,7 @@ gem 'uglifier'
 gem 'slim-rails'
 gem 'bourbon'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -25,3 +25,4 @@ gem 'protected_attributes'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
+gem 'active_attr'

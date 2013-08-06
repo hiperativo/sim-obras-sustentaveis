@@ -2,7 +2,7 @@
 	label.control-label.emphasis 
 		= group_name
 		- if options.include? :enable_disable
-			= f.input_field prefix 
+			= f.input_field prefix, as: :boolean
 	.controls data-requires=(prefix if options.include? :enable_disable)
 		- if prefix.nil?
 			- prefix = "" 

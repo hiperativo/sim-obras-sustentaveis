@@ -4,6 +4,10 @@ module ConstructionsHelper
 		@data[index]
 	end
 
+	def data_structure
+		YAML.load_file Rails.root.join "app", "models", "data_structure.yml"
+	end
+
 	def only_keys(data)
 		data.map{|o| if o.is_a?(Hash) then o.keys.first else o end}
 	end

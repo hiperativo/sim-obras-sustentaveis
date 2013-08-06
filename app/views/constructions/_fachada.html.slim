@@ -1,9 +1,10 @@
 h2 Fachada
 
+= render partial: "build_form", locals:{f:f, index:"E"}
+
 hr
 
-label.control-label.emphasis
-	| 41. Proteções solares – Tipos
+label.control-label.emphasis 43. Proteções solares – Tipos
 .controls
 	- for p in ["Brises", "Persianas automatizadas internas", "Outros"]
 		= f.input_field :tipos_de_protecoes_solares, label: p, as: :radio_buttons, collection:[p], boolean_style: :nested
@@ -14,4 +15,4 @@ label.control-label.emphasis
 	= f.input_field :tipos_de_protecoes_solares, placeholder: "Qual?", data:{requires:"tipos_de_protecoes_solares", desires:"Outros", exactly:"[value='outros']"}
 
 hr
-= render partial: "layouts/group_checkboxes", locals: @iluminacao_equipamentos[0].merge(f:f)
+/ = render partial: "layouts/group_checkboxes", locals: @iluminacao_equipamentos[0].merge(f:f)

@@ -14,6 +14,9 @@ GEM
       actionpack (>= 4.0.0.beta, < 5.0)
     actionpack-page_caching (1.0.0)
       actionpack (>= 4.0.0.beta, < 5.0)
+    active_attr (0.8.2)
+      activemodel (>= 3.0.2, < 4.1)
+      activesupport (>= 3.0.2, < 4.1)
     activemodel (4.0.0)
       activesupport (= 4.0.0)
       builder (~> 3.1.0)
@@ -155,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-action_caching
   actionpack-page_caching
+  active_attr
   bourbon
   cancan
   coffee-rails

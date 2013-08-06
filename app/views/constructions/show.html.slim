@@ -1,2 +1,4 @@
-h2 Ver dados da Obra
+h2 
+	| Ver dados da Obra
+	small<= link_to "editar", edit_construction_path(@obra)
 = render partial: "layouts/table", locals:{table: @table}

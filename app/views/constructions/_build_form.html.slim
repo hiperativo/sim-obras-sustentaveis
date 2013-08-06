@@ -17,7 +17,7 @@ hr
 		- case option.class.to_s
 		- when "String"
 			- if option == "Outros"
-				= f.input main_input+"_outros", label: main_input.capitalize+" / Outros", placeholder: "Qual?", wrapper_html: requires(main_input+"_outros")
+				= f.input main_input+"_outros", label: data["label"]+" / Outros", placeholder: "Qual?", wrapper_html: requires(main_input+"_outros")
 
 		- when "Hash"
 			div *requires(databased(main_input+"_"+option.keys.first))
@@ -28,7 +28,7 @@ hr
 						- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
 							.control-group	
 								label.control-label
-									= "Quais?"
+									= option.keys.first
 								.controls
 									- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
 										label.checkbox
@@ -51,13 +51,17 @@ hr
 								- if sub_option == "Outros"
 									= f.input databased(main_input+"_"+option.keys.first+"_"+sub_option), label: option.keys.first+" / Outros", placeholder: "Qual?", wrapper_html: requires(databased(main_input+"_"+option.keys.first+"_"+sub_option))
 
-								
 					- else
-						= f.input databased(option.keys[0]), collection: option.values.first["opções"], as: :radio_buttons, boolean_style: :nested
+						= f.input databased(option.keys[0]), collection: only_keys(option.values.first["opções"]), as: :radio_buttons, boolean_style: :nested
 						
 						- if option.values.first["opções"].include? "Outros"
 							= f.input main_input+"_outros", label: false, placeholder: "Qual?", wrapper_html: requires(databased(option.keys.first), "Outros")
 
+						- for sub_option in option.values.first["opções"]
+							
+							- case sub_option.class.to_s
+							- when "Hash"
+								= f.input databased(main_input+"_"+option.keys.first+"_"+sub_option.keys.first), collection: sub_option.values.first["opções"], as: :radio_buttons, boolean_style: :nested, wrapper_html: requires(databased(option.keys.first), sub_option.keys.first)
 
 				- when "Array"
 					.control-group
@@ -100,7 +104,7 @@ hr
 						- if option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
 							.control-group	
 								label.control-label
-									= "Quais?"
+									= option.keys.first
 								.controls
 									- for sub_option in option.values.first["opções"].map{|o| o if o.is_a?(String) }.compact
 										label.checkbox

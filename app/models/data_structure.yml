@@ -56,15 +56,17 @@ C:
       - Superior
       - Excelente
     - Central de Água Gelada:
-      - Chiller elétrico:
-        - Queima direita
-        - Queima indireta
-      - Chiller de absorção
+        opções:
+          - Chiller elétrico:
+              opções:
+                - Queima direita
+                - Queima indireta
+          - Chiller de absorção
     - Outros
 
 D:
   label: Equipamentos
-  número: "42"
+  número: "45"
   escolha: múltipla
   opções:
     - Motores de alta eficiência
@@ -94,7 +96,7 @@ E:
     - Não
 
 F:
-  label: Elétrica – Tamanho da entrada – Tipo de fonte de energia
+  label: Elétrica
   número: "39"
   escolha: "múltipla"
   opções:

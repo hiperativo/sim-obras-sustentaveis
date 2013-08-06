@@ -11,7 +11,7 @@ class ConstructionsController < ApplicationController
 	
 
 	def create
-		@obra = Construction.new(params[:construction])
+		@obra = Construction.new(dados: params[:construction])
 		@pagina = @passos.collect(&:parameterize).collect(&:underscore).index(@passo)
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
 		
@@ -25,17 +25,15 @@ class ConstructionsController < ApplicationController
 		else
 			render action: :new, passo: @passos[@passo_index].parameterize.underscore
 		end
-
 	end
 
 	def show
 		@obra = Construction.find(params[:id])
-		@table = @obra.attributes.map do |key, value|
+		@table = @obra.dados.map do |key, value|
 			if !value.blank?
-				[key]<< case value.class.to_s
-					when "TrueClass" 					then "Sim"
-					when "FalseClass" 					then "Não"
-					when "ActiveSupport::TimeWithZone" 	then I18n.l(value, format: :long)
+				[key] << case value
+					when "1" then "Sim"
+					when "0" then "Não"
 					else value
 				end
 			end
@@ -67,7 +65,7 @@ class ConstructionsController < ApplicationController
 
 	def update
 		@obra = Construction.find(params[:id])
-		@obra.update_attributes params[:construction]
+		@obra.update_attributes(dados: params[:construction])
 		log current_admin, "Editou obra", @obra.nome_da_obra
 		
 		@passo_index = @passos.collect(&:parameterize).collect(&:underscore).index(params[:construction][:passo])
@@ -332,7 +330,7 @@ class ConstructionsController < ApplicationController
 			@iluminacao_equipamentos = [
 				{
 					options: [], 
-					group_name: "42. Tipo de iluminação – Área",
+					group_name: "44. Tipo de iluminação – Área",
 					prefix: "iluminacao", 
 					collection:
 					[
@@ -354,7 +352,7 @@ class ConstructionsController < ApplicationController
 				},
 				{
 					options: [], 
-					group_name: "42. Equipamentos",
+					group_name: "45. Equipamentos",
 					prefix: "equipamentos", 
 					collection: ["Elevadores eficientes", "Frenagem regenerativa", "ADC", "Outros"]
 				}
@@ -363,31 +361,31 @@ class ConstructionsController < ApplicationController
 			@materiais_e_residuos_radios = [
 				{
 					method: :material_de_baixo_voc,
-					name: "43. Material de baixo VOC",
+					name: "46. Material de baixo VOC",
 					radios: ["Tintas", "Adesivos"]
 
 				},
 				{
 					method: :madeira_certificada, 
-					name: "44. Madeira certificada",
+					name: "47. Madeira certificada",
 					radios: ["Acabamentos", "Mobiliários"]
 				},
 				{
 					method: :pisos_e_carpetes_certificados, 
-					name: "45. Pisos e carpetes certificados",
+					name: "48. Pisos e carpetes certificados",
 					radios: ["Certificação Floor Score"]
 				}
 			]
 			@materiais_checkboxes = [
 				{
 					options: [],
-					group_name: "46. Infraestrutura para coleta de resíduos recicláveis",
+					group_name: "49. Infraestrutura para coleta de resíduos recicláveis",
 					prefix: "coleta_de_residuos_reciclaveis", 
 					collection: ["Depósito central", "Depósito no pavimento", "Outros"]
 				},
 				{
 					options: [],
-					group_name: "47. Qualidade Ambiental (Ar) – Nível de filtragem",
+					group_name: "50. Qualidade Ambiental (Ar) – Nível de filtragem",
 					prefix: "coleta_de_residuos_reciclaveis", 
 					collection: 
 					[
