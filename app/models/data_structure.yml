@@ -1,4 +1,21 @@
-- Ficha Técnica:
+- Ficha técnica:
+    - grupo:
+        - Código obra
+        - Nome da obra
+    - grupo:
+        - título: Localização
+        - Tipo de Logradouro
+        - Bairro
+        - CEP
+        - Estado
+        - Cidade
+    - grupo:
+        - título: Contato 1
+        - Nome 1
+        - Telefone 1
+        - E-mail 1
+        - Razão Social 1
+- Sobrando:
   - Perfil/Nível de Certificação:
       opções:
         - LEED - Platinum
@@ -15,9 +32,10 @@
             escolha: múltipla
             opções:
               - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_aqua
-                - Bom
-                - Superior
-                - Excelente
+                  opções:
+                    - Bom
+                    - Superior
+                    - Excelente
               - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_aqua
               - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_aqua
               - Categoria n°4 Gestão da energia: *opcoes_categoria_aqua
@@ -32,7 +50,6 @@
               - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_aqua
               - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_aqua
   - Medição de água:
-      número: "33"
       opções:
         - Medição individualizada das unidades
         - Medição setorizada de consumos:
@@ -44,7 +61,6 @@
         - Sistema de gerenciamento de consumo
   - Ar condicionado — condensação:
       escolha: múltipla
-      número: "35"
       opções:
         - VRF:
             opções:
@@ -75,7 +91,6 @@
               - Outros
         - Outros
   - Existe área envidraçada na fachada?:
-      número: "38"
       opções:
         - Sim:
             escolha: múltipla
@@ -86,7 +101,6 @@
               - Outros
         - Não
   - Elétrica:
-      número: "39"
       escolha: "múltipla"
       opções:
         - Medição setorizada de consumo de energia
@@ -109,7 +123,6 @@
         - Cogeração
         - Outros
   - Medição de energia:
-      número: "40"
       opções:
         - Medição setorizada de consumo:
             escolha: múltipla
@@ -122,11 +135,11 @@
         - Sistema de gerenciamento de consumo
 
   - Torres de resfriamento:
-      número: "31"
       opções:
         - Sim:
-            - Aberta
-            - Fechada
-            - Dry cooler
-            - Controle automático de purga
+            opções:
+              - Aberta
+              - Fechada
+              - Dry cooler
+              - Controle automático de purga
         - Não

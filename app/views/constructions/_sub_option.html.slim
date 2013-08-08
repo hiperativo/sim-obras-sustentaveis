@@ -16,6 +16,4 @@ label class=input_type[escolha]
 
 - if sub_option.is_a?(Hash)
 	= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
-		- collection = sub_option.values.first.include?("opções") ? sub_option.values.first["opções"] : sub_option.values.first
-		- sub_escolha = sub_option["escolha"]
-		= render_options collection: collection, locals:{ parent: label, f:f }, escolha: sub_escolha
+		= render_options collection: sub_option.values.first["opções"], locals:{ parent: [sub_option_accessor, label].join("_"), f:f, escolha: sub_option.values.first["escolha"] }

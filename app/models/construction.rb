@@ -1,37 +1,51 @@
 class Construction < ActiveRecord::Base
 
+	def self.data_structure
+		# @data ||= 
+		YAML.load_file(Rails.root.join "app", "models", "data_structure.yml")
+	end
+
+	def self.passos
+		@passos ||= data_structure.map{|passo| passo.keys.first}
+	end
+
 	def self.colunas
-		data = YAML.load_file(Rails.root.join "app", "models", "data_structure.yml")
-		
 		colunas = []
-		data.each do |passo|
-			passo.values.first.each do |question|
-				if question.values.first.include?("opções")
-					colunas += extract_keys(question)
+		data_structure.each do |passo|
+			passo.values.first.each do |q|
+				questions = (q["grupo"] if q.keys.first == "grupo") if q.is_a?(Hash)
+				questions ||= [q]
+				for question in questions
+					if question.is_a?(Hash)
+						colunas += extract_keys(question)
+					else
+						colunas << question
+					end
 				end
 			end
 		end
-		colunas.map!{|c|c.parameterize.underscore.to_sym}
-		# raise colunas.to_yaml
+		colunas.compact.map{|c|c.parameterize.underscore.to_sym}
 	end	
 
 	def self.extract_keys(question, parent_question=nil)
-		output_keys = []
-		parent_question ||= ""
-		# raise question.to_yaml unless parent_question.blank?
 		options = question.values.first["opções"]
+		output_keys = []
 		if question.values.first["escolha"] == "múltipla"
 			options.each do |o|
-				output_keys << parent_question + "_" + question.keys.first + "_" + case o.class.to_s
-					when "String" then o 
-					when "Hash" then o.keys.first
-				end
-				extract_keys(o, o.keys.first) if o.is_a?(Hash)
+				output_keys << [parent_question, question.keys.first, (o.is_a?(Hash) ? o.keys.first : o)].compact.join(" ")
 			end
 		else
-			output_keys << question.keys.first
+			output_keys << [parent_question, question.keys.first].compact.join(" ")
 		end
-		options.each{|o| output_keys << parent_question + "_" + (question.keys.first)+"_"+ o + "_quais" if o == "Outros"}
+		options.each do |o|
+			output_keys += extract_keys(o, [parent_question, question.keys.first].compact.join(" ")) if o.is_a?(Hash)
+			if o == "Outros"
+				outro_campo = [parent_question, question.keys.first].compact
+				outro_campo << o # if question.values.first["escolha"] == "múltipla"
+				outro_campo << "Quais"
+				output_keys << outro_campo.compact.join(" ")
+			end
+		end
 		output_keys
 	end
 

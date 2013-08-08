@@ -5,7 +5,7 @@ module ConstructionsHelper
 	end
 
 	def data_structure
-		YAML.load_file Rails.root.join "app", "models", "data_structure.yml"
+		Construction.data_structure
 	end
 
 	def only_keys(data)
