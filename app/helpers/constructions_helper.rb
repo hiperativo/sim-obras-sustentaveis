@@ -12,17 +12,18 @@ module ConstructionsHelper
 		data.map{|o| if o.is_a?(Hash) then o.keys.first else o end}
 	end
 
-	# def only_with_sub_options(data)
-	# 	data.map{|o| o if o.is_a?(Hash) }.compact
-	# end
+	def render_options options
+		options[:locals][:escolha] ||= "única"
+		render options.merge partial: "sub_option"
+	end
 
 	def databased(name)
-		name.parameterize.underscore.slice(0..62)
+		name.parameterize.underscore
 	end
 
 	def requires(input, value=nil)
-		output = {"data-requires" => input}
-		output["data-desires"] = value unless value.nil?
+		output = {"requires" => input}
+		output["desires"] = value unless value.nil?
 		return output
 	end
 

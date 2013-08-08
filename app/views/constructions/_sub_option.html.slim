@@ -1,0 +1,21 @@
+- input_type = {"múltipla" => "checkbox", "única" => "radio"}
+- label = sub_option.is_a?(Hash) ? sub_option.keys.first : sub_option
+
+- sub_option_accessor = [databased(parent)]
+- sub_option_accessor << databased(label) if escolha == "múltipla"
+- sub_option_accessor = sub_option_accessor.compact.join("_")
+
+- required_element = {"múltipla" => sub_option_accessor, "única" =>  databased(parent)}
+
+label class=input_type[escolha]
+	= label
+	= f.input_field sub_option_accessor, type: input_type[escolha], value: label
+
+- if sub_option == "Outros"
+	= f.input_field [databased(parent), databased(label)].join("_")+"_quais", placeholder: "Quais?", data: requires(required_element[escolha], (label if escolha == "única") )
+
+- if sub_option.is_a?(Hash)
+	= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
+		- collection = sub_option.values.first.include?("opções") ? sub_option.values.first["opções"] : sub_option.values.first
+		- sub_escolha = sub_option["escolha"]
+		= render_options collection: collection, locals:{ parent: label, f:f }, escolha: sub_escolha
