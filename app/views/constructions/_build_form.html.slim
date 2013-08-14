@@ -1,19 +1,37 @@
+/ hr
 hr
+
 - @numero ||= 0
-- questions = (question["grupo"] if question.keys.first == "grupo") if question.is_a?(Hash)
-- questions ||= [question]
-- for question in questions
+/ - questions = (question["grupo"] if question.keys.first == "grupo") if question.is_a?(Hash)
+
+
+
+- for item in question
 	.control-group
-		.control-label: label 
-			- if question.is_a?(Hash)
-				strong #{(@numero += 1)}.
-				=< question.values.first
-			- else
-				- unless questions.map{|q| q.include?("título")}.any?
-					strong #{(@numero += 1)}.
-				=< (question.is_a?(Hash) ? question.keys.first : question)
+		.control-label: label
+			- case item.class.to_s
+			- when "String"
+				= item
+			- when "Array"
+				= item
+/ - questions ||= [question]
+/ - for question in questions
+/ 	.control-group	
+/ 		.control-label: label 
+/ 			- if question.is_a?(Hash)
+/ 				strong #{(@numero += 1)}.
+/ 				=< question.values.first
+/ 			- else
+/ 				- unless questions.map{|q| q.include?("título")}.any?
+/ 					strong #{(@numero += 1)}.
+/ 				=< (question.is_a?(Hash) ? question.keys.first : question)
 		.controls
-			- if question.is_a?(Hash)
-				= render_options collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f, escolha: question["escolha"]}
-			- else
-				= f.input_field databased(question)
+
+/ 			- case question.class.to_s
+/ 			- when "Hash"
+/ 				- if question.values.include?("opções")
+					
+/ 					= render_options collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f, escolha: question["escolha"]}
+			
+/ 			- when "String"
+/ 				= f.input_field databased(question)

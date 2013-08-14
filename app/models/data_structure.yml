@@ -1,145 +1,475 @@
 - Ficha técnica:
-    - grupo:
-        - Código obra
-        - Nome da obra
-    - grupo:
-        - título: Localização
+    -
+      - Código obra
+      - Nome da obra
+    - Localização:
         - Tipo de Logradouro
         - Bairro
         - CEP
-        - Estado
-        - Cidade
-    - grupo:
-        - título: Contato 1
+        - Estado:
+            select:
+              - AC
+              - AL
+              - AM
+              - AP
+              - BA
+              - CE
+              - DF
+              - ES
+              - GO
+              - MA
+              - MG
+              - MS
+              - MT
+              - PA
+              - PB
+              - PE
+              - PI
+              - PR
+              - RJ
+              - RN
+              - RO
+              - RR
+              - RS
+              - SC
+              - SE
+              - SP
+              - TO
+        - Cidade:
+            select:
+              - Escolha um estado
+    - Contato:
         - Nome 1
         - Telefone 1
         - E-mail 1
         - Razão Social 1
-- Sobrando:
-  - Perfil/Nível de Certificação:
-      opções:
-        - LEED - Platinum
-        - LEED - Gold
-        - LEED - Silver
-        - LEED - Certified
-        - Procel – A
-        - Procel – B
-        - Procel – C
-        - Procel – D
-        - Procel - E
-        - Outros
-        - Aqua:
-            escolha: múltipla
-            opções:
-              - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_aqua
-                  opções:
-                    - Bom
-                    - Superior
-                    - Excelente
-              - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_aqua
-              - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_aqua
-              - Categoria n°4 Gestão da energia: *opcoes_categoria_aqua
-              - Categoria n°5 Gestão da água: *opcoes_categoria_aqua
-              - Categoria n°6 Gestão dos resíduos de uso e operação do edifício: *opcoes_categoria_aqua
-              - Categoria n°7 Manutenção - Permanência do desempenho ambiental: *opcoes_categoria_aqua
-              - Categoria n°8 Conforto higrotérmico: *opcoes_categoria_aqua
-              - Categoria n°9 Conforto acústico: *opcoes_categoria_aqua
-              - Categoria n°10 Conforto visual: *opcoes_categoria_aqua
-              - Categoria n°11 Conforto olfativo: *opcoes_categoria_aqua
-              - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_aqua
-              - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_aqua
-              - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_aqua
-  - Medição de água:
-      opções:
-        - Medição individualizada das unidades
-        - Medição setorizada de consumos:
-            opções:
-              - Irrigação
-              - Torres de resfriamento
-              - Sistemas sanitários
-              - Outros
-        - Sistema de gerenciamento de consumo
-  - Ar condicionado — condensação:
-      escolha: múltipla
-      opções:
-        - VRF:
-            opções:
-              - Bom
-              - Superior
-              - Excelente
-        - Central de Água Gelada:
-            opções:
-              - Chiller elétrico:
-                  opções:
-                    - Queima direita
-                    - Queima indireta
-              - Chiller de absorção
-        - Outros
-  - Equipamentos:
-      escolha: múltipla
-      opções:
-        - Motores de alta eficiência
-        - Elevadores
-        - Variadores de frequência:
-            escolha: múltipla
-            opções:
-              - Nos ventiladores de Tomadas de ar externos
-              - Nas bombas de água gelada
-              - Nas torres de resfriamento
-              - Nos Fan Coils
-              - Nos Chillers
-              - Outros
-        - Outros
-  - Existe área envidraçada na fachada?:
-      opções:
-        - Sim:
-            escolha: múltipla
-            opções:
-              - Insulado
-              - Laminado
-              - Low-e (baixa emissividade)
-              - Outros
-        - Não
-  - Elétrica:
-      escolha: "múltipla"
-      opções:
-        - Medição setorizada de consumo de energia
-        - Entrada de energia:
-            opções:
-              - Alta
-              - Média
-              - Baixa
-        - Fonte de energia:
-            escolha: múltipla
-            opções:
-              - Elétrica
-              - Gás
-              - Outros
-        - Geração:
-            escolha: múltipla
-            opções:
-              - Peak shaving
-              - Possui 100% de backup
-        - Cogeração
-        - Outros
-  - Medição de energia:
-      opções:
-        - Medição setorizada de consumo:
-            escolha: múltipla
-            opções:
-              - Elevadores
-              - Ar condicionado
-              - Ventilação
-              - Iluminação
-              - Outros
-        - Sistema de gerenciamento de consumo
+    - Contato:
+        - Nome 2
+        - Telefone 2
+        - E-mail 2
+        - Razão Social 2
+    - Contato:
+        - Nome 3
+        - Telefone 3
+        - E-mail 3
+        - Razão Social 3
+    - Contato:
+        - Nome 4
+        - Telefone 4
+        - E-mail 4
+        - Razão Social 4
+    - Metragens/Números:
+        - m² unidade
+        - m² útil total
+        - Nº de unidades
+        - Nº de andares
+    - Estrutura utilizada:
+        opções:
+          - Alvenaria estrutural
+          - Concreto armado convencional
+          - Concreto armado pré-moldado
+          - Estrutura metálica
+          - Parede de concreto
+          - Steel frame
+    - Laje utilizada:
+        opções:
+          - Laje nervurada cubeta
+          - Laje nervurada treliçada
+          - Maciça convencional com vigas
+          - Maciça plana
+          - Pré-laje de concreto
+          - Steel deck
+          - Não utiliza
+    - Datas:
+        - Início da obra
+        - Termino da Obra
+    - Fases:
+        - Projeto
+        - Lançamento
+        - Fundação
+        - Estrutura
+        - Acabamento
+        - Paralisada
+        - Conclusão
+    - Proprietários:
+        - Proprietario1
+        - Proprierario2
+        - Proprietario3
+        - Proprietario4
+    - Investidores:
+        - Investidor1
+        - Investidor2
+        - Investidor3
+        - Investidor4
+    - Construtora 1:
+        - Código 1
+        - Razão Social 1
+    - Construtora 2:
+        - Código 2
+        - Razão Social 2
+    - Construtora 3:
+        - Código 3
+        - Razão Social 3
+    - Construtora 4:
+        - Código 4
+        - Razão Social 4
+    - Tipologia:
+        select:
+            - Mercado Imobiliário – Residencial - Edifício Residencial
+            - Mercado Imobiliário – Comercial - Edifício comercial saletas
+            - Mercado Imobiliário – Comercial - Edifício corporativo
+            - Mercado Imobiliário – Comercial - Universidades / Escolas
+            - Mercado Imobiliário – Comercial – Supermercados
+            - Mercado Imobiliário – Comercial - Home Center
+            - Mercado Imobiliário – Comercial - Hospital e Laboratórios
+            - Mercado Imobiliário – Comercial - Hotéis / Resorts
+            - Mercado Imobiliário – Comercial – Shopping
+            - Mercado Imobiliário – Comercial - Pequenas edificações
+            - Mercado Imobiliário – Comercial – Restaurantes
+            - Mercado Imobiliário – Comercial - Agencia bancária
+            - Mercado Imobiliário – Comercial - Outros - SESC
+            - Mercado Industrial - Centro de distribuição
+            - Mercado Industrial – Frigorífico
+            - Mercado Industrial – Galpão
+            - Mercado Industrial – Indústria
+            - Mercado Industrial - Data Centers / CPD
+            - Infraestrutura - Infraestrutura esportiva – Estádio
+            - Infraestrutura - Infraestrutura da habitação – Urbanização
+            - Outros
+    - Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc):
+        opções:
+            - Sim:
+                - Qual empresa?
+            - Não
+    -
+        - Observação
+- Certificação:
+    - Sistema:
+        escolha: múltipla
+        opções:
+          - LEED
+          - Aqua
+          - Procel Edifica
+          - Qualiverde
+          - Bream
+          - DGNB
+          - LBC
+          - Outros
+    - Tipo de sistema:
+        escolha: múltipla
+        opções:
+          - LEED NC
+          - LEED CS
+          - LEED CI
+          - LEED EB - OEM
+          - Aqua Bairros e loteamentos
+          - Aqua Edifícios Habitacionais
+          - Aqua Serviços
+          - Aqua Operação e Uso
+          - Procel Residencial
+          - Procel comercial
+          - Outros
+    - Perfil/Nível de Certificação:
+        opções:
+          - LEED - Platinum
+          - LEED - Gold
+          - LEED - Silver
+          - LEED - Certified
+          - Procel – A
+          - Procel – B
+          - Procel – C
+          - Procel – D
+          - Procel - E
+          - Outros
+          - Aqua:
+              escolha: tabela
+              opções:
+                - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_aqua
+                    opções:
+                      - Bom
+                      - Superior
+                      - Excelente
+                - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_aqua
+                - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_aqua
+                - Categoria n°4 Gestão da energia: *opcoes_categoria_aqua
+                - Categoria n°5 Gestão da água: *opcoes_categoria_aqua
+                - Categoria n°6 Gestão dos resíduos de uso e operação do edifício: *opcoes_categoria_aqua
+                - Categoria n°7 Manutenção - Permanência do desempenho ambiental: *opcoes_categoria_aqua
+                - Categoria n°8 Conforto higrotérmico: *opcoes_categoria_aqua
+                - Categoria n°9 Conforto acústico: *opcoes_categoria_aqua
+                - Categoria n°10 Conforto visual: *opcoes_categoria_aqua
+                - Categoria n°11 Conforto olfativo: *opcoes_categoria_aqua
+                - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_aqua
+                - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_aqua
+                - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_aqua
+- Terreno:
+    - Vagas verdes: &sim_nao_quantidade
+        opções: 
+          - Sim:
+              - Quantidade?
+          - Não
+    - Estações de recarga de veículos elétricos: *sim_nao_quantidade
+    - Bicicletários: *sim_nao_quantidade
+    - Vestiários com chuveiro: *sim_nao_quantidade
+    - Transporte público:
+        escolha: múltipla
+        opções:
+          - Metro: &distancia_aproximada
+              - Distancia aproximada (metros)
+          - Trem: *distancia_aproximada
+          - Ponto de ônibus: *distancia_aproximada
+          - Outros:
+              - Quais?
+              - Distancia aproximada (metros)
+    - Como você está reduzindo o efeito de ilhas de calor no empreendimento?:
+        escolha: múltipla
+        opções:
+          - Alta refletância solar
+          - Telhado verde
+          - Vagas Cobertas
+          - Piso Concregama
+          - Outros
+- Água:
+    - Bacias e Mictorios:
+        escolha: múltipla
+        opções:
+          - Bacias a vácuo
+          - Bacias dual flux
+          - HET – Vasos com consumo menor de 4 litros
+          - Mictórios secos
+          - Mictório com fechamento hidromecânico
+          - Mictório com fechamento com sensor de presença
+          - Outros
+    - Torneiras:
+        escolha: múltipla
+        opções:
+          - Restritores de vazão
+          - Acionamento hidromecânico
+          - Sensor de presença
+          - Regulador de vazão
+          - Outros
+    - Chuveiros:
+        opções:
+          - Restritores de vazão
+          - Chuveiros eficientes (com baixa vazão e tecnologia incorporada para aumento de sensação da pressão)
+          - Outros
+    - Irrigação:
+        opções:
+          - Irrigação automatizada
+          - Sensor de chuva
+          - Sensor de umidade do solo
+          - Estação meteorological
+          - Outros
+    - Piscina:
+        opções:
+          - Aquecimento solar para piscina
+          - Outros
+    - Torres de resfriamento:
+        opções:
+          - Sim:
+              escolha: múltipla
+              opções:
+                - Aberta
+                - Fechada
+                - Dry cooler
+                - Controle automático de purga
+          - Não
+    - Fontes não potáveis de água:
+        escolha: múltipla
+        opções:
+          - Água Pluvial: &opcoes_fontes_nao_potaveis
+              escolha: múltipla
+              opções:
+                - Para irrigação do paisagismo
+                - Para lavagem de pisos
+                - Para bacias e mictórios
+                - Outros
+          - Água de Lençol: *opcoes_fontes_nao_potaveis
+          - Água de Condensação: *opcoes_fontes_nao_potaveis
+          - Água Cinza: *opcoes_fontes_nao_potaveis
+          - Água Negra: *opcoes_fontes_nao_potaveis
+    - Medição de água:
+        opções:
+          - Medição individualizada das unidades
+          - Medição setorizada de consumos:
+              opções:
+                - Irrigação
+                - Torres de resfriamento
+                - Sistemas sanitários
+                - Outros
+          - Sistema de gerenciamento de consumo
+    - Drenagem:
+        escolha: múltipla
+        opções:
+          - Pisos permeáveis
+          - Caixa de retardo
+          - Remoção de sólidos suspensos – Filtros Vortex
+          - Captação e aproveitamente de água pluvial
+          - Outros
+- Energia:
+    - Ar condicionado — condensação:
+        escolha: múltipla
+        opções:
+          - VRF:
+              opções:
+                - Condensação por Ar
+                - Condensação por Água
 
-  - Torres de resfriamento:
-      opções:
-        - Sim:
-            opções:
-              - Aberta
-              - Fechada
-              - Dry cooler
-              - Controle automático de purga
-        - Não
+          - Central de Água Gelada:
+              opções:
+                - Chiller elétrico:
+                    opções:
+                      - Queima direita
+                      - Queima indireta
+                - Chiller de absorção
+                - Condensação por ar ou água:
+                    opções:
+                      - Condensação por Ar
+                      - Condensação por Água
+
+          - Outros
+    - Ar externo:
+        escolha: múltipla
+        opções:
+          - Roda entálpica
+          - Trocador de calor
+          - Controle de demanda de ventilação por CO2
+          - Outros
+    - Tipo de Insuflamento de ar:
+        escolha: múltipla
+        opções:
+          - Teto
+          - Piso
+          - Vigas frias
+          - Outros
+    - Elétrica:
+        escolha: "múltipla"
+        opções:
+          - Entrada de energia:
+              escolha: "múltipla"
+              opções:
+                - Alta
+                - Média
+                - Baixa
+          - Fonte de energia:
+              escolha: múltipla
+              opções:
+                - Elétrica
+                - Gás
+                - Outros
+          - Geração:
+              escolha: múltipla
+              opções:
+                - Peak shaving
+                - Possui 100% de backup
+          - Cogeração
+          - Outros
+    - Medição de energia:
+        escolha: múltipla
+        opções:
+          - Medição setorizada de consumo:
+              escolha: múltipla
+              opções:
+                - Elevadores
+                - Ar condicionado
+                - Ventilação
+                - Iluminação
+                - Outros
+          - Sistema de gerenciamento de consumo
+    - Energia alternativa:
+        escolha: múltipla
+        opções:
+          - Solar fotovoltaica:
+              - qual a potencia?
+          - Aquecimento solar de água:
+              - qual a metragem?
+          - Eólica:
+              - qual a potencia?
+          - Biomassa:
+              - qual a potencia?
+          - Outros
+    - Tipo de iluminação – Área:
+        escolha: múltipla
+        opções:
+          - Lâmpadas T5:
+              escolha: múltipla
+              opções:
+                - Área privativa
+                - Área comum
+          - Lâmpadas LED
+          - Integração da iluminação com a iluminação natural
+          - Dali
+          - Sensores de presença em áreas comuns
+          - Controles de acionamento automatizado
+          - Fotocélulas na iluminação externa
+          - Outros
+    - Ar condicionado - filtragem:
+        escolha: múltipla
+        opções:
+          - Nível de Filtragem:
+              opções:
+                - F5
+                - F7
+          - Sistemas de tratamento de ar interno
+          - Outros 
+- Fachada:
+    - Existe área envidraçada na fachada?:
+        escolha: múltipla
+        opções:
+          - Insulado
+          - Laminado
+          - Low-e (baixa emissividade)
+          - Outros
+    - Proteções solares – Tipos:
+        escolha: múltipla
+        opções:
+          - Brises:
+              opções:
+                - Verticais
+                - Horizontais
+                - Outros
+          - Persianas automatizadas internas
+          - Outros
+    - Equipamentos:
+        escolha: múltipla
+        opções:
+          - Motores de alta eficiência
+          - Elevadores eficientes:
+              escolha: múltipla
+              opções:
+                - Antecipador de chamada
+                - Frangem degenerativa
+          - Variadores de frequência:
+              escolha: múltipla
+              opções:
+                - Nos ventiladores de Tomadas de ar externos
+                - Nas bombas de água gelada
+                - Nas torres de resfriamento
+                - Nos Fan Coils
+                - Nos Chillers
+                - Outros
+          - Outros
+- Materiais e resíduos:
+    - Material de baixo VOC:
+        escolha: múltipla
+        opções:
+            - Tintas
+            - Adesivos
+            - Outros
+            - Compostos de madeira
+    - Madeira certificada FSC:
+        escolha: "múltipla"
+        opções:
+          - Acabamentos
+          - Mobiliários
+          - Portas
+          - Outros
+    - Pisos e carpetes certificados:
+        opções:
+          - Certificação Floor Score
+          - Outros
+    - Infraestrutura para coleta de resíduos recicláveis:
+        opções:
+          - Depósito Central
+          - Depósito no pavimento
+          - Outros

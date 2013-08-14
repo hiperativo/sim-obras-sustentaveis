@@ -10,10 +10,35 @@
 label class=input_type[escolha]
 	= label
 	= f.input_field sub_option_accessor, type: input_type[escolha], value: label
-
+	
 - if sub_option == "Outros"
 	= f.input_field [databased(parent), databased(label)].join("_")+"_quais", placeholder: "Quais?", data: requires(required_element[escolha], (label if escolha == "única") )
 
 - if sub_option.is_a?(Hash)
-	= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
-		= render_options collection: sub_option.values.first["opções"], locals:{ parent: [sub_option_accessor, label].join("_"), f:f, escolha: sub_option.values.first["escolha"] }
+	- if sub_option.values.first.include?("opções")
+		-# se nao for tabela
+		= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
+			- unless sub_option.values.first["escolha"] == "tabela"
+					= render_options collection: sub_option.values.first["opções"], locals:{ parent: [sub_option_accessor, label].join("_"), f:f, escolha: sub_option.values.first["escolha"] }
+
+			- else
+				table.table.table-striped.tabela-classificacoes
+					thead
+						tr
+							th
+							th Bom
+							th Superior
+							th Excelente
+					tbody
+						- sub_option.values.first["opções"].each_with_index do |item, n|
+							tr
+								th Categoria nº#{n+1}
+								td= f.input_field "aqua_categoria_#{n}", value: "bom", type: "radio"
+								td= f.input_field "aqua_categoria_#{n}", value: "superior", type: "radio"
+								td= f.input_field "aqua_categoria_#{n}", value: "excelente", type: "radio"
+		
+	- else
+		- for item in sub_option.values.first 
+			= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
+				label  
+				= f.input_field sub_option_accessor, placeholder: item

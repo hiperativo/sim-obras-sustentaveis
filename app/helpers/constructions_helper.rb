@@ -12,7 +12,7 @@ module ConstructionsHelper
 		data.map{|o| if o.is_a?(Hash) then o.keys.first else o end}
 	end
 
-	def render_options options
+	def render_options(options={})
 		options[:locals][:escolha] ||= "única"
 		render options.merge partial: "sub_option"
 	end
