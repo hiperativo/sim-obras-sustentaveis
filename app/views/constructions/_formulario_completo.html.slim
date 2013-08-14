@@ -1,10 +1,77 @@
 = simple_form_for @obra, html:{class: "form-horizontal conditional-fields warn-before-leaving", data:{object:"construction"}} do |f|
-	= f.input_field :passo, value: params[:passo], as: :hidden
-	- for passo in @passos do
-		= content_tag :fieldset, id: sluggify(passo), style: ("display: none" unless params[:passo] == sluggify(passo))
-			= render partial: sluggify(passo), locals: {f: f}
+	/ = f.input_field :passo, value: params[:passo], as: :hidden
+	/ - for passo in @passos do
+	/ 		= render partial: sluggify(passo), locals: {f: f}
 
+	- @numero ||= 0
+	- for passo in data_structure
+		= content_tag :fieldset, id: sluggify(passo.keys.first), style: ("display: none" unless params[:passo] == sluggify(passo.keys.first))
+			h2= passo.keys.first
+			- for question in passo.values.first
+				hr
+				- case question.class.to_s
+				- when "Array"
+					-# Se for um grupo de inputs sem nome
+					- for item in question
+						- case item.class.to_s
+						- when "String"
+							.control-group
+								.control-label: label
+									strong #{(@numero+=1)}.
+									=< item
+								.controls
+									= f.input_field databased(item)
+						- else
+							= render_options(collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f}) 
+				- when "Hash"
+					- # Se for um grupo de inputs com nome
+					- # Se tiver opções, então é radio/check
+					- if question.values.first.include?("opções")
+						.control-group
+							.control-label: label 
+								strong #{@numero+=1}.
+								=< question.keys.first
+							- case question.values.first["escolha"]
+							- when "múltipla"
+								.controls= render_options(collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f, escolha: question.values.first["escolha"]})
+
+							- else
+								.controls
+									= render_options(collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f})
+									label.radio
+										| Não soube informar
+										= f.input_field databased(question.keys.first), type: :radio
+					
+					- elsif question.values.first.include?("select")
+						-# Quando tem um select
+						.control-group
+							.control-label: label
+								strong #{(@numero+=1)}.
+								=< question.keys.first
+							.controls
+								= f.input_field databased(question.keys.first), collection: question.values.first["select"]
+								=< f.input_field databased([question.keys.first, "quais"].join(" ")), placeholder: "Quais?", data: requires(databased(question.keys.first), "Outros")
+
+					- else
+						h3
+							strong #{(@numero+=1)}.
+							=< question.keys.first
+						- # Se não tiver, então são inputs
+						- for item in question.values.first
+							- case item.class.to_s
+							- when "String"
+								= f.input databased(item), label: item
+							- when "Hash"
+								-# se tiver um select
+								- if item.values.first.keys.first == "select"
+									= f.input databased(item.keys.first), collection: item.values.first["select"]
 	.form-actions
 		= f.submit "Salvar", class: "btn btn-primary"
-		|  
-		= f.submit "Salvar e sair", class: "btn btn-info"
+		=< f.submit "Salvar e sair", class: "btn btn-info"
+
+
+
+				/ - when Hash
+				/ = render partial: "build_form", locals:{question: question, title: "title", f:f}
+
+/ = debug Construction.colunas

@@ -80,7 +80,7 @@ class ConstructionsController < ApplicationController
 	protected
 
 	def set_variables
-		@passos = ["ficha técnica", "certificação", "terreno", "água", "energia", "fachada", "materiais e resíduos"]
+		@passos = Construction.passos
 		params[:passo] = @passos.first.parameterize.underscore if params[:passo].nil?
 
 		@groups_checkboxes_certificacao = [

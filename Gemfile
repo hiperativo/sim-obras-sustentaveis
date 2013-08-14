@@ -14,6 +14,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'slim-rails'
 gem 'bourbon'
+gem 'debugger'
 
 gem 'rails_12factor', group: :production
 
