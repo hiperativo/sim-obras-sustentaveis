@@ -10,7 +10,7 @@
 label class=input_type[escolha]
 	= label
 	- @colunas << sub_option_accessor
-	= f.input_field sub_option_accessor, type: input_type[escolha], value: label if @liberar_formulario
+	= f.input_field sub_option_accessor, type: input_type[escolha], value: (label if @liberar_formulario), checked: (true if @obra.send(sub_option_accessor) == label)
 	
 - if sub_option == "Outros"
 	- @colunas << [databased(parent), databased(label)].join("_")+"_quais"
@@ -36,13 +36,13 @@ label class=input_type[escolha]
 							tr
 								th Categoria nº#{n+1}
 								- @colunas << "aqua_categoria_#{n}"
-								td= f.input_field "aqua_categoria_#{n}", value: "bom", type: "radio" if @liberar_formulario
-								td= f.input_field "aqua_categoria_#{n}", value: "superior", type: "radio" if @liberar_formulario
-								td= f.input_field "aqua_categoria_#{n}", value: "excelente", type: "radio" if @liberar_formulario
+								td= f.input_field "aqua_categoria_#{n}", value: "bom", type: ("radio" if @liberar_formulario), checked: (true if @obra.send("aqua_categoria_#{n}") == "bom")
+								td= f.input_field "aqua_categoria_#{n}", value: "superior", type: ("radio" if @liberar_formulario), checked: (true if @obra.send("aqua_categoria_#{n}") == "superior")
+								td= f.input_field "aqua_categoria_#{n}", value: "excelente", type: ("radio" if @liberar_formulario), checked: (true if @obra.send("aqua_categoria_#{n}") == "excelente")
 		
 	- else
 		- for item in sub_option.values.first 
 			= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
 				label  
 				- @colunas << sub_option_accessor
-				= f.input_field sub_option_accessor, placeholder: item if @liberar_formulario
+				= f.input_field sub_option_accessor, placeholder: (item if @liberar_formulario), checked: @obra.send(sub_option_accessor)

@@ -18,6 +18,7 @@ class ConditionalFields
 			exactly = $(conditional_field).data().requiresExactly
 			required_element = required_element.filter(exactly) if exactly?
 			required_element.change (e) =>
+
 				if @check_conditions(e.target, desired_value) 
 					@show conditional_field
 				else 
@@ -36,7 +37,6 @@ class ConditionalFields
 					$("input[name='"+$(field).attr("name")+"']:checked").val()
 				else $(field).text()
 			when "SELECT" then $(field).find(":selected").attr("value")
-
 
 	show: (field) =>
 		$(field).show()
