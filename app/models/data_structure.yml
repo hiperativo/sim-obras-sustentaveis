@@ -136,7 +136,7 @@
             - Infraestrutura - Infraestrutura esportiva – Estádio
             - Infraestrutura - Infraestrutura da habitação – Urbanização
             - Outros
-    - Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Aqua, etc):
+    - Teve consultoria de Sustentabilidade e certificação ambiental? (LEED, Acqua, etc):
         opções:
             - Sim:
                 - Qual empresa?
@@ -148,7 +148,7 @@
         escolha: múltipla
         opções:
           - LEED
-          - Aqua
+          - Acqua
           - Procel Edifica
           - Qualiverde
           - Bream
@@ -162,14 +162,15 @@
           - LEED CS
           - LEED CI
           - LEED EB - OEM
-          - Aqua Bairros e loteamentos
-          - Aqua Edifícios Habitacionais
-          - Aqua Serviços
-          - Aqua Operação e Uso
+          - Acqua Bairros e loteamentos
+          - Acqua Edifícios Habitacionais
+          - Acqua Serviços
+          - Acqua Operação e Uso
           - Procel Residencial
           - Procel comercial
           - Outros
     - Perfil/Nível de Certificação:
+        escolha: múltipla
         opções:
           - LEED - Platinum
           - LEED - Gold
@@ -181,36 +182,47 @@
           - Procel – D
           - Procel - E
           - Outros
-          - Aqua:
+          - Acqua:
               escolha: tabela
               opções:
-                - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_aqua
+                - Categoria n°1 Relação do edifício com o seu entorno: &opcoes_categoria_acqua
                     opções:
                       - Bom
                       - Superior
                       - Excelente
-                - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_aqua
-                - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_aqua
-                - Categoria n°4 Gestão da energia: *opcoes_categoria_aqua
-                - Categoria n°5 Gestão da água: *opcoes_categoria_aqua
-                - Categoria n°6 Gestão dos resíduos de uso e operação do edifício: *opcoes_categoria_aqua
-                - Categoria n°7 Manutenção - Permanência do desempenho ambiental: *opcoes_categoria_aqua
-                - Categoria n°8 Conforto higrotérmico: *opcoes_categoria_aqua
-                - Categoria n°9 Conforto acústico: *opcoes_categoria_aqua
-                - Categoria n°10 Conforto visual: *opcoes_categoria_aqua
-                - Categoria n°11 Conforto olfativo: *opcoes_categoria_aqua
-                - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_aqua
-                - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_aqua
-                - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_aqua
+                - Categoria n°2 Escolha integrada de produtos, sistemas e processos construtivos: *opcoes_categoria_acqua
+                - Categoria n°3 Canteiro de obras com baixo impacto ambiental: *opcoes_categoria_acqua
+                - Categoria n°4 Gestão da energia: *opcoes_categoria_acqua
+                - Categoria n°5 Gestão da água: *opcoes_categoria_acqua
+                - Categoria n°6 Gestão dos resíduos de uso e operação do edifício: *opcoes_categoria_acqua
+                - Categoria n°7 Manutenção - Permanência do desempenho ambiental: *opcoes_categoria_acqua
+                - Categoria n°8 Conforto higrotérmico: *opcoes_categoria_acqua
+                - Categoria n°9 Conforto acústico: *opcoes_categoria_acqua
+                - Categoria n°10 Conforto visual: *opcoes_categoria_acqua
+                - Categoria n°11 Conforto olfativo: *opcoes_categoria_acqua
+                - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_acqua
+                - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_acqua
+                - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_acqua
 - Terreno:
     - Vagas verdes: &sim_nao_quantidade
         opções: 
           - Sim:
-              - Quantidade?
+              - Quantidade total?
+              - Porcentagem?
           - Não
     - Estações de recarga de veículos elétricos: *sim_nao_quantidade
-    - Bicicletários: *sim_nao_quantidade
-    - Vestiários com chuveiro: *sim_nao_quantidade
+    - Bicicletários: 
+        opções: 
+          - Sim:
+              - Quantidade?
+              - Qual a população?
+          - Não
+    - Vestiários com chuveiro: 
+        opções: 
+          - Sim:
+              - Quantidade?
+              - Qual a população?
+          - Não
     - Transporte público:
         escolha: múltipla
         opções:
@@ -255,11 +267,14 @@
           - Outros
     - Irrigação:
         opções:
-          - Irrigação automatizada
-          - Sensor de chuva
-          - Sensor de umidade do solo
-          - Estação meteorological
-          - Outros
+          - Sim:
+              escolha: múltipla
+              opções:
+                - Sensor de Chuva
+                - Sensor de umidade no solo
+                - Estação Meteorológica
+                - Outros
+          - Não
     - Piscina:
         opções:
           - Aquecimento solar para piscina
@@ -304,11 +319,10 @@
           - Pisos permeáveis
           - Caixa de retardo
           - Remoção de sólidos suspensos – Filtros Vortex
-          - Captação e aproveitamente de água pluvial
+          - Captação e aproveitamento de água pluvial
           - Outros
 - Energia:
     - Ar condicionado — condensação:
-        escolha: múltipla
         opções:
           - VRF:
               opções:
@@ -438,7 +452,7 @@
               escolha: múltipla
               opções:
                 - Antecipador de chamada
-                - Frangem degenerativa
+                - frenagem regenerativa
           - Variadores de frequência:
               escolha: múltipla
               opções:
