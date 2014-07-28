@@ -220,14 +220,16 @@
     - Vestiários com chuveiro: 
         opções: 
           - Sim:
-              - Quantidade?
-              - Qual a população?
+              opções:
+                - Elétrico
+                - Gás
+                - Solar
           - Não
     - Transporte público:
         escolha: múltipla
         opções:
           - Metro: &distancia_aproximada
-              - Distancia aproximada (metros)
+              - Distancia aproximada (em metros)
           - Trem: *distancia_aproximada
           - Ponto de ônibus: *distancia_aproximada
           - Outros:
@@ -426,6 +428,9 @@
                 - F7
           - Sistemas de tratamento de ar interno
           - Outros 
+    - A instalação elétrica utilizou somente cabos elétricos ou também empregou barramentos blindados em alguns trechos?
+    - A instalação elétrica utilizou (no todo ou em partes) os cabos elétricos não halogenados (com características antichama, com baixa emissão de fumaça e sem emissão de gases tóxicos e corrosivos)?
+    - O dimensionamento dos circuitos levou em consideração os requisitos da norma ABNT NBR 15920 - Cabos elétricos — Cálculo da corrente nominal — Condições de operação — Otimização econômica das seções dos cabos de potência?
 - Fachada:
     - Existe área envidraçada na fachada?:
         escolha: múltipla

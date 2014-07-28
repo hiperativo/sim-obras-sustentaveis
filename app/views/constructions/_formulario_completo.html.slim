@@ -27,6 +27,13 @@
 									p.text-error= f.error databased(item) if @liberar_formulario
 						- else
 							= render_options(collection: question.values.first["opções"], locals:{parent: question.keys.first, f:f}) 
+				- when "String"
+					.control-group
+						.control-label: label
+							strong #{(@numero+=1)}.
+							=< question
+							= f.input databased(question), as: :text, placeholder: "Resposta"
+
 				- when "Hash"
 					- # Se for um grupo de inputs com nome
 					- # Se tiver opções, então é radio/check

@@ -37,7 +37,29 @@ class Construction < ActiveRecord::Base
 			"irrigacao_sim_outros_quais",
 			"ar_condicionado_condensacao",
 			"ar_condicionado_condensacao_central_de_agua_gelada_chiller_eletrico",
-			"ar_condicionado_condensacao_central_de_agua_gelada_condensacao_por_ar_ou_agua"
+			"ar_condicionado_condensacao_central_de_agua_gelada_condensacao_por_ar_ou_agua",
+			"teve_consultoria_de_sustentabilidade_e_certificacao_ambiental_leed_acqua_etc_detalhes",
+			"vagas_verdes_detalhes",
+			"estacoes_de_recarga_de_veiculos_eletricos_detalhes",
+			"bicicletarios_detalhes",
+			"vestiarios_com_chuveiro_detalhes",
+			"transporte_publico_metro_detalhes",
+			"transporte_publico_trem_detalhes",
+			"transporte_publico_ponto_de_onibus_detalhes",
+			"transporte_publico_outros_detalhes",
+			"energia_alternativa_solar_fotovoltaica_detalhes",
+			"energia_alternativa_aquecimento_solar_de_agua_detalhes",
+			"energia_alternativa_eolica_detalhes",
+			"energia_alternativa_biomassa_detalhes",
+            "vestiarios_com_chuveiro_sim",
+            "a_instalacao_eletrica_utilizou_somente_cabos_eletricos_ou_tambem_empregou_barramentos_blindados_em_alguns_trechos",
+            "a_instalacao_eletrica_utilizou_no_todo_ou_em_partes_os_cabos_eletricos_nao_halogenados_com_caracteristicas_antichama_com_baixa_emissao_de_fumaca_e_sem_emissao_de_gases_toxicos_e_corrosivos",
+            "o_dimensionamento_dos_circuitos_levou_em_consideracao_os_requisitos_da_norma_abnt_nbr_15920_cabos_eletricos_calculo_da_corrente_nominal_condicoes_de_operacao_otimizacao_economica_das_secoes_dos_cabos_de_potencia",
+            "",
+            "",
+            "",
+            "",
+            ""
 		]
 		# data_structure.each do |passo|
 		# 	passo.values.first.each do |question|
