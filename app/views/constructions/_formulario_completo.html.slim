@@ -31,7 +31,6 @@
 					.control-group
 						.control-label: label
 							strong #{(@numero+=1)}.
-							=< question
 							= f.input databased(question), as: :text, placeholder: "Resposta"
 
 				- when "Hash"
