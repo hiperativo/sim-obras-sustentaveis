@@ -13,7 +13,7 @@ class CitiesLoader
 			if options.data[$(e.currentTarget).val()]?
 				cidades = options.data[$(e.currentTarget).val()].cidades
 				cidades_atuais += for cidade in cidades
-					"<option value=\"#{cidade}\">#{cidade}</option>"
+					"<option value='#{cidade}'>#{cidade}</option>"
 				options.city_selector.html cidades_atuais
 			else
 				options.city_selector.html "<option>Selecione o estado</option>"
@@ -49,7 +49,7 @@ $ ->
 
 		if(window.cidade) 
 			$("#construction_cidade").find(":selected").removeAttr("selected");
-			$("#construction_cidade").find("[value=#{cidade}]").attr("selected", "selected");
+			$("#construction_cidade").find("[value='#{cidade}']").attr("selected", "selected");
 
 
 	$("#construction_inicio_da_obra, #construction_termino_da_obra").datepicker
