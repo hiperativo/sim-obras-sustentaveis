@@ -203,6 +203,11 @@
                 - Categoria n°12 Qualidade sanitária dos ambientes: *opcoes_categoria_acqua
                 - Categoria n°13 Qualidade sanitária do ar: *opcoes_categoria_acqua
                 - Categoria n°14 Qualidade sanitária da água: *opcoes_categoria_acqua
+    - Existe a intenção de certificar estes edifícios pela ISO50001 – Gestão de Energia?:
+        opções:
+          - Sim
+          - Não
+
 - Terreno:
     - Vagas verdes: &sim_nao_quantidade
         opções: 
@@ -218,13 +223,16 @@
               - Qual a população?
           - Não
     - Vestiários com chuveiro: 
-        opções: 
+        opções:
           - Sim:
-              opções:
-                - Elétrico
-                - Gás
-                - Solar
+              - Quantidade?
+              - Qual a população?
           - Não
+    - Tipos de vestiários com chuveiro:
+        opções: 
+          - Elétrico
+          - Gás
+          - Solar
     - Transporte público:
         escolha: múltipla
         opções:
