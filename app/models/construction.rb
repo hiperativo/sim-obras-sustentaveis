@@ -57,9 +57,24 @@ class Construction < ActiveRecord::Base
             "o_dimensionamento_dos_circuitos_levou_em_consideracao_os_requisitos_da_norma_abnt_nbr_15920_cabos_eletricos_calculo_da_corrente_nominal_condicoes_de_operacao_otimizacao_economica_das_secoes_dos_cabos_de_potencia",
             "existe_a_intencao_de_certificar_estes_edificios_pela_iso50001_gestao_de_energia",
             "tipos_de_vestiarios_com_chuveiro",
-            "",
-            "",
-            ""
+            "teve_consultoria_de_sustentabilidade_e_certificacao_ambiental_leed_acqua_etc_qual_empresa",
+            "vagas_verdes_quantidade_total",
+            "vagas_verdes_porcentagem",
+            "estacoes_de_recarga_de_veiculos_eletricos_quantidade_total",
+            "estacoes_de_recarga_de_veiculos_eletricos_porcentagem",
+            "bicicletarios_quantidade",
+            "bicicletarios_qual_a_populacao",
+            "vestiarios_com_chuveiro_quantidade",
+            "vestiarios_com_chuveiro_qual_a_populacao",
+            "transporte_publico_metro_distancia_aproximada_em_metros",
+            "transporte_publico_trem_distancia_aproximada_em_metros",
+            "transporte_publico_ponto_de_onibus_distancia_aproximada_em_metros",
+            "transporte_publico_outros_quais",
+            "transporte_publico_outros_distancia_aproximada_metros",
+            "energia_alternativa_solar_fotovoltaica_qual_a_potencia",
+            "energia_alternativa_aquecimento_solar_de_agua_qual_a_metragem",
+            "energia_alternativa_eolica_qual_a_potencia",
+            "energia_alternativa_biomassa_qual_a_potencia"
 		]
 		# data_structure.each do |passo|
 		# 	passo.values.first.each do |question|

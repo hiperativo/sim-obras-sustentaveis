@@ -45,4 +45,4 @@ label class=input_type[escolha]
 			= content_tag :div, style:"padding-left: 20px", data: requires(required_element[escolha], (label if escolha == "única") )
 				label  
 				- @colunas << sub_option_accessor
-				= f.input_field "#{sub_option_accessor}_detalhes", placeholder: (item if @liberar_formulario), checked: @obra.send(sub_option_accessor)
+				= f.input_field "#{sub_option_accessor}_#{databased item}", placeholder: (item if @liberar_formulario), checked: @obra.send(sub_option_accessor)
